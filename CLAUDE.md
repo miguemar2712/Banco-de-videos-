@@ -62,3 +62,12 @@ corrección de color, chat render y un reel completo). Ver `remotion/README.md`.
 
 ---
 Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
+
+## 6 · Videos de tomas con voz en off (formato de @delcarmen__1)
+- Ella NO sale a cámara ni quiere subtítulos: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
+- Banco de b-roll por tema en `broll/catalogo.json` (Mixkit, uso comercial libre): china · avion · fabrica · cajas · entrega ·
+  dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
+- Montaje: transcribe la voz (`scripts/transcribir.py`), escribe `ediciones/<nombre>/tomas.json` (modelo:
+  `ediciones/sets-deportivos-tomas/tomas.json`) y corre `.venv/bin/python scripts/montar-tomas.py ediciones/<nombre>/tomas.json`.
+- Textos SOLO si ella los pide (p. ej. el precio): campo `textos` del tomas.json.
+- Guiones listos: `GUIONES.md`.

@@ -35,7 +35,8 @@
     "SUBTÍTULOS DEFINITIVOS = estilo 'cartel' (su plantilla de CapCut tipo THE/QUICK/BROWN, letra 'Poffen' de CapCut Pro → equivalente libre: Ultra): blanca con resplandor negro y textura gastada; palabra clave (o la más larga) ENORME al centro, las de antes pequeñas arriba a la derecha, las de después pequeñas abajo a la izquierda; aparecen palabra por palabra. En tomas.json: \"subtitulos\": \"cartel\". El título de arriba sigue en Montserrat Black sobre el mapa de China.",
     "Subtítulos 'cartel' SIEMPRE blancos lisos, un solo color, SIN textura ni manchas (pedido explícito). Solo la sombra/resplandor negro suave alrededor para que se lean. No poner \"textura\": true.",
     "Título de arriba en CURSIVA Great Vibes (la eligió entre 4 opciones), blanca con sombra suave, tal cual se escribe (no mayúsculas), ancho ~820 px sobre el mapa de China. En tomas.json: \"titulo_letra\": \"Great Vibes\" (por defecto).",
-    "Sonido de MONEDAS (assets/sonidos/mk-866.mp3, vol 0.55) justo cuando dice un precio/dinero (ej. '$15 dólares'), junto al texto grande del precio. Es el único efecto de sonido que pidió; el resto, solo su voz."
+    "Subtítulos 'cartel' MÁS PEQUEÑOS (le parecían muy grandes): palabra grande máx. 120 px y ≤760 px de ancho; pequeñas 44–56 px.",
+    "Sonido de dinero al decir un precio: está eligiendo entre assets/sonidos/mk-1993/1989/2003/3187 (NO usar el 866: era un destello de videojuego, no monedas)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

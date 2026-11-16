@@ -113,10 +113,10 @@ def ass_cartel(grupos, Y):
         fin = min(grupos[k + 1][0]['a'] if k + 1 < len(grupos) else g[-1]['b'] + .5, g[-1]['b'] + .7)
         cand = [j for j, w in enumerate(g) if w['clave']] or list(range(len(g)))
         i = max(cand, key=lambda j: len(g[j]['t']))
-        grande = 175
-        while ancho(g[i]['t'], grande) > 900 and grande > 60:
+        grande = 120
+        while ancho(g[i]['t'], grande) > 760 and grande > 50:
             grande -= 5
-        chico = max(56, min(78, int(grande * .45)))
+        chico = max(44, min(56, int(grande * .46)))
         w_g = ancho(g[i]['t'], grande); esp = ancho(' ', chico)
         izq, der = 540 - w_g / 2, 540 + w_g / 2
         partes = [(g[i], 540, Y, grande, '\\an5')]

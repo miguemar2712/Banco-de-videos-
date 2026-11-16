@@ -262,12 +262,24 @@ SUB_CSS = {
 .g { position:absolute; left:120px; right:120px; top:978px; text-align:center; opacity:0; }
 .g span { font-family:'Poppins',sans-serif; font-weight:700; font-size:66px; color:#fff; text-shadow:0 3px 14px rgba(0,0,0,.6); }
 .g span.k { color:var(--acento); }''',
+    # estilo "referencia": texto limpio que se escribe letra por letra + palabra clave gruesa/cursiva que entra deslizándose
+    'referencia': '''
+.g { position:absolute; left:70px; right:70px; top:860px; text-align:center; opacity:0; color:#fff; }
+.g .n { font-family:'Inter',sans-serif; font-weight:500; font-size:80px; letter-spacing:-1.5px; line-height:1.1;
+  text-shadow:0 2px 10px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35); }
+.g .c { opacity:0; margin-left:0 !important; white-space:pre; }
+.g .big { display:block; font-family:'Archivo Black',sans-serif; font-size:150px; line-height:.95; text-transform:uppercase; letter-spacing:-3px;
+  text-shadow:0 4px 18px rgba(0,0,0,.45); }
+.g .big.num { font-family:'Inter',sans-serif; font-weight:300; font-size:210px; letter-spacing:-8px; text-transform:none; }
+.g .big.largo { font-size:112px; letter-spacing:-2px; }
+.g .cur { display:block; margin-top:-10px; font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:104px; line-height:1;
+  letter-spacing:-1px; text-shadow:0 3px 16px rgba(0,0,0,.5); margin-left:0 !important; }''',
 }
 
 SUB_HTML = '''<!doctype html>
 <html lang="es"><head><meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@1,600&family=Inter:wght@700&display=block" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Poppins:wght@600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Inter:wght@300;500;700&display=block" />
 <style>
 :root {{ --acento:{acento}; --acento2:{acento2}; --tinta:{tinta}; }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
@@ -305,7 +317,11 @@ def agrupar(palabras, estilo, claves, ocultos):
             continue
         limpio = w['text'].lower().strip('.,¿?¡!')
         es_clave = limpio in claves
-        corte = g and (len(g) >= maxp or es_clave or any(x['clave'] for x in g) or w['start'] - g[-1]['end'] > .25
+        if estilo == 'referencia':   # la clave abre grupo y se lleva 1–2 palabras detrás (van en cursiva)
+            corte = g and (es_clave or len(g) >= 3 or (g[0]['clave'] and len(g) >= 2 and len(g[-1]['text']) + len(w['text']) > 11) or w['start'] - g[-1]['end'] > .25 or g[-1]['text'][-1:] in '.,?!'
+                           or (not g[0]['clave'] and sum(len(x['text']) for x in g) + len(w['text']) > 18))
+        else:
+            corte = g and (len(g) >= maxp or es_clave or any(x['clave'] for x in g) or w['start'] - g[-1]['end'] > .25
                        or sum(len(x['text']) for x in g) + len(w['text']) > 16 or g[-1]['text'][-1:] in '.,?!')
         if corte:
             grupos.append(g); g = []
@@ -325,6 +341,27 @@ def html_subs(palabras, estilo, plan, dur):
         b = grupos[i + 1][0]['start'] if i + 1 < len(grupos) else g[-1]['end'] + .4
         b = min(b, g[-1]['end'] + .6)
         clave = any(x['clave'] for x in g)
+        if estilo == 'referencia':
+            lado = -1 if i % 2 else 1
+            if g[0]['clave']:
+                p0 = g[0]['text'].strip('.,¿?¡!')
+                num = bool(re.fullmatch(r'[$+]?\d[\d.,]*%?', p0))
+                resto = html.escape(' '.join(x['text'].strip('.,') for x in g[1:]))
+                cls = 'big num' if num else 'big largo' if len(p0) > 9 else 'big'
+                divs.append(f'<div class="g clave" id="g{i}"><span class="{cls}">{html.escape(p0)}</span>'
+                            + (f'<span class="cur">{resto}</span>' if resto else '') + '</div>')
+                js.append(f"tl.fromTo('#g{i} .big',{{x:{-260 * lado},filter:'blur(14px)'}},{{x:0,filter:'blur(0px)',duration:.32,ease:'expo.out',immediateRender:false}},{a:.3f})"
+                          f".fromTo('#g{i} .cur',{{x:{260 * lado},opacity:0,filter:'blur(10px)'}},{{x:0,opacity:1,filter:'blur(0px)',duration:.32,ease:'expo.out',immediateRender:false}},{a + .12:.3f})"
+                          f".set('#g{i}',{{opacity:1}},{a:.3f}).to('#g{i}',{{x:{220 * lado},opacity:0,filter:'blur(10px)',duration:.16,ease:'power2.in'}},{max(a + .3, b - .16):.3f});")
+            else:
+                texto = ' '.join(x['text'] for x in g)
+                chars = ''.join(f'<span class="c">{html.escape(ch)}</span>' for ch in texto)
+                n = max(1, len(texto))
+                paso = min(.025, max(.008, (g[-1]['end'] - a) * .5 / n))
+                divs.append(f'<div class="g" id="g{i}"><span class="n">{chars}</span></div>')
+                js.append(f"tl.set('#g{i}',{{opacity:1}},{a:.3f}).fromTo('#g{i} .c',{{opacity:0}},{{opacity:1,duration:.01,stagger:{paso:.4f},immediateRender:false}},{a:.3f})"
+                          f".set('#g{i}',{{opacity:0}},{b:.3f});")
+            continue
         spans = ' '.join(f'<span class="{"k" if x["clave"] else ""}">{html.escape(x["text"].strip(".,") if estilo == "impacto" else x["text"])}</span>' for x in g)
         divs.append(f'<div class="g{" clave" if clave else ""}" id="g{i}">{spans}</div>')
         if estilo == 'impacto':
@@ -605,7 +642,7 @@ def main():
     plan['_marca'] = juntas
     print('4 · subtítulos…')
     plan['_ocultos'] = ocultos
-    shtml, grupos = html_subs(pal, estilo, plan, dur)
+    shtml, grupos = html_subs(pal, plan.get("subtitulos", estilo), plan, dur)
     if plan.get('clic_subs') and plan.get('efectos_sonido', False):
         desde = T(plan['clic_subs'])
         for g in grupos:

@@ -33,7 +33,8 @@
     "Excepción a 'sin textos': si pide un texto puntual (p. ej. el precio), ponerlo SOLO en ese momento: grande, blanco, Archivo Black + palabra en Playfair Italic, entrando de lados opuestos (ej. '$15' + 'dólares'), y hacer coincidir la toma relacionada (billetes) con la palabra.",
     "ESTILO DEFINITIVO (su ejemplo de CapCut): título fijo arriba en Montserrat Black blanca MAYÚSCULAS con sombra oscura sobre el mapa de China rojo con estrellas (\"mapa\": true, \"titulo\": [\"línea 1\",\"línea 2\"]); subtítulos en MAYÚSCULAS Montserrat ExtraBold blanca con sombra, palabra por palabra, escalonados izquierda/derecha; palabras clave grandes y centradas (\"subtitulos\": \"capcut\", \"claves\": [...]). Ver ediciones/sets-deportivos-capcut/tomas.json.",
     "SUBTÍTULOS DEFINITIVOS = estilo 'cartel' (su plantilla de CapCut tipo THE/QUICK/BROWN, letra 'Poffen' de CapCut Pro → equivalente libre: Ultra): blanca con resplandor negro y textura gastada; palabra clave (o la más larga) ENORME al centro, las de antes pequeñas arriba a la derecha, las de después pequeñas abajo a la izquierda; aparecen palabra por palabra. En tomas.json: \"subtitulos\": \"cartel\". El título de arriba sigue en Montserrat Black sobre el mapa de China.",
-    "Subtítulos 'cartel' SIEMPRE blancos lisos, un solo color, SIN textura ni manchas (pedido explícito). Solo la sombra/resplandor negro suave alrededor para que se lean. No poner \"textura\": true."
+    "Subtítulos 'cartel' SIEMPRE blancos lisos, un solo color, SIN textura ni manchas (pedido explícito). Solo la sombra/resplandor negro suave alrededor para que se lean. No poner \"textura\": true.",
+    "Título de arriba en CURSIVA Great Vibes (la eligió entre 4 opciones), blanca con sombra suave, tal cual se escribe (no mayúsculas), ancho ~820 px sobre el mapa de China. En tomas.json: \"titulo_letra\": \"Great Vibes\" (por defecto)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -44,5 +45,6 @@
   "ritmo": "rápido: cortes seguidos sin pausas, efecto nuevo cada 2–3 s",
   "texto": "subtítulos siempre + pocos textos grandes con frases clave",
   "emojis": true,
-  "subtitulos": "cartel"
+  "subtitulos": "cartel",
+  "titulo_letra": "Great Vibes"
 }

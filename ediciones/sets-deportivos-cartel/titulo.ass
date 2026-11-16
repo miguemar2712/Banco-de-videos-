@@ -16,7 +16,7 @@ Style: CartelGlow,Ultra,80,&H10000000,&H10000000,&H10000000,&H00000000,0,0,0,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:19.09,Sombra,,0,0,0,,{\pos(547,300)\blur8\fs170}SETS A $15
-Dialogue: 1,0:00:00.00,0:00:19.09,Titulo,,0,0,0,,{\pos(540,290)\fs170}SETS A $15
-Dialogue: 0,0:00:00.00,0:00:19.09,Sombra,,0,0,0,,{\pos(547,453)\blur8\fs170}ESTILO ALO
-Dialogue: 1,0:00:00.00,0:00:19.09,Titulo,,0,0,0,,{\pos(540,443)\fs170}ESTILO ALO
+Dialogue: 0,0:00:00.00,0:00:19.09,Sombra,,0,0,0,,{\pos(546,204)\blur7\fnGreat Vibes\fs420}Sets a $15
+Dialogue: 1,0:00:00.00,0:00:19.09,Titulo,,0,0,0,,{\pos(540,195)\fnGreat Vibes\fs420}Sets a $15
+Dialogue: 0,0:00:00.00,0:00:19.09,Sombra,,0,0,0,,{\pos(546,414)\blur7\fnGreat Vibes\fs420}estilo Alo
+Dialogue: 1,0:00:00.00,0:00:19.09,Titulo,,0,0,0,,{\pos(540,405)\fnGreat Vibes\fs420}estilo Alo

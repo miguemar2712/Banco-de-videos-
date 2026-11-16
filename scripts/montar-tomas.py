@@ -138,10 +138,21 @@ def hacer_ass(plan, total, parte='todo'):
     t = plan.get('titulo') if parte in ('todo', 'titulo') else None
     if t:
         lineas = [t] if isinstance(t, str) else t
-        y0 = plan.get('titulo_y', 290)
-        for i, l in enumerate(lineas):
-            fs = min(170, int(960 / (len(l) * .56)))
-            out += doble(0, 0, total, 'Titulo', 540, y0 + i * int(fs * .9), l.upper(), f'\\fs{fs}', sombra=(7, 10), blur=8)
+        y0 = plan.get('titulo_y', 300 if plan.get('titulo_letra', 'Great Vibes') != 'Montserrat Black' else 290)
+        letra = plan.get('titulo_letra', 'Great Vibes')     # su elección: cursiva caligráfica
+        if letra == 'Montserrat Black':
+            for i, l in enumerate(lineas):
+                fs = min(170, int(960 / (len(l) * .56)))
+                out += doble(0, 0, total, 'Titulo', 540, y0 + i * int(fs * .9), l.upper(), f'\\fs{fs}', sombra=(7, 10), blur=8)
+        else:                                                # cursiva: tal cual se escribe, más grande
+            from PIL import ImageFont
+            archivo = os.path.join(RAIZ, 'fuentes', letra.replace(' ', '') + '.ttf')
+            f = ImageFont.truetype(archivo, 200); asc, des = f.getmetrics()
+            fs = min(int(1.44 * 820 * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
+            paso = int(fs * .5)
+            for i, l in enumerate(lineas):
+                out += doble(0, 0, total, 'Titulo', 540, y0 - paso // 2 * (len(lineas) - 1) + i * paso, l,
+                             f'\\fn{letra}\\fs{fs}', sombra=(6, 9), blur=7)
     if plan.get('subtitulos') and parte in ('todo', 'subs'):
         ws = json.load(open(os.path.join(RAIZ, plan['palabras'])))['words']
         rep = {k.lower(): v for k, v in plan.get('reemplazos', {}).items()}

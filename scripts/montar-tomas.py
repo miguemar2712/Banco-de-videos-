@@ -240,16 +240,19 @@ def main():
             ass = os.path.join(carpeta, 'titulo.ass'); open(ass, 'w').write(hacer_ass(plan, total, 'titulo'))
             cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
         ass = os.path.join(carpeta, 'subs.ass'); txt = hacer_ass(plan, total, 'subs'); open(ass, 'w').write(txt)
-        solo = os.path.join(carpeta, 'subs-mascara.ass')        # solo las letras (sin resplandor) para la máscara de desgaste
-        open(solo, 'w').write(''.join(l for l in txt.splitlines(True) if 'CartelGlow,' not in l))
-        tex = os.path.join(RAIZ, 'assets', 'textura-gastada.png')
-        idx = nv + 1 + (1 if plan.get('mapa') else 0)
-        extra += ['-loop', '1', '-i', tex]
-        cadena += (f",subtitles=filename='{ass}':fontsdir='{fdir}'[vb2];"
-                   f"color=c=black:s=1080x1920:r=30:d={total:.3f},subtitles=filename='{solo}':fontsdir='{fdir}',format=gray,lut=y='if(gt(val,110),255,0)'[am];"
-                   f"[{idx}:v]format=gray,trim=duration={total:.3f},fps=30[tg];"
-                   f"[am][tg]blend=all_mode=multiply,lutyuv=y='val*0.9'[mk];color=c=black:s=1080x1920:r=30:d={total:.3f},format=rgba[neg];"
-                   f"[neg][mk]alphamerge[manchas];[vb2][manchas]overlay=format=auto:shortest=1")
+        if not plan.get('textura'):         # por defecto: letras blancas lisas, sin manchas (gusto de @delcarmen__1)
+            cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
+        else:                               # opcional: textura gastada dentro de las letras
+            solo = os.path.join(carpeta, 'subs-mascara.ass')        # solo las letras (sin resplandor) para la máscara de desgaste
+            open(solo, 'w').write(''.join(l for l in txt.splitlines(True) if 'CartelGlow,' not in l))
+            tex = os.path.join(RAIZ, 'assets', 'textura-gastada.png')
+            idx = nv + 1 + (1 if plan.get('mapa') else 0)
+            extra += ['-loop', '1', '-i', tex]
+            cadena += (f",subtitles=filename='{ass}':fontsdir='{fdir}'[vb2];"
+                       f"color=c=black:s=1080x1920:r=30:d={total:.3f},subtitles=filename='{solo}':fontsdir='{fdir}',format=gray,lut=y='if(gt(val,110),255,0)'[am];"
+                       f"[{idx}:v]format=gray,trim=duration={total:.3f},fps=30[tg];"
+                       f"[am][tg]blend=all_mode=multiply,lutyuv=y='val*0.9'[mk];color=c=black:s=1080x1920:r=30:d={total:.3f},format=rgba[neg];"
+                       f"[neg][mk]alphamerge[manchas];[vb2][manchas]overlay=format=auto:shortest=1")
     elif plan.get('titulo') or plan.get('subtitulos'):
         ass = os.path.join(carpeta, 'subs.ass')
         open(ass, 'w').write(hacer_ass(plan, total))

@@ -80,12 +80,5 @@
   "test": "desde",
   "whatsapp": "WhatsApp",
   "15": "$15"
- },
- "sonidos": [
-  {
-   "t": 4.95,
-   "archivo": "assets/sonidos/mk-866.mp3",
-   "vol": 0.55
-  }
- ]
+ }
 }

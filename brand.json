@@ -31,7 +31,8 @@
     "B-roll libre: Mixkit (mixkit.co, licencia gratuita comercial); videos 16:9 recortados al centro a 1080x1920.",
     "Subtítulos por defecto: \"subtitulos\": \"referencia\" en el plan → texto normal Inter 500 80px blanco que se escribe letra por letra; palabras clave (números, lugares, verbos de acción, CTA) en Archivo Black MAYÚSCULAS + 1 palabra en Playfair Display Italic debajo, entrando de un lado con desenfoque; números en Inter Light 210px. Emojis de bandera no se ven: usar 🚢 ✈️ 📦.",
     "Excepción a 'sin textos': si pide un texto puntual (p. ej. el precio), ponerlo SOLO en ese momento: grande, blanco, Archivo Black + palabra en Playfair Italic, entrando de lados opuestos (ej. '$15' + 'dólares'), y hacer coincidir la toma relacionada (billetes) con la palabra.",
-    "ESTILO DEFINITIVO (su ejemplo de CapCut): título fijo arriba en Montserrat Black blanca MAYÚSCULAS con sombra oscura sobre el mapa de China rojo con estrellas (\"mapa\": true, \"titulo\": [\"línea 1\",\"línea 2\"]); subtítulos en MAYÚSCULAS Montserrat ExtraBold blanca con sombra, palabra por palabra, escalonados izquierda/derecha; palabras clave grandes y centradas (\"subtitulos\": \"capcut\", \"claves\": [...]). Ver ediciones/sets-deportivos-capcut/tomas.json."
+    "ESTILO DEFINITIVO (su ejemplo de CapCut): título fijo arriba en Montserrat Black blanca MAYÚSCULAS con sombra oscura sobre el mapa de China rojo con estrellas (\"mapa\": true, \"titulo\": [\"línea 1\",\"línea 2\"]); subtítulos en MAYÚSCULAS Montserrat ExtraBold blanca con sombra, palabra por palabra, escalonados izquierda/derecha; palabras clave grandes y centradas (\"subtitulos\": \"capcut\", \"claves\": [...]). Ver ediciones/sets-deportivos-capcut/tomas.json.",
+    "SUBTÍTULOS DEFINITIVOS = estilo 'cartel' (su plantilla de CapCut tipo THE/QUICK/BROWN, letra 'Poffen' de CapCut Pro → equivalente libre: Ultra): blanca con resplandor negro y textura gastada; palabra clave (o la más larga) ENORME al centro, las de antes pequeñas arriba a la derecha, las de después pequeñas abajo a la izquierda; aparecen palabra por palabra. En tomas.json: \"subtitulos\": \"cartel\". El título de arriba sigue en Montserrat Black sobre el mapa de China."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -42,5 +43,5 @@
   "ritmo": "rápido: cortes seguidos sin pausas, efecto nuevo cada 2–3 s",
   "texto": "subtítulos siempre + pocos textos grandes con frases clave",
   "emojis": true,
-  "subtitulos": "capcut"
+  "subtitulos": "cartel"
 }

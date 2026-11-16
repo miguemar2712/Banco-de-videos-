@@ -66,8 +66,9 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
 ## 6 · Videos de tomas con voz en off (formato de @delcarmen__1)
 - Ella NO sale a cámara: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
 - **Su estilo de texto (de su ejemplo en CapCut):** título fijo arriba sobre el mapa de China rojo (`"titulo"`, `"mapa": true`) +
-  subtítulos MAYÚSCULAS Montserrat palabra por palabra, escalonados, claves grandes (`"subtitulos": "capcut"`, `"claves"`,
-  `"palabras"`, `"reemplazos"`). Modelo: `ediciones/sets-deportivos-capcut/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
+  subtítulos estilo **cartel** (`"subtitulos": "cartel"`): letra Ultra blanca con resplandor negro y textura gastada, palabra
+  clave ENORME al centro + pequeñas arriba-derecha / abajo-izquierda (su plantilla de CapCut). Campos: `"claves"`, `"palabras"`,
+  `"reemplazos"`. Modelo: `ediciones/sets-deportivos-cartel/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
 - Banco de b-roll por tema en `broll/catalogo.json` (Mixkit, uso comercial libre): china · avion · fabrica · cajas · entrega ·
   dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
 - Montaje: transcribe la voz (`scripts/transcribir.py`), escribe `ediciones/<nombre>/tomas.json` (modelo:

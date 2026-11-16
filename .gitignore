@@ -5,3 +5,6 @@ videos/*
 !videos/LEEME.txt
 .DS_Store
 __pycache__/
+ediciones/*/capas/
+ediciones/*/subs/
+.hyperframes/

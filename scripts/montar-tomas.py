@@ -53,6 +53,83 @@ def descargar(ids):
             print('✗ no se pudo bajar', i)
 
 
+# ---------------------------------------------------------------- título + subtítulos estilo CapCut (gusto de @delcarmen__1)
+#  Título fijo arriba en Montserrat Black blanca con sombra; subtítulos en MAYÚSCULAS Montserrat ExtraBold que aparecen
+#  palabra por palabra, escalonados (una palabra por línea, alternando izquierda/derecha); las claves, más grandes.
+ASS_CAB = """[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Titulo,Montserrat Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Sombra,Montserrat Black,128,&H70000000,&H70000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Sub,Montserrat ExtraBold,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
+Style: SubSombra,Montserrat ExtraBold,64,&H80000000,&H80000000,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+
+
+def tc(s):
+    s = max(0, s); h = int(s // 3600); m = int(s % 3600 // 60)
+    return f"{h}:{m:02d}:{s % 60:05.2f}"
+
+
+def doble(capa, a, b, estilo, x, y, txt, tags='', sombra=(5, 8), blur=6):
+    """Texto blanco + su sombra difuminada debajo (como CapCut)."""
+    sx, sy = sombra
+    return (f"Dialogue: {capa},{tc(a)},{tc(b)},{estilo.replace('Sub', 'SubSombra') if estilo.startswith('Sub') else 'Sombra'},,0,0,0,,"
+            f"{{\\pos({x + sx},{y + sy})\\blur{blur}{tags}}}{txt}\n"
+            f"Dialogue: {capa + 1},{tc(a)},{tc(b)},{estilo},,0,0,0,,{{\\pos({x},{y}){tags}}}{txt}\n")
+
+
+def hacer_ass(plan, total):
+    out = ASS_CAB
+    t = plan.get('titulo')
+    if t:
+        lineas = [t] if isinstance(t, str) else t
+        y0 = plan.get('titulo_y', 290)
+        for i, l in enumerate(lineas):
+            fs = min(170, int(960 / (len(l) * .56)))
+            out += doble(0, 0, total, 'Titulo', 540, y0 + i * int(fs * .9), l.upper(), f'\\fs{fs}', sombra=(7, 10), blur=8)
+    if plan.get('subtitulos'):
+        ws = json.load(open(os.path.join(RAIZ, plan['palabras'])))['words']
+        rep = {k.lower(): v for k, v in plan.get('reemplazos', {}).items()}
+        claves = {c.lower() for c in plan.get('claves', [])}
+        pal = []
+        for w in ws:
+            base = w['text'].strip().strip('.,¿?¡!')
+            nuevo = rep.get(base.lower(), base)
+            for i, p in enumerate(nuevo.split()):
+                pal.append(dict(t=p.upper(), a=w['start'], b=w['end'], clave=base.lower() in claves,
+                                fin=(i == len(nuevo.split()) - 1) and w['text'].strip()[-1:] in '.,?!'))
+        grupos, g = [], []
+        for w in pal:
+            if g and (len(g) >= 3 or w['a'] - g[-1]['b'] > .3 or g[-1]['fin'] or w['clave'] != g[-1]['clave']):
+                grupos.append(g); g = []
+            g.append(w)
+        grupos.append(g)
+        Y = plan.get('subs_y', 1180)
+        for k, g in enumerate(grupos):
+            fin = min(grupos[k + 1][0]['a'] if k + 1 < len(grupos) else g[-1]['b'] + .5, g[-1]['b'] + .7)
+            grande = g[0]['clave']
+            for j, w in enumerate(g):
+                if grande:   # palabra clave: grande y centrada, una debajo de otra
+                    tam = min(140, int(900 / (len(w['t']) * .72)))
+                    x, y, al = 540, Y + j * int(tam * .95), '\\an5'
+                else:        # palabras normales: escalonadas izquierda/derecha
+                    tam = 98
+                    x, y, al = 270 + (180 if j % 2 else 0), Y + j * 88, '\\an4'
+                pop = f"{al}\\fs{tam}\\fscx125\\fscy125\\t(0,90,\\fscx100\\fscy100)"
+                out += doble(2, w['a'], fin, 'Sub', x, y, w['t'], pop, sombra=(5, 7), blur=6)
+    return out
+
+
 def main():
     cat = json.load(open(CAT)) if os.path.exists(CAT) else {'categorias': {}}
     if '--descargar' in sys.argv:
@@ -102,10 +179,18 @@ def main():
             cadena += dt(x['grande'], 'ArchivoBlack-Regular.ttf', x.get('tam', 300 if len(x['grande']) <= 5 else 170), x.get('y', 640), a, '-')
         if x.get('cursiva'):
             cadena += dt(x['cursiva'], 'PlayfairDisplay-Italic.ttf', 170, x.get('y', 640) + 325, x.get('cursiva_de', a + .3), '+')
+    extra = []
+    if plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
+        extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]
+        cadena += f"[vb];[vb][{nv + 1}:v]overlay=x=(W-w)/2:y={plan.get('mapa_y', 60)}"
+    if plan.get('titulo') or plan.get('subtitulos'):
+        ass = os.path.join(RAIZ, os.path.dirname(sys.argv[1]), 'subs.ass')
+        open(ass, 'w').write(hacer_ass(plan, total))
+        cadena += f",subtitles=filename='{ass}':fontsdir='{os.path.join(RAIZ, 'fuentes')}'"
     filtro = ';'.join(partes) + ';' + cadena + '[v];' + f'[{nv}:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]'
     salida = os.path.join(RAIZ, plan['salida'])
     os.makedirs(os.path.dirname(salida), exist_ok=True)
-    sh(['ffmpeg', '-v', 'error', '-y', *entradas, '-i', os.path.join(RAIZ, plan['voz']), '-filter_complex', filtro,
+    sh(['ffmpeg', '-v', 'error', '-y', *entradas, '-i', os.path.join(RAIZ, plan['voz']), *extra, '-filter_complex', filtro,
         '-map', '[v]', '-map', '[a]', '-t', f'{total:.3f}', '-c:v', 'libx264', '-crf', '16', '-preset', 'medium',
         '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709',
         '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', salida])

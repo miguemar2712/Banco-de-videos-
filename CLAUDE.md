@@ -64,10 +64,13 @@ corrección de color, chat render y un reel completo). Ver `remotion/README.md`.
 Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
 
 ## 6 · Videos de tomas con voz en off (formato de @delcarmen__1)
-- Ella NO sale a cámara ni quiere subtítulos: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
+- Ella NO sale a cámara: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
+- **Su estilo de texto (de su ejemplo en CapCut):** título fijo arriba sobre el mapa de China rojo (`"titulo"`, `"mapa": true`) +
+  subtítulos MAYÚSCULAS Montserrat palabra por palabra, escalonados, claves grandes (`"subtitulos": "capcut"`, `"claves"`,
+  `"palabras"`, `"reemplazos"`). Modelo: `ediciones/sets-deportivos-capcut/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
 - Banco de b-roll por tema en `broll/catalogo.json` (Mixkit, uso comercial libre): china · avion · fabrica · cajas · entrega ·
   dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
 - Montaje: transcribe la voz (`scripts/transcribir.py`), escribe `ediciones/<nombre>/tomas.json` (modelo:
   `ediciones/sets-deportivos-tomas/tomas.json`) y corre `.venv/bin/python scripts/montar-tomas.py ediciones/<nombre>/tomas.json`.
-- Textos SOLO si ella los pide (p. ej. el precio): campo `textos` del tomas.json.
+- Textos grandes puntuales (p. ej. "$15 dólares"): campo `textos` del tomas.json.
 - Guiones listos: `GUIONES.md`.

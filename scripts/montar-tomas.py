@@ -268,7 +268,17 @@ def main():
         ass = os.path.join(carpeta, 'subs.ass')
         open(ass, 'w').write(hacer_ass(plan, total))
         cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
-    filtro = ';'.join(partes) + ';' + cadena + '[v];' + f'[{nv}:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]'
+    audio = f'[{nv}:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000'
+    sons = plan.get('sonidos', [])     # efectos SOLO si ella los pide: [{"t": 4.95, "archivo": "assets/sonidos/mk-866.mp3", "vol": .55}]
+    if sons:
+        base = nv + 1 + extra.count('-i')
+        audio += '[voz];'
+        for j, x in enumerate(sons):
+            extra += ['-i', os.path.join(RAIZ, x['archivo'])]
+            ms = int(x['t'] * 1000)
+            audio += f"[{base + j}:a]aresample=48000,volume={x.get('vol', .55)},adelay={ms}|{ms}[sx{j}];"
+        audio += '[voz]' + ''.join(f'[sx{j}]' for j in range(len(sons))) + f'amix=inputs={len(sons) + 1}:normalize=0:duration=first,alimiter=limit=0.95'
+    filtro = ';'.join(partes) + ';' + cadena + '[v];' + audio + '[a]'
     salida = os.path.join(RAIZ, plan['salida'])
     os.makedirs(os.path.dirname(salida), exist_ok=True)
     sh(['ffmpeg', '-v', 'error', '-y', *entradas, '-i', os.path.join(RAIZ, plan['voz']), *extra, '-filter_complex', filtro,

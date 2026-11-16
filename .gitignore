@@ -8,3 +8,5 @@ __pycache__/
 ediciones/*/capas/
 ediciones/*/subs/
 .hyperframes/
+.venv-voz/
+voz/

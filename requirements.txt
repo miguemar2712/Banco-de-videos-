@@ -1,0 +1,6 @@
+numpy
+opencv-python
+pillow
+mediapipe==0.10.21
+faster-whisper
+av<16

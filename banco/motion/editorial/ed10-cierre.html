@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "usuario", "type": "string", "label": "@usuario", "default": "@tu_usuario"},
+  {"id": "frase", "type": "string", "label": "Frase final (cursiva)", "default": "sígueme para más"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "tinta", "type": "color", "label": "Color oscurecido", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed10-velo { position: absolute; inset: 0; background: color-mix(in srgb, var(--tinta) 78%, transparent); }
+  #ed10-grupo { position: absolute; left: 0; right: 0; top: 760px; text-align: center; }
+  #ed10-ig { width: 190px; height: 190px; margin: 0 auto; position: relative; }
+  #ed10-ig .cuadro { position: absolute; inset: 0; border-radius: 56px; background: linear-gradient(45deg, #F9CE34, #EE2A7B 50%, #6228D7); }
+  #ed10-ig .blanco { position: absolute; inset: 0; border-radius: 56px; background: #fff; }
+  #ed10-ig svg { position: absolute; inset: 0; }
+  #ed10-user { font-family: var(--sans); font-weight: 700; font-size: 50px; color: #fff; margin-top: 34px; letter-spacing: 1px; }
+  #ed10-frase { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 92px; color: var(--acento); margin-top: 8px; }
+  #ed10-logo { position: absolute; left: 50%; bottom: 120px; width: 300px; margin-left: -150px; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed10" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed10-velo"></div>
+    <div id="ed10-grupo">
+      <div id="ed10-ig">
+        <div class="cuadro"></div><div class="blanco"></div>
+        <svg viewBox="0 0 190 190"><rect id="ed10-r" x="42" y="42" width="106" height="106" rx="32" fill="none" stroke="#2A1E16" stroke-width="12"/><circle id="ed10-c" cx="95" cy="95" r="25" fill="none" stroke="#2A1E16" stroke-width="12"/><circle id="ed10-p" cx="127" cy="63" r="8" fill="#2A1E16"/></svg>
+      </div>
+      <div id="ed10-user" data-lu="usuario"></div>
+      <div id="ed10-frase" data-lu="frase"></div>
+    </div>
+    <img id="ed10-logo" src="../../assets/levelup-logo.png" alt="Level Up" />
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const frase = LU.split(document.querySelector('#ed10-frase'));
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed10-velo', { opacity: 0 }, { opacity: 1, duration: .6, ease: 'power2.out' }, 0)
+    .fromTo('#ed10-ig', { scale: 0, rotate: -30 }, { scale: 1, rotate: 0, duration: .7, ease: 'back.out(1.8)' }, .25)
+    .fromTo('#ed10-r, #ed10-c', { opacity: 0 }, { opacity: 1, duration: .3 }, .45)
+    .fromTo('#ed10-p', { scale: 0, transformOrigin: '50% 50%' }, { scale: 1, duration: .3, ease: 'back.out(3)' }, .7)
+    .fromTo('#ed10-ig .blanco', { opacity: 1 }, { opacity: 0, duration: .5, ease: 'power2.inOut' }, 1.0)
+    .to('#ed10-r, #ed10-c', { stroke: '#FFFFFF', duration: .5 }, 1.0)
+    .to('#ed10-p', { fill: '#FFFFFF', duration: .5 }, 1.0)
+    .fromTo('#ed10-user', { opacity: 0, y: 20, scaleX: 1.25 }, { opacity: 1, y: 0, scaleX: 1, duration: .6, ease: 'power3.out' }, .8)
+    .fromTo(frase, { opacity: 0, y: 40, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: .5, stagger: .08, ease: 'power3.out' }, 1.15)
+    .to('#ed10-logo', { opacity: .9, duration: .6 }, 1.6)
+    .to('#ed10-ig', { scale: 1.06, duration: .5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 2.3);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed10"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

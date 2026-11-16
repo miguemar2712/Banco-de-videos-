@@ -1,0 +1,13 @@
+[0:v]trim=2.0:5.5,setpts=PTS-STARTPTS,setsar=1[s1];
+[2:v]trim=1.5:3.95,setpts=PTS-STARTPTS,crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1[s2];
+[3:v]trim=1:2.35,setpts=PTS-STARTPTS,crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1[s3];
+[0:v]trim=6.0:8.1,setpts=PTS-STARTPTS,setsar=1[s4];
+[4:v]trim=1:2.9,setpts=PTS-STARTPTS,crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1[s5];
+[0:v]trim=8.5:10.8,setpts=PTS-STARTPTS,setsar=1[s6];
+[5:v]trim=0.9:2.3,setpts=PTS-STARTPTS,crop=ih*9/16:ih:(iw-ow)*0.1:0,scale=1080:1920:flags=lanczos,setsar=1[s7a];
+[6:v]trim=8.4:9.7,setpts=PTS-STARTPTS,crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1[s7b];
+[1:v]trim=0:2.9,setpts=PTS-STARTPTS,setsar=1[s8];
+[s1][s2][s3][s4][s5][s6][s7a][s7b][s8]concat=n=9:v=1:a=0,fps=30,format=yuv420p,
+drawtext=fontfile=fx-camara/fonts/ArchivoBlack-Regular.ttf:text='$15':fontsize=300:fontcolor=white:shadowcolor=black@0.45:shadowx=0:shadowy=8:x='(w-tw)/2-360*pow(max(0\,1-(t-4.95)/0.3)\,3)':y=640:alpha='min(1\,max(0\,(t-4.95)/0.12))':enable='between(t,4.95,5.95)',
+drawtext=fontfile=fx-camara/fonts/PlayfairDisplay-Italic.ttf:text='dólares':fontsize=170:fontcolor=white:shadowcolor=black@0.45:shadowx=0:shadowy=6:x='(w-tw)/2+360*pow(max(0\,1-(t-5.40)/0.3)\,3)':y=965:alpha='min(1\,max(0\,(t-5.40)/0.12))':enable='between(t,5.40,5.95)'[v];
+[7:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]

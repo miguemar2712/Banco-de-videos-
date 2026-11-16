@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "arriba", "type": "string", "label": "Línea de arriba", "default": "Crea una"},
+  {"id": "centro", "type": "string", "label": "Palabra elegante (cursiva)", "default": "marca personal"},
+  {"id": "abajo", "type": "string", "label": "Línea de abajo", "default": "antes del 2027"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed01-bloque { position: absolute; left: 0; right: 0; top: 330px; text-align: center; }
+  #ed01-arriba, #ed01-abajo { font-family: var(--sans); font-weight: 800; font-size: 104px; line-height: 1; letter-spacing: -3px; color: var(--tinta); }
+  #ed01-centro { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 150px; line-height: 1.02; letter-spacing: -3px; color: var(--tinta); margin: 6px 0 4px; }
+  #ed01-raya { display: block; margin: 0 auto; width: 720px; height: 10px; border-radius: 10px; background: var(--acento); transform-origin: left center; }
+  #ed01-chispa { position: absolute; right: 120px; top: 270px; width: 90px; height: 90px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed01" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div id="ed01-bg" class="hoja"></div>
+  <div id="ed01-capa" class="capa">
+    <svg id="ed01-chispa" viewBox="0 0 100 100"><path d="M50 4 L58 42 L96 50 L58 58 L50 96 L42 58 L4 50 L42 42 Z" fill="var(--acento)"/></svg>
+    <div id="ed01-bloque">
+      <div id="ed01-arriba" data-lu="arriba"></div>
+      <div id="ed01-centro" data-lu="centro"></div>
+      <span id="ed01-raya"></span>
+      <div id="ed01-abajo" data-lu="abajo" style="margin-top:22px"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const arriba = LU.split(document.querySelector('#ed01-arriba'));
+  const centro = LU.split(document.querySelector('#ed01-centro'), 'letras');
+  const abajo = LU.split(document.querySelector('#ed01-abajo'));
+  const tl = gsap.timeline({ paused: true });
+
+  tl.fromTo(arriba, { y: 60, opacity: 0, filter: 'blur(14px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: .55, ease: 'power3.out', stagger: .07 }, .05)
+    .fromTo(centro, { y: 90, rotate: 8, opacity: 0, filter: 'blur(10px)' }, { y: 0, rotate: 0, opacity: 1, filter: 'blur(0px)', duration: .7, ease: 'expo.out', stagger: .025 }, .3)
+    .fromTo('#ed01-raya', { scaleX: 0 }, { scaleX: 1, duration: .6, ease: 'power4.inOut' }, .75)
+    .fromTo(abajo, { y: 60, opacity: 0, filter: 'blur(14px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: .55, ease: 'power3.out', stagger: .07 }, .85)
+    .fromTo('#ed01-chispa', { scale: 0, rotate: -90 }, { scale: 1, rotate: 0, duration: .6, ease: 'back.out(2.2)' }, 1.0)
+    .to('#ed01-chispa', { rotate: 45, duration: 2.2, ease: 'none' }, 1.6)
+    .to('#ed01-bloque', { y: -14, duration: 2.0, ease: 'sine.inOut' }, 1.4)
+    // salida
+    .to('#ed01-bloque, #ed01-chispa', { y: '-=50', opacity: 0, filter: 'blur(12px)', duration: .45, ease: 'power2.in' }, 3.5);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed01"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

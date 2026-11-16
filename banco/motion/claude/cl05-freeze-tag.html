@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "nombre", "type": "string", "label": "Tu nombre", "default": "@tu_usuario"},
+  {"id": "rol", "type": "string", "label": "Tu rol", "default": "CREADOR"},
+  {"id": "pecho", "type": "number", "label": "Altura debajo de tu pecho (px)", "default": 1300},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background-color: #6b6b70; }
+  #cl05-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  #cl05-tag { position: absolute; left: 120px; width: 840px; text-align: center; }
+  #cl05-pill { display: inline-block; background: rgba(16,16,20,.88); border-radius: 999px; padding: 20px 48px 22px; box-shadow: 0 16px 40px rgba(0,0,0,.4); max-width: 840px; }
+  #cl05-n { font: 800 56px var(--body); color: #fff; letter-spacing: -1px; white-space: nowrap; }
+  #cl05-r { font: 600 22px var(--body); letter-spacing: 8px; color: rgba(255,255,255,.65); margin-top: 4px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl05" data-start="0" data-duration="2.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cl05-tag"><div id="cl05-pill"><div id="cl05-n" data-lu="nombre"></div><div id="cl05-r" data-lu="rol"></div></div></div>
+  </div>
+  <div id="cl05-flash"></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  // Capa del FreezeFrame: flash blanco al congelar + etiqueta con tu nombre debajo del pecho.
+  // El congelado, el fondo gris y el borde de sticker los hace scripts/editar.py ("congelar" en el plan).
+  document.querySelector('#cl05-tag').style.top = (+LU.vars.pecho || 1300) + 'px';
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cl05-flash', { opacity: .8 }, { opacity: 0, duration: 6 / 30, ease: 'power2.out' }, 0)
+    .fromTo('#cl05-tag', { scale: .7, opacity: 0 }, { scale: 1, opacity: 1, duration: .4, ease: 'back.out(2.4)' }, 6 / 30)
+    .to('#cl05-tag', { opacity: 0, scale: .9, duration: 10 / 30 }, 45 / 30);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl05"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

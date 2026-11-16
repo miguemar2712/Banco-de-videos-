@@ -1,0 +1,13 @@
+.venv/
+node_modules/
+out/
+videos/*
+!videos/LEEME.txt
+.DS_Store
+__pycache__/
+ediciones/*/capas/
+ediciones/*/subs/
+.hyperframes/
+.venv-voz/
+voz/
+referencias/

@@ -1,0 +1,16 @@
+{
+ "voz": "videos/voz-sets.m4a",
+ "salida": "out/prueba-montador.mp4",
+ "tomas": [
+  {"hasta": 3.5,   "clip": "videos/clip-b-limpio.mp4", "desde": 2.0},
+  {"hasta": 5.95,  "clip": "videos/broll/mk-18304.mp4", "desde": 1.5},
+  {"hasta": 7.3,   "clip": "videos/broll/mk-39461.mp4", "desde": 1.0},
+  {"hasta": 9.4,   "clip": "videos/clip-b-limpio.mp4", "desde": 6.0},
+  {"hasta": 11.3,  "clip": "videos/broll/mk-23327.mp4", "desde": 1.0},
+  {"hasta": 13.6,  "clip": "videos/clip-b-limpio.mp4", "desde": 8.5},
+  {"hasta": 15.0,  "clip": "videos/broll/mk-31267.mp4", "desde": 0.9, "recorte": 0.1},
+  {"hasta": 16.3,  "clip": "videos/broll/mk-31346.mp4", "desde": 8.4},
+  {"hasta": 19.09, "clip": "videos/clip-a-1080.mp4", "desde": 0.0}
+ ],
+ "textos": [ {"de": 4.95, "a": 5.95, "grande": "$15", "cursiva": "dólares", "cursiva_de": 5.40} ]
+}

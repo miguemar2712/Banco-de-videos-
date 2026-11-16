@@ -1,0 +1,175 @@
+{
+ "fuente": "Mixkit (mixkit.co) · Mixkit Stock Video Free License: uso comercial gratis, sin atribución obligatoria",
+ "categorias": {
+  "china": {
+   "descripcion": "Puertos y contenedores (importar desde China)",
+   "tomas": [
+    {
+     "id": 39461
+    },
+    {
+     "id": 4011
+    },
+    {
+     "id": 46500
+    },
+    {
+     "id": 39463
+    },
+    {
+     "id": 30467
+    }
+   ]
+  },
+  "avion": {
+   "descripcion": "Aviones de carga / envío aéreo",
+   "tomas": [
+    {
+     "id": 7379
+    },
+    {
+     "id": 6935
+    },
+    {
+     "id": 27996
+    },
+    {
+     "id": 4003
+    },
+    {
+     "id": 4065
+    }
+   ]
+  },
+  "fabrica": {
+   "descripcion": "Fábricas y talleres de ropa (proveedores)",
+   "tomas": [
+    {
+     "id": 34239
+    },
+    {
+     "id": 35387
+    },
+    {
+     "id": 35884
+    },
+    {
+     "id": 35388
+    }
+   ]
+  },
+  "cajas": {
+   "descripcion": "Personas moviendo y empacando cajas",
+   "tomas": [
+    {
+     "id": 31267,
+     "desde": 0.9,
+     "recorte": 0.1
+    },
+    {
+     "id": 31346,
+     "desde": 8.4
+    },
+    {
+     "id": 31218
+    },
+    {
+     "id": 42130
+    }
+   ]
+  },
+  "entrega": {
+   "descripcion": "Entregas a domicilio y repartidores",
+   "tomas": [
+    {
+     "id": 31297
+    },
+    {
+     "id": 31138
+    },
+    {
+     "id": 42130
+    },
+    {
+     "id": 31346,
+     "desde": 8.4
+    }
+   ]
+  },
+  "dinero": {
+   "descripcion": "Billetes, calculadora, ganancia",
+   "tomas": [
+    {
+     "id": 18304,
+     "desde": 1.5
+    },
+    {
+     "id": 24061
+    },
+    {
+     "id": 18249
+    },
+    {
+     "id": 45703
+    },
+    {
+     "id": 34126
+    },
+    {
+     "id": 47007
+    }
+   ]
+  },
+  "whatsapp": {
+   "descripcion": "Celular, mensajes, chat",
+   "tomas": [
+    {
+     "id": 39773
+    },
+    {
+     "id": 4915
+    },
+    {
+     "id": 42123
+    },
+    {
+     "id": 39774
+    }
+   ]
+  },
+  "vender": {
+   "descripcion": "Tiendas, ventas, compras online",
+   "tomas": [
+    {
+     "id": 23327
+    },
+    {
+     "id": 15901
+    },
+    {
+     "id": 21325
+    },
+    {
+     "id": 33167
+    },
+    {
+     "id": 21331
+    },
+    {
+     "id": 42121
+    }
+   ]
+  },
+  "clienta": {
+   "descripcion": "Clientas felices / emprendedoras",
+   "tomas": [
+    {
+     "id": 32847
+    },
+    {
+     "id": 21328
+    }
+   ]
+  }
+ }
+}

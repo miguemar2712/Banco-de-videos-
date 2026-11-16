@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "pie", "type": "string", "label": "Pie de foto", "default": "episodio 1"},
+  {"id": "imagen", "type": "string", "label": "Imagen (ruta, opcional)", "default": ""},
+  {"id": "lado", "type": "string", "label": "Lado (izquierda | derecha)", "default": "izquierda"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#5A2630"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; }
+  #cr10-p { position: absolute; top: 200px; width: 330px; background: #fff; padding: 18px 18px 22px; border-radius: 10px; box-shadow: 0 26px 50px rgba(0,0,0,.3); }
+  .izq #cr10-p { left: 70px; } .der #cr10-p { right: 70px; }
+  #cr10-foto { height: 420px; border-radius: 4px; overflow: hidden; background: linear-gradient(160deg, #E9CFC9, #B98C8C); display: flex; align-items: center; justify-content: center; font-size: 120px; }
+  #cr10-foto img { width: 100%; height: 100%; object-fit: cover; }
+  #cr10-pie { font: 700 46px var(--mano); color: var(--tinta); text-align: center; margin-top: 10px; }
+  #cr10-cinta { position: absolute; left: 50%; top: -24px; width: 140px; height: 46px; margin-left: -70px; background: rgba(233,216,140,.85); transform: rotate(-4deg); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr10" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa"><div id="cr10-p"><div id="cr10-cinta"></div><div id="cr10-foto" class="emoji">📼</div><div id="cr10-pie" data-lu="pie"></div></div></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const der = LU.vars.lado === 'derecha';
+  document.querySelector('#root').classList.add(der ? 'der' : 'izq');
+  if (LU.vars.imagen) { const f = document.querySelector('#cr10-foto'); f.textContent = ''; const im = document.createElement('img'); im.src = LU.vars.imagen; f.appendChild(im); }
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cr10-p', { x: der ? 600 : -600, y: -200, rotate: der ? 40 : -40 }, { x: 0, y: 0, rotate: der ? 6 : -6, duration: .7, ease: 'back.out(1.5)' }, 0)
+    .fromTo('#cr10-cinta', { scaleX: 0 }, { scaleX: 1, duration: .3, ease: 'power3.out' }, .6)
+    .to('#cr10-p', { rotate: der ? 3 : -3, y: -10, duration: 1.0, yoyo: true, repeat: 1, ease: 'sine.inOut' }, .9)
+    .to('#cr10-p', { x: der ? 600 : -600, rotate: der ? 30 : -30, duration: .4, ease: 'back.in(1.5)' }, 3.1);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr10"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

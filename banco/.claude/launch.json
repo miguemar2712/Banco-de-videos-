@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "banco", "runtimeExecutable": "node", "runtimeArgs": ["servidor.mjs"], "port": 4400 }
+  ]
+}

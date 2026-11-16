@@ -1,0 +1,844 @@
+{
+"words": [
+{
+"text": "Amigas,",
+"start": 0.08,
+"end": 0.8
+},
+{
+"text": "quédate",
+"start": 1.0,
+"end": 1.08
+},
+{
+"text": "en",
+"start": 1.08,
+"end": 1.26
+},
+{
+"text": "este",
+"start": 1.26,
+"end": 1.42
+},
+{
+"text": "video",
+"start": 1.42,
+"end": 1.68
+},
+{
+"text": "porque",
+"start": 1.68,
+"end": 1.9
+},
+{
+"text": "te",
+"start": 1.9,
+"end": 2.04
+},
+{
+"text": "voy",
+"start": 2.04,
+"end": 2.16
+},
+{
+"text": "a",
+"start": 2.16,
+"end": 2.22
+},
+{
+"text": "enseñar",
+"start": 2.22,
+"end": 2.68
+},
+{
+"text": "cómo",
+"start": 2.68,
+"end": 2.98
+},
+{
+"text": "hacer",
+"start": 2.98,
+"end": 3.52
+},
+{
+"text": "las",
+"start": 3.52,
+"end": 3.82
+},
+{
+"text": "famosísimas",
+"start": 3.82,
+"end": 4.74
+},
+{
+"text": "reseñas",
+"start": 4.74,
+"end": 5.14
+},
+{
+"text": "de",
+"start": 5.14,
+"end": 5.34
+},
+{
+"text": "Amazon.",
+"start": 5.34,
+"end": 5.64
+},
+{
+"text": "Lo",
+"start": 5.92,
+"end": 5.98
+},
+{
+"text": "primero",
+"start": 5.98,
+"end": 6.22
+},
+{
+"text": "que",
+"start": 6.22,
+"end": 6.4
+},
+{
+"text": "harás",
+"start": 6.4,
+"end": 6.68
+},
+{
+"text": "es",
+"start": 6.68,
+"end": 6.84
+},
+{
+"text": "tener",
+"start": 6.84,
+"end": 7.14
+},
+{
+"text": "tu",
+"start": 7.14,
+"end": 7.36
+},
+{
+"text": "cuenta",
+"start": 7.36,
+"end": 7.86
+},
+{
+"text": "de",
+"start": 7.86,
+"end": 8.16
+},
+{
+"text": "Amazon",
+"start": 8.16,
+"end": 8.52
+},
+{
+"text": "Prime.",
+"start": 8.52,
+"end": 8.96
+},
+{
+"text": "Lo",
+"start": 9.24,
+"end": 9.34
+},
+{
+"text": "segundo",
+"start": 9.34,
+"end": 9.9
+},
+{
+"text": "será",
+"start": 9.9,
+"end": 10.3
+},
+{
+"text": "tener",
+"start": 10.3,
+"end": 10.66
+},
+{
+"text": "un",
+"start": 10.66,
+"end": 10.9
+},
+{
+"text": "gasto",
+"start": 10.9,
+"end": 11.26
+},
+{
+"text": "mínimo",
+"start": 11.26,
+"end": 11.6
+},
+{
+"text": "de",
+"start": 11.6,
+"end": 11.92
+},
+{
+"text": "50",
+"start": 11.92,
+"end": 12.52
+},
+{
+"text": "dólares",
+"start": 12.52,
+"end": 12.96
+},
+{
+"text": "en",
+"start": 12.96,
+"end": 13.14
+},
+{
+"text": "la",
+"start": 13.14,
+"end": 13.3
+},
+{
+"text": "plataforma.",
+"start": 13.3,
+"end": 13.84
+},
+{
+"text": "Un",
+"start": 14.12,
+"end": 14.24
+},
+{
+"text": "mínimo",
+"start": 14.24,
+"end": 14.62
+},
+{
+"text": "de",
+"start": 14.62,
+"end": 15.06
+},
+{
+"text": "tres",
+"start": 15.06,
+"end": 15.4
+},
+{
+"text": "reseñas",
+"start": 15.4,
+"end": 15.84
+},
+{
+"text": "de",
+"start": 15.84,
+"end": 16.1
+},
+{
+"text": "productos",
+"start": 16.1,
+"end": 16.4
+},
+{
+"text": "que",
+"start": 16.4,
+"end": 16.7
+},
+{
+"text": "hayas",
+"start": 16.7,
+"end": 16.96
+},
+{
+"text": "comprado",
+"start": 16.96,
+"end": 17.46
+},
+{
+"text": "en",
+"start": 17.46,
+"end": 17.72
+},
+{
+"text": "Amazon.",
+"start": 17.72,
+"end": 18.02
+},
+{
+"text": "Tu",
+"start": 18.1,
+"end": 18.26
+},
+{
+"text": "correo",
+"start": 18.26,
+"end": 18.62
+},
+{
+"text": "de",
+"start": 18.62,
+"end": 18.76
+},
+{
+"text": "PayPal",
+"start": 18.76,
+"end": 19.12
+},
+{
+"text": "donde",
+"start": 19.12,
+"end": 19.46
+},
+{
+"text": "vas",
+"start": 19.46,
+"end": 19.68
+},
+{
+"text": "a",
+"start": 19.68,
+"end": 19.88
+},
+{
+"text": "recibir",
+"start": 19.88,
+"end": 20.1
+},
+{
+"text": "los",
+"start": 20.1,
+"end": 20.34
+},
+{
+"text": "pagos.",
+"start": 20.34,
+"end": 20.44
+},
+{
+"text": "Una",
+"start": 20.54,
+"end": 20.64
+},
+{
+"text": "vez",
+"start": 20.64,
+"end": 20.76
+},
+{
+"text": "que",
+"start": 20.76,
+"end": 20.94
+},
+{
+"text": "tengas",
+"start": 20.94,
+"end": 21.18
+},
+{
+"text": "todo",
+"start": 21.18,
+"end": 21.46
+},
+{
+"text": "esto",
+"start": 21.46,
+"end": 22.14
+},
+{
+"text": "podrás",
+"start": 22.14,
+"end": 22.68
+},
+{
+"text": "comenzar",
+"start": 22.68,
+"end": 23.1
+},
+{
+"text": "a",
+"start": 23.1,
+"end": 23.22
+},
+{
+"text": "escribirle",
+"start": 23.22,
+"end": 23.74
+},
+{
+"text": "a",
+"start": 23.74,
+"end": 24.02
+},
+{
+"text": "todos",
+"start": 24.02,
+"end": 24.18
+},
+{
+"text": "los",
+"start": 24.18,
+"end": 24.38
+},
+{
+"text": "proveedores.",
+"start": 24.38,
+"end": 24.86
+},
+{
+"text": "Ellos",
+"start": 25.08,
+"end": 25.3
+},
+{
+"text": "te",
+"start": 25.3,
+"end": 25.44
+},
+{
+"text": "van",
+"start": 25.44,
+"end": 25.56
+},
+{
+"text": "a",
+"start": 25.56,
+"end": 25.72
+},
+{
+"text": "pedir",
+"start": 25.72,
+"end": 25.9
+},
+{
+"text": "tu",
+"start": 25.9,
+"end": 26.1
+},
+{
+"text": "link",
+"start": 26.1,
+"end": 26.36
+},
+{
+"text": "de",
+"start": 26.36,
+"end": 26.68
+},
+{
+"text": "Amazon",
+"start": 26.68,
+"end": 27.08
+},
+{
+"text": "y",
+"start": 27.08,
+"end": 27.5
+},
+{
+"text": "tu",
+"start": 27.5,
+"end": 27.66
+},
+{
+"text": "correo",
+"start": 27.66,
+"end": 27.92
+},
+{
+"text": "de",
+"start": 27.92,
+"end": 28.08
+},
+{
+"text": "PayPal.",
+"start": 28.08,
+"end": 28.34
+},
+{
+"text": "Esto",
+"start": 28.34,
+"end": 28.92
+},
+{
+"text": "es",
+"start": 28.92,
+"end": 29.08
+},
+{
+"text": "para",
+"start": 29.08,
+"end": 29.24
+},
+{
+"text": "verificar",
+"start": 29.24,
+"end": 29.9
+},
+{
+"text": "que",
+"start": 29.9,
+"end": 30.06
+},
+{
+"text": "ya",
+"start": 30.06,
+"end": 30.24
+},
+{
+"text": "cuentas",
+"start": 30.24,
+"end": 30.58
+},
+{
+"text": "con",
+"start": 30.58,
+"end": 30.88
+},
+{
+"text": "todo",
+"start": 30.88,
+"end": 31.0
+},
+{
+"text": "lo",
+"start": 31.0,
+"end": 31.18
+},
+{
+"text": "que",
+"start": 31.18,
+"end": 31.26
+},
+{
+"text": "te",
+"start": 31.26,
+"end": 31.4
+},
+{
+"text": "mencioné",
+"start": 31.4,
+"end": 31.86
+},
+{
+"text": "anteriormente.",
+"start": 31.86,
+"end": 32.58
+},
+{
+"text": "Una",
+"start": 32.72,
+"end": 32.78
+},
+{
+"text": "vez",
+"start": 32.78,
+"end": 32.9
+},
+{
+"text": "que",
+"start": 32.9,
+"end": 33.1
+},
+{
+"text": "el",
+"start": 33.1,
+"end": 33.16
+},
+{
+"text": "proveedor",
+"start": 33.16,
+"end": 33.38
+},
+{
+"text": "te",
+"start": 33.38,
+"end": 33.58
+},
+{
+"text": "aprueba,",
+"start": 33.58,
+"end": 33.92
+},
+{
+"text": "te",
+"start": 34.04,
+"end": 34.08
+},
+{
+"text": "va",
+"start": 34.08,
+"end": 34.22
+},
+{
+"text": "a",
+"start": 34.22,
+"end": 34.28
+},
+{
+"text": "escribir",
+"start": 34.28,
+"end": 34.7
+},
+{
+"text": "para",
+"start": 34.7,
+"end": 34.96
+},
+{
+"text": "pedirte",
+"start": 34.96,
+"end": 35.42
+},
+{
+"text": "tu",
+"start": 35.42,
+"end": 35.48
+},
+{
+"text": "correo",
+"start": 35.48,
+"end": 36.02
+},
+{
+"text": "de",
+"start": 36.02,
+"end": 36.18
+},
+{
+"text": "PayPal.",
+"start": 36.18,
+"end": 36.48
+},
+{
+"text": "Y",
+"start": 36.68,
+"end": 36.76
+},
+{
+"text": "listo,",
+"start": 36.76,
+"end": 37.18
+},
+{
+"text": "ya",
+"start": 37.3,
+"end": 37.48
+},
+{
+"text": "comienzas",
+"start": 37.48,
+"end": 38.04
+},
+{
+"text": "a",
+"start": 38.04,
+"end": 38.2
+},
+{
+"text": "trabajar",
+"start": 38.2,
+"end": 38.52
+},
+{
+"text": "con",
+"start": 38.52,
+"end": 38.84
+},
+{
+"text": "este",
+"start": 38.84,
+"end": 39.04
+},
+{
+"text": "proveedor.",
+"start": 39.04,
+"end": 39.52
+},
+{
+"text": "Si",
+"start": 39.8,
+"end": 39.94
+},
+{
+"text": "te",
+"start": 39.94,
+"end": 40.14
+},
+{
+"text": "gustaría",
+"start": 40.14,
+"end": 40.44
+},
+{
+"text": "adquirir",
+"start": 40.44,
+"end": 40.92
+},
+{
+"text": "la",
+"start": 40.92,
+"end": 41.1
+},
+{
+"text": "guía",
+"start": 41.1,
+"end": 41.4
+},
+{
+"text": "para",
+"start": 41.4,
+"end": 41.66
+},
+{
+"text": "aprender",
+"start": 41.66,
+"end": 42.0
+},
+{
+"text": "a",
+"start": 42.0,
+"end": 42.12
+},
+{
+"text": "hacer",
+"start": 42.12,
+"end": 42.28
+},
+{
+"text": "esto",
+"start": 42.28,
+"end": 42.48
+},
+{
+"text": "de",
+"start": 42.48,
+"end": 42.62
+},
+{
+"text": "forma",
+"start": 42.62,
+"end": 42.92
+},
+{
+"text": "profesional",
+"start": 42.92,
+"end": 43.52
+},
+{
+"text": "y",
+"start": 43.52,
+"end": 43.84
+},
+{
+"text": "sencilla,",
+"start": 43.84,
+"end": 44.42
+},
+{
+"text": "escribe",
+"start": 44.7,
+"end": 44.9
+},
+{
+"text": "aquí",
+"start": 44.9,
+"end": 45.28
+},
+{
+"text": "la",
+"start": 45.28,
+"end": 45.5
+},
+{
+"text": "palabra",
+"start": 45.5,
+"end": 45.76
+},
+{
+"text": "guía",
+"start": 45.76,
+"end": 46.16
+},
+{
+"text": "o",
+"start": 46.16,
+"end": 46.56
+},
+{
+"text": "escríbeme",
+"start": 46.56,
+"end": 47.14
+},
+{
+"text": "directamente",
+"start": 47.14,
+"end": 47.82
+},
+{
+"text": "a",
+"start": 47.82,
+"end": 48.24
+},
+{
+"text": "mi",
+"start": 48.24,
+"end": 48.4
+},
+{
+"text": "privado",
+"start": 48.4,
+"end": 48.98
+},
+{
+"text": "y",
+"start": 48.98,
+"end": 49.3
+},
+{
+"text": "yo",
+"start": 49.3,
+"end": 49.4
+},
+{
+"text": "con",
+"start": 49.4,
+"end": 49.62
+},
+{
+"text": "gusto",
+"start": 49.62,
+"end": 49.8
+},
+{
+"text": "te",
+"start": 49.8,
+"end": 49.96
+},
+{
+"text": "voy",
+"start": 49.96,
+"end": 50.14
+},
+{
+"text": "a",
+"start": 50.14,
+"end": 50.24
+},
+{
+"text": "brindar",
+"start": 50.24,
+"end": 50.6
+},
+{
+"text": "toda",
+"start": 50.6,
+"end": 50.76
+},
+{
+"text": "la",
+"start": 50.76,
+"end": 50.94
+}
+]
+}

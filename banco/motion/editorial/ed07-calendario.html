@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "anio", "type": "number", "label": "Año", "default": 2026},
+  {"id": "mes", "type": "number", "label": "Mes (1-12)", "default": 12},
+  {"id": "dia", "type": "number", "label": "Día a marcar", "default": 31},
+  {"id": "nota", "type": "string", "label": "Nota a mano", "default": "¡la meta!"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color marca", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed07-cal { position: absolute; left: 150px; top: 330px; width: 780px; background: #FFFDF8; border-radius: 18px; box-shadow: var(--sombra); overflow: hidden; }
+  #ed07-cab { background: var(--tinta); color: var(--papel); text-align: center; padding: 26px 0 22px; font-family: var(--serif); font-weight: 700; font-size: 56px; letter-spacing: 6px; text-transform: uppercase; }
+  #ed07-anillos { position: absolute; top: -18px; left: 0; right: 0; display: flex; justify-content: space-around; padding: 0 120px; }
+  #ed07-anillos i { width: 18px; height: 50px; border-radius: 9px; background: var(--papel2); box-shadow: inset 0 0 0 3px var(--tinta2); }
+  #ed07-grid { display: grid; grid-template-columns: repeat(7, 1fr); padding: 22px 26px 30px; row-gap: 8px; }
+  #ed07-grid b { font-family: var(--sans); font-weight: 700; font-size: 26px; color: var(--tinta2); text-align: center; padding-bottom: 10px; }
+  #ed07-grid span { position: relative; font-family: var(--sans); font-weight: 600; font-size: 38px; color: var(--tinta); text-align: center; height: 74px; line-height: 74px; }
+  #ed07-marca { position: absolute; width: 130px; height: 110px; overflow: visible; pointer-events: none; }
+  #ed07-nota { position: absolute; font-family: var(--mano); font-weight: 700; font-size: 76px; color: var(--acento); transform: rotate(-6deg); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed07" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed07-cal">
+      <div id="ed07-cab"></div>
+      <div id="ed07-grid"></div>
+    </div>
+    <div id="ed07-anillos" style="position:absolute;left:150px;top:312px;width:780px"><i></i><i></i><i></i><i></i></div>
+    <svg id="ed07-marca" viewBox="0 0 130 110"><path id="ed07-trazo" d="M70 8 C 20 4, 4 40, 12 70 C 22 104, 100 108, 120 70 C 134 40, 110 6, 62 12" fill="none" stroke="var(--acento)" stroke-width="7" stroke-linecap="round"/></svg>
+    <div id="ed07-nota" data-lu="nota"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const anio = +LU.vars.anio, mes = +LU.vars.mes, dia = +LU.vars.dia;
+  // día de la semana del 1 (0 = lunes) con la fórmula de Zeller, sin usar fechas del sistema
+  const zeller = (y, m) => { if (m < 3) { m += 12; y -= 1; } const K = y % 100, J = Math.floor(y / 100); const h = (1 + Math.floor(13 * (m + 1) / 5) + K + Math.floor(K / 4) + Math.floor(J / 4) + 5 * J) % 7; return (h + 5) % 7; };
+  const diasMes = [31, (anio % 4 === 0 && anio % 100 !== 0) || anio % 400 === 0 ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][mes - 1];
+  document.querySelector('#ed07-cab').textContent = MESES[mes - 1] + ' ' + anio;
+  const grid = document.querySelector('#ed07-grid');
+  ['L','M','M','J','V','S','D'].forEach((d) => { const b = document.createElement('b'); b.textContent = d; grid.appendChild(b); });
+  for (let i = 0; i < zeller(anio, mes); i++) grid.appendChild(document.createElement('span'));
+  let objetivo = null;
+  for (let d = 1; d <= diasMes; d++) { const s = document.createElement('span'); s.textContent = d; s.className = 'ed07-d'; grid.appendChild(s); if (d === dia) objetivo = s; }
+  // coloca el círculo y la nota sobre el día
+  const r = objetivo.getBoundingClientRect(), root = document.querySelector('#root').getBoundingClientRect();
+  const marca = document.querySelector('#ed07-marca'), nota = document.querySelector('#ed07-nota');
+  marca.style.left = (r.left - root.left + r.width / 2 - 65) + 'px'; marca.style.top = (r.top - root.top + r.height / 2 - 55) + 'px';
+  nota.style.left = Math.min(r.left - root.left - 60, 640) + 'px'; nota.style.top = (r.bottom - root.top + 70) + 'px';
+  const trazo = document.querySelector('#ed07-trazo'), largo = trazo.getTotalLength();
+  trazo.style.strokeDasharray = largo;
+
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed07-cal, #ed07-anillos', { y: 220, opacity: 0, rotate: -4 }, { y: 0, opacity: 1, rotate: 0, duration: .8, ease: 'back.out(1.3)' }, 0)
+    .fromTo('.ed07-d', { opacity: 0, scale: .4 }, { opacity: 1, scale: 1, duration: .25, ease: 'back.out(2)', stagger: .018 }, .35)
+    .fromTo(trazo, { strokeDashoffset: largo }, { strokeDashoffset: 0, duration: .7, ease: 'power2.inOut' }, 1.4)
+    .to(objetivo, { color: 'var(--acento)', scale: 1.15, duration: .3, ease: 'back.out(3)' }, 1.6)
+    .fromTo(nota, { opacity: 0, y: 20, scale: .8 }, { opacity: 1, y: 0, scale: 1, duration: .45, ease: 'back.out(2)' }, 2.0)
+    .to('.capa', { y: -60, opacity: 0, duration: .45, ease: 'power2.in' }, 3.5);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed07"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

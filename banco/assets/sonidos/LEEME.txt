@@ -1,0 +1,1 @@
+Pon aquí tus propios efectos de sonido y regístralos en sonidos.json (Claude te ayuda). Por defecto los videos van sin sonidos.

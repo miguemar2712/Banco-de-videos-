@@ -1,0 +1,105 @@
+{
+ "nombre": "sets-deportivos-v3",
+ "estilo": "editorial",
+ "video": "videos/v3-sets-broll.mp4",
+ "palabras": "videos/voz-sets-palabras.json",
+ "silencio": 0.3,
+ "cola": 0.55,
+ "tramos": [
+  {
+   "de": 0.1,
+   "a": 3.1,
+   "texto": "¿Tú cuánto crees que cuestan estos sets deportivos estilo Alo? 🤔"
+  },
+  {
+   "de": 3.6,
+   "a": 6.9,
+   "texto": "A mí me salen solo en 15 dólares importándolos desde China 🚢"
+  },
+  {
+   "de": 7.5,
+   "a": 8.8,
+   "texto": "Mira cómo se ve el conjunto completo 😍"
+  },
+  {
+   "de": 9.5,
+   "a": 13.0,
+   "texto": "Si quieres empezar a vender ropa deportiva y no sabes dónde conseguir estos sets,"
+  },
+  {
+   "de": 13.8,
+   "a": 18.2,
+   "texto": "comenta PROVEEDORES o escríbeme directamente al WhatsApp 📲 en mi perfil y te explico cómo."
+  }
+ ],
+ "claves": [
+  "15",
+  "China",
+  "completo",
+  "vender",
+  "conseguir",
+  "PROVEEDORES",
+  "WhatsApp"
+ ],
+ "zooms": [
+  {
+   "t": 0.1,
+   "tipo": "golpe",
+   "dur": 0.8,
+   "escala": 1.12
+  },
+  {
+   "t": 3.6,
+   "tipo": "golpe",
+   "dur": 0.7,
+   "escala": 1.1
+  },
+  {
+   "t": 7.5,
+   "tipo": "flash",
+   "dur": 0.5
+  },
+  {
+   "t": 7.6,
+   "tipo": "suave",
+   "dur": 1.6,
+   "escala": 1.12
+  },
+  {
+   "t": 11.3,
+   "tipo": "golpe",
+   "dur": 0.7,
+   "escala": 1.1
+  }
+ ],
+ "motions": [
+  {
+   "id": "ed01",
+   "t": 0.1,
+   "dur": 3.4,
+   "ocultar_subs": true,
+   "vars": {
+    "arriba": "¿Cuánto crees",
+    "centro": "que cuestan",
+    "abajo": "estos sets?"
+   }
+  },
+  {
+   "id": "ci09",
+   "t": 15.3,
+   "dur": 4.1,
+   "ocultar_subs": true,
+   "vars": {
+    "etiqueta": "Proveedores",
+    "titulo": "¿Quieres vender?",
+    "detalle": "o escríbeme al WhatsApp de mi perfil",
+    "boton": "Comenta PROVEEDORES",
+    "fondo": "transparente",
+    "zona": "elementos"
+   }
+  }
+ ],
+ "efectos_sonido": false,
+ "marca": false,
+ "subtitulos": "referencia"
+}

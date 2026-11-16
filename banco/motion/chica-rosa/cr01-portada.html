@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "arriba", "type": "string", "label": "Texto a mano arriba", "default": "bienvenida a la"},
+  {"id": "titulo", "type": "string", "label": "Título", "default": "PARTE 02"},
+  {"id": "tag", "type": "string", "label": "Etiqueta", "default": "de mi miniserie"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "papel", "type": "color", "label": "Fondo", "default": "#F5E6DF"},
+  {"id": "tinta", "type": "color", "label": "Color título", "default": "#5A2630"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#D9A0A0"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; --acento: #D9A0A0; }
+  #cr01-g { position: absolute; left: 0; right: 0; top: 200px; text-align: center; }
+  #cr01-arriba { font-family: var(--mano); font-weight: 700; font-size: 84px; color: var(--tinta); transform: rotate(-3deg); display: inline-block; }
+  #cr01-titulo { font-family: var(--sans); font-weight: 900; font-size: 168px; line-height: 1; letter-spacing: -4px; color: var(--tinta); margin-top: 4px; white-space: nowrap; }
+  #cr01-tag { display: inline-block; margin-top: 18px; background: var(--tinta); color: var(--papel); font: 700 40px var(--sans); padding: 10px 28px; border-radius: 999px; transform: rotate(-2deg); }
+  .cr01-estrella { position: absolute; width: 70px; height: 70px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr01" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <svg class="cr01-estrella" id="cr01-s1" style="left:130px;top:200px" viewBox="0 0 100 100"><path d="M50 4 L61 38 L97 38 L68 60 L79 95 L50 73 L21 95 L32 60 L3 38 L39 38 Z" fill="var(--acento)"/></svg>
+    <svg class="cr01-estrella" id="cr01-s2" style="right:110px;top:420px;width:50px;height:50px" viewBox="0 0 100 100"><path d="M50 4 L61 38 L97 38 L68 60 L79 95 L50 73 L21 95 L32 60 L3 38 L39 38 Z" fill="var(--tinta)"/></svg>
+    <div id="cr01-g">
+      <div id="cr01-arriba" data-lu="arriba"></div>
+      <div id="cr01-titulo" data-lu="titulo"></div>
+      <div id="cr01-tag" data-lu="tag"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const letras = LU.split(document.querySelector('#cr01-titulo'), 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cr01-arriba', { opacity: 0, y: 20, rotate: -10 }, { opacity: 1, y: 0, rotate: -3, duration: .45, ease: 'back.out(2)' }, 0)
+    .fromTo(letras, { y: 80, opacity: 0, scale: .6 }, { y: 0, opacity: 1, scale: 1, duration: .45, ease: 'back.out(2.2)', stagger: .04 }, .2)
+    .fromTo('#cr01-tag', { scale: 0, rotate: -12 }, { scale: 1, rotate: -2, duration: .45, ease: 'back.out(2.5)' }, .75)
+    .fromTo('.cr01-estrella', { scale: 0, rotate: -180 }, { scale: 1, rotate: 0, duration: .5, ease: 'back.out(3)', stagger: .12 }, .5)
+    .to('.cr01-estrella', { rotate: 25, scale: 1.1, duration: .8, yoyo: true, repeat: 2, ease: 'sine.inOut' }, 1.1)
+    .to('#cr01-g', { y: -40, opacity: 0, duration: .3, ease: 'power2.in' }, 3.2);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr01"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

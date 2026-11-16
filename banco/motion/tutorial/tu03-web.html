@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es" data-zona="panel" data-composition-variables='[
+  {"id": "url", "type": "string", "label": "Dirección web", "default": "claude.ai"},
+  {"id": "marca", "type": "string", "label": "Nombre grande", "default": "Claude"},
+  {"id": "sub", "type": "string", "label": "Texto pequeño", "default": "Tu editor de video con IA"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "panel"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #tu03-v { position: absolute; left: 70px; right: 70px; top: 150px; height: 680px; overflow: hidden; }
+  #tu03-bar { height: 76px; display: flex; align-items: center; gap: 12px; padding: 0 24px; background: color-mix(in srgb, var(--papel2) 70%, #fff); border-bottom: 1px solid color-mix(in srgb, var(--tinta) 10%, transparent); }
+  #tu03-bar i { width: 18px; height: 18px; border-radius: 50%; }
+  #tu03-url { flex: 1; margin-left: 16px; height: 46px; border-radius: 23px; background: #fff; display: flex; align-items: center; gap: 12px; padding: 0 20px; font: 500 30px var(--body); color: var(--tinta2); }
+  #tu03-cuerpo { position: absolute; top: 76px; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  #tu03-marca { font: 900 110px var(--sans); letter-spacing: -4px; color: var(--tinta); }
+  #tu03-sub { font: 500 40px var(--body); color: var(--tinta2); margin-top: 6px; }
+  #tu03-carga { position: absolute; top: 76px; left: 0; height: 6px; width: 100%; background: var(--acento); transform-origin: left; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="tu03" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa mitad">
+    <div id="tu03-v" class="tarjeta">
+      <div id="tu03-bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><div id="tu03-url">🔒 <span id="tu03-u"></span></div></div>
+      <div id="tu03-carga"></div>
+      <div id="tu03-cuerpo"><div id="tu03-marca" data-lu="marca"></div><div id="tu03-sub" data-lu="sub"></div></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const url = String(LU.vars.url), u = document.querySelector('#tu03-u'), n = { v: 0 };
+  const pinta = () => { u.textContent = url.slice(0, Math.round(n.v)); };
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#tu03-v', { y: 80, opacity: 0, scale: .95 }, { y: 0, opacity: 1, scale: 1, duration: .5, ease: 'expo.out' }, 0)
+    .fromTo(n, { v: 0 }, { v: url.length, duration: .6, ease: 'none', onUpdate: pinta }, .35)
+    .fromTo('#tu03-carga', { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: .5, ease: 'power2.inOut' }, 1.0)
+    .to('#tu03-carga', { opacity: 0, duration: .2 }, 1.5)
+    .fromTo('#tu03-marca', { scale: .7, opacity: 0 }, { scale: 1, opacity: 1, duration: .5, ease: 'back.out(1.8)' }, 1.3)
+    .fromTo('#tu03-sub', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .4 }, 1.55)
+    .to('.capa', { opacity: 0, duration: .25 }, 2.75);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["tu03"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

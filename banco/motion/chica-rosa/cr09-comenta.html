@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "arriba", "type": "string", "label": "Texto a mano", "default": "comenta"},
+  {"id": "palabra", "type": "string", "label": "Palabra clave", "default": "CLAUDE"},
+  {"id": "tag", "type": "string", "label": "Etiqueta", "default": "y te mando mis skills al privado"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#5A2630"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; }
+  #cr09-g { position: absolute; left: 0; right: 0; top: 190px; text-align: center; }
+  #cr09-arriba { font: 700 80px var(--mano); color: #fff; text-shadow: 0 3px 12px rgba(0,0,0,.35); text-align: left; padding-left: 120px; }
+  #cr09-burbuja { position: relative; display: inline-block; background: #fff; padding: 22px 56px 30px; border-radius: 30px; box-shadow: 0 24px 50px rgba(60,20,30,.25); }
+  #cr09-burbuja::after { content: ''; position: absolute; right: 90px; bottom: -34px; border: 22px solid transparent; border-top: 22px solid #fff; border-left: 30px solid #fff; }
+  #cr09-palabra { font: 900 136px/1 var(--sans); letter-spacing: -4px; color: var(--tinta); white-space: nowrap; }
+  #cr09-tag { display: inline-block; margin-top: 54px; background: var(--tinta); color: #fff; font: 700 38px var(--sans); padding: 10px 28px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr09" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cr09-g">
+      <div id="cr09-arriba" data-lu="arriba"></div>
+      <div id="cr09-burbuja"><div id="cr09-palabra" data-lu="palabra"></div></div><br />
+      <div id="cr09-tag" data-lu="tag"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const p = document.querySelector('#cr09-palabra'); if (p.textContent.length > 8) p.style.fontSize = Math.max(70, 136 * 8 / p.textContent.length) + 'px';
+  const letras = LU.split(p, 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cr09-arriba', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .35 }, 0)
+    .fromTo('#cr09-burbuja', { scale: 0, rotate: -8, transformOrigin: '80% 100%' }, { scale: 1, rotate: -2, duration: .5, ease: 'back.out(2.2)' }, .15)
+    .fromTo(letras, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .25, stagger: .05, ease: 'back.out(3)' }, .35)
+    .fromTo('#cr09-tag', { scale: 0 }, { scale: 1, duration: .4, ease: 'back.out(2.5)' }, .9)
+    .to('#cr09-burbuja', { rotate: 2, duration: .6, yoyo: true, repeat: 2, ease: 'sine.inOut' }, 1.3)
+    .to('#cr09-g', { opacity: 0, y: -30, duration: .3, ease: 'power2.in' }, 3.7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr09"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

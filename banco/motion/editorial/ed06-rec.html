@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "calidad", "type": "string", "label": "Texto esquina", "default": "4K 60FPS"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "blanco", "type": "color", "label": "Color marco", "default": "#FFFFFF"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .ed06-esq { position: absolute; width: 130px; height: 130px; border: 0 solid var(--blanco); filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+  #ed06-e1 { left: 60px; top: 90px; border-top-width: 6px; border-left-width: 6px; border-top-left-radius: 22px; }
+  #ed06-e2 { right: 60px; top: 90px; border-top-width: 6px; border-right-width: 6px; border-top-right-radius: 22px; }
+  #ed06-e3 { left: 60px; bottom: 90px; border-bottom-width: 6px; border-left-width: 6px; border-bottom-left-radius: 22px; }
+  #ed06-e4 { right: 60px; bottom: 90px; border-bottom-width: 6px; border-right-width: 6px; border-bottom-right-radius: 22px; }
+  .ed06-txt { position: absolute; font-family: var(--mono); font-weight: 500; font-size: 38px; letter-spacing: 3px; color: var(--blanco); text-shadow: 0 2px 6px rgba(0,0,0,.4); }
+  #ed06-rec { right: 110px; top: 140px; display: flex; align-items: center; gap: 14px; }
+  #ed06-punto { width: 26px; height: 26px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 18px #E5484D; }
+  #ed06-tc { left: 110px; top: 142px; }
+  #ed06-cal { left: 110px; bottom: 140px; }
+  #ed06-hd { right: 110px; bottom: 140px; }
+  #ed06-mira { position: absolute; left: 470px; top: 900px; width: 140px; height: 140px; }
+  #ed06-mira::before, #ed06-mira::after { content: ''; position: absolute; background: var(--blanco); opacity: .8; }
+  #ed06-mira::before { left: 69px; top: 30px; width: 3px; height: 80px; }
+  #ed06-mira::after { top: 69px; left: 30px; height: 3px; width: 80px; }
+  #ed06-bat { position: absolute; left: 50%; top: 150px; transform: translateX(-50%); width: 76px; height: 34px; border: 3px solid var(--blanco); border-radius: 7px; }
+  #ed06-bat::after { content: ''; position: absolute; left: 4px; top: 4px; bottom: 4px; width: 46px; background: var(--blanco); border-radius: 3px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed06" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa" id="ed06-capa">
+    <div class="ed06-esq" id="ed06-e1"></div><div class="ed06-esq" id="ed06-e2"></div>
+    <div class="ed06-esq" id="ed06-e3"></div><div class="ed06-esq" id="ed06-e4"></div>
+    <div class="ed06-txt" id="ed06-rec"><span id="ed06-punto"></span>REC</div>
+    <div class="ed06-txt" id="ed06-tc">00:00:00</div>
+    <div class="ed06-txt" id="ed06-cal" data-lu="calidad"></div>
+    <div class="ed06-txt" id="ed06-hd">HD</div>
+    <div id="ed06-bat"></div>
+    <div id="ed06-mira"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const tc = document.querySelector('#ed06-tc');
+  const reloj = { s: 0 };
+  const pinta = () => {
+    const f = Math.floor(reloj.s * 30) % 30, s = Math.floor(reloj.s) % 60, m = Math.floor(reloj.s / 60);
+    tc.textContent = [m, s, f].map((n) => String(n).padStart(2, '0')).join(':');
+  };
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed06-e1', { x: -80, y: -80, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, 0)
+    .fromTo('#ed06-e2', { x: 80, y: -80, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, .05)
+    .fromTo('#ed06-e3', { x: -80, y: 80, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, .1)
+    .fromTo('#ed06-e4', { x: 80, y: 80, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, .15)
+    .fromTo('.ed06-txt, #ed06-bat', { opacity: 0 }, { opacity: 1, duration: .3, stagger: .06 }, .35)
+    .fromTo('#ed06-mira', { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: .5, ease: 'back.out(2)' }, .5)
+    .to('#ed06-mira', { scale: .85, duration: .25, yoyo: true, repeat: 1, ease: 'power2.inOut' }, 1.2)
+    .fromTo('#ed06-punto', { opacity: 1 }, { opacity: .15, duration: .45, yoyo: true, repeat: 5, ease: 'steps(1)' }, .4)
+    .fromTo(reloj, { s: 0 }, { s: 3.5, duration: 3.5, ease: 'none', onUpdate: pinta }, 0)
+    .to('#ed06-capa', { opacity: 0, duration: .4 }, 3.6);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed06"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "colores", "type": "string", "label": "Colores (hex, separados por coma)", "default": "#F5E6DF,#5A2630,#FFFFFF,#C9A15F"},
+  {"id": "titulo", "type": "string", "label": "Etiqueta", "default": "mi paleta"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#5A2630"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; }
+  #cr05-fila { position: absolute; left: 70px; right: 70px; top: 230px; display: flex; align-items: flex-start; gap: 22px; }
+  .cr05-s { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cr05-c { width: 118px; height: 118px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 12px 30px rgba(60,20,30,.25); }
+  .cr05-h { font: 500 22px var(--mono); color: #fff; background: rgba(40,20,20,.55); padding: 3px 10px; border-radius: 8px; }
+  .cr05-aa { width: 118px; height: 118px; border-radius: 26px; background: #fff; display: flex; align-items: center; justify-content: center; color: var(--tinta); box-shadow: 0 12px 30px rgba(60,20,30,.25); }
+  #cr05-titulo { position: absolute; left: 70px; top: 160px; font: 700 52px var(--mano); color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr05" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cr05-titulo" data-lu="titulo"></div>
+    <div id="cr05-fila"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const fila = document.querySelector('#cr05-fila');
+  const cols = String(LU.vars.colores).split(',').map((s) => s.trim()).filter(Boolean).slice(0, 4);
+  const els = cols.map((c) => { const s = document.createElement('div'); s.className = 'cr05-s'; s.innerHTML = `<div class="cr05-c" style="background:${c}"></div><div class="cr05-h">${c.toUpperCase()}</div>`; fila.appendChild(s); return s; });
+  ['font:900 64px Poppins', 'font:italic 600 66px Playfair Display'].forEach((f) => { const a = document.createElement('div'); a.className = 'cr05-s'; a.innerHTML = `<div class="cr05-aa" style="${f}">Aa</div>`; fila.appendChild(a); els.push(a); });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cr05-titulo', { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: .35 }, 0)
+    .fromTo(els, { scale: 0, y: 40 }, { scale: 1, y: 0, duration: .45, ease: 'back.out(2.4)', stagger: .12 }, .1)
+    .to(els, { y: -10, duration: .7, ease: 'sine.inOut', yoyo: true, repeat: 1, stagger: .08 }, 1.2)
+    .to('.capa', { opacity: 0, duration: .25 }, 3.25);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr05"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

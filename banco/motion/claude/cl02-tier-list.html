@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "tema", "type": "string", "label": "Tema", "default": "herramientas de IA"},
+  {"id": "S", "type": "string", "label": "Fila S (separados por coma)", "default": "Claude"},
+  {"id": "A", "type": "string", "label": "Fila A", "default": "ChatGPT,Gemini,Perplexity"},
+  {"id": "B", "type": "string", "label": "Fila B", "default": "Midjourney,CapCut"},
+  {"id": "C", "type": "string", "label": "Fila C", "default": "Notion AI,Canva"},
+  {"id": "D", "type": "string", "label": "Fila D", "default": "Copilot"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background-color: #1b1b1f; }
+  #cl02-panel { position: absolute; left: 120px; width: 840px; top: 990px; border-radius: 36px; background: rgba(14,14,18,.88); padding: 26px; box-shadow: 0 30px 70px rgba(0,0,0,.5); }
+  #cl02-estado { position: relative; height: 56px; margin-bottom: 18px; }
+  .cl02-pill { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 14px; height: 56px; padding: 0 24px; border-radius: 999px; font: 600 26px var(--body); color: #fff; white-space: nowrap; }
+  #cl02-p1 { background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.15); }
+  #cl02-p2 { background: rgba(70,167,88,.18); border: 1.5px solid rgba(70,167,88,.6); opacity: 0; }
+  #cl02-giro { width: 22px; height: 22px; border-radius: 50%; border: 3px solid rgba(255,255,255,.25); border-top-color: #fff; }
+  .cl02-fila { display: flex; gap: 14px; margin-bottom: 12px; background: #26262C; border-radius: 18px; padding: 10px; min-height: 92px; align-items: center; }
+  .cl02-et { width: 72px; height: 72px; border-radius: 14px; flex: none; display: flex; align-items: center; justify-content: center; font: 900 40px var(--body); color: #111; }
+  .cl02-items { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cl02-item { height: 72px; padding: 0 22px; border-radius: 16px; background: #3A3A42; color: #fff; display: flex; align-items: center; font: 700 28px var(--body); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl02" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cl02-panel">
+      <div id="cl02-estado">
+        <div class="cl02-pill" id="cl02-p1"><span id="cl02-giro"></span>Clasificando <span data-lu="tema"></span>…</div>
+        <div class="cl02-pill" id="cl02-p2"><b style="color:#46A758">✓</b>Clasificado</div>
+      </div>
+      <div id="cl02-filas"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const COLOR = { S: '#E5484D', A: '#F2883B', B: '#F2C94C', C: '#46A758', D: '#3E8DE0' };
+  const filas = document.querySelector('#cl02-filas'), items = [];
+  ['S', 'A', 'B', 'C', 'D'].forEach((k) => {
+    const f = document.createElement('div'); f.className = 'cl02-fila';
+    f.innerHTML = `<div class="cl02-et" style="background:${COLOR[k]}">${k}</div><div class="cl02-items"></div>`;
+    String(LU.vars[k] || '').split(',').map((s) => s.trim()).filter(Boolean).forEach((n) => { const it = document.createElement('div'); it.className = 'cl02-item'; it.textContent = n; f.lastChild.appendChild(it); items.push(it); });
+    filas.appendChild(f);
+  });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cl02-panel', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 8 / 30, ease: 'power3.out' }, 0)
+    .to('#cl02-giro', { rotation: 360 * 3, duration: 3, ease: 'none' }, 0);
+  items.forEach((it, i) => tl.fromTo(it, { y: -70, opacity: 0, scale: .85 }, { y: 0, opacity: 1, scale: 1, duration: .35, ease: 'back.out(2.6)' }, (10 + i * 4) / 30));
+  const fin = (10 + (items.length - 1) * 4 + 6) / 30;
+  tl.to('#cl02-p1', { opacity: 0, duration: 5 / 30 }, fin).to('#cl02-p2', { opacity: 1, duration: 5 / 30 }, fin)
+    .to('#cl02-panel', { opacity: 0, duration: 10 / 30 }, 80 / 30);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl02"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

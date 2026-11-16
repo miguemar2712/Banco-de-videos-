@@ -1,7 +1,7 @@
 {
   "configured": false,
-  "name": "",
-  "handle": "",
+  "name": "Del Carmen",
+  "handle": "@delcarmen__1",
   "colors": {
     "papel": "#F3ECE0",
     "tinta": "#3A2A1F",
@@ -21,5 +21,9 @@
   "avoid": "",
   "aprendido": [],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
-  "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa."
+  "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
+  "redes": {
+    "tiktok": "@delcarmen__1"
+  },
+  "cta": "Al final de cada video: invitar a que le escriban o comenten para enviarles información del programa de importación."
 }

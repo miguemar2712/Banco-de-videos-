@@ -73,6 +73,6 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
   dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
 - Montaje: transcribe la voz (`scripts/transcribir.py`), escribe `ediciones/<nombre>/tomas.json` (modelo:
   `ediciones/sets-deportivos-tomas/tomas.json`) y corre `.venv/bin/python scripts/montar-tomas.py ediciones/<nombre>/tomas.json`.
-- Textos grandes puntuales (p. ej. "$15 dólares"): campo `textos` del tomas.json. Cuando dice un precio, además **sonido de
-  monedas** (`"sonidos"`, ver `assets/sonidos/LEEME.md`).
+- Textos grandes puntuales (p. ej. "$15 dólares"): campo `textos` del tomas.json. **Sin sonido de monedas**
+  ni efectos: solo su voz (lo probó y no lo quiere; `"sonidos"` queda disponible solo si lo vuelve a pedir).
 - Guiones listos: `GUIONES.md`.

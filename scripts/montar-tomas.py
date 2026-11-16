@@ -69,6 +69,8 @@ Style: Titulo,Montserrat Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0
 Style: Sombra,Montserrat Black,128,&H70000000,&H70000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
 Style: Sub,Montserrat ExtraBold,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
 Style: SubSombra,Montserrat ExtraBold,64,&H80000000,&H80000000,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
+Style: Cartel,Ultra,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: CartelGlow,Ultra,80,&H10000000,&H10000000,&H10000000,&H00000000,0,0,0,0,100,100,0,0,1,13,0,5,0,0,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -88,26 +90,74 @@ def doble(capa, a, b, estilo, x, y, txt, tags='', sombra=(5, 8), blur=6):
             f"Dialogue: {capa + 1},{tc(a)},{tc(b)},{estilo},,0,0,0,,{{\\pos({x},{y}){tags}}}{txt}\n")
 
 
-def hacer_ass(plan, total):
+def grupos_cartel(pal):
+    grupos, g = [], []
+    for w in pal:
+        if g and (len(g) >= 3 or w['a'] - g[-1]['b'] > .3 or g[-1]['fin'] or sum(len(x['t']) for x in g) + len(w['t']) > 22):
+            grupos.append(g); g = []
+        g.append(w)
+    return grupos + [g]
+
+
+def ass_cartel(grupos, Y):
+    """Estilo 'cartel' (plantilla de CapCut tipo THE / QUICK / BROWN): letra Ultra con serifas, blanca con resplandor
+    negro; la palabra más importante (la clave más larga, o la más larga) ENORME al centro; las de antes pequeñas arriba
+    a la derecha y las de después pequeñas abajo a la izquierda. Cada palabra aparece cuando se dice."""
+    from PIL import ImageFont
+    fuente = os.path.join(RAIZ, 'fuentes', 'Ultra.ttf')
+    def ancho(t, fs):   # libass escala la letra para que ascendente+descendente = fs; PIL usa el cuadro 'em'
+        f = ImageFont.truetype(fuente, 200); a, d = f.getmetrics()
+        return f.getlength(t) * fs / (a + d)
+    out = ''
+    for k, g in enumerate(grupos):
+        fin = min(grupos[k + 1][0]['a'] if k + 1 < len(grupos) else g[-1]['b'] + .5, g[-1]['b'] + .7)
+        cand = [j for j, w in enumerate(g) if w['clave']] or list(range(len(g)))
+        i = max(cand, key=lambda j: len(g[j]['t']))
+        grande = 175
+        while ancho(g[i]['t'], grande) > 900 and grande > 60:
+            grande -= 5
+        chico = max(56, min(78, int(grande * .45)))
+        w_g = ancho(g[i]['t'], grande); esp = ancho(' ', chico)
+        izq, der = 540 - w_g / 2, 540 + w_g / 2
+        partes = [(g[i], 540, Y, grande, '\\an5')]
+        ya, xa = Y - grande * .55 - chico * .42, der
+        for w in reversed(g[:i]):            # arriba, alineadas a la derecha de la grande
+            partes.append((w, xa, ya, chico, '\\an6')); xa -= ancho(w['t'], chico) + esp
+        yb, xb = Y + grande * .55 + chico * .42, izq
+        for w in g[i + 1:]:                  # abajo, alineadas a la izquierda de la grande
+            partes.append((w, xb, yb, chico, '\\an4')); xb += ancho(w['t'], chico) + esp
+        for w, x, y, fs, al in partes:
+            pop = f"{al}\\fs{fs}\\fscx118\\fscy118\\t(0,100,\\fscx100\\fscy100)"
+            out += (f"Dialogue: 2,{tc(w['a'])},{tc(fin)},CartelGlow,,0,0,0,,{{\\pos({x:.0f},{y:.0f})\\blur18{pop}}}{w['t']}\n"
+                    f"Dialogue: 3,{tc(w['a'])},{tc(fin)},Cartel,,0,0,0,,{{\\pos({x:.0f},{y:.0f}){pop}}}{w['t']}\n")
+    return out
+
+
+def hacer_ass(plan, total, parte='todo'):
     out = ASS_CAB
-    t = plan.get('titulo')
+    t = plan.get('titulo') if parte in ('todo', 'titulo') else None
     if t:
         lineas = [t] if isinstance(t, str) else t
         y0 = plan.get('titulo_y', 290)
         for i, l in enumerate(lineas):
             fs = min(170, int(960 / (len(l) * .56)))
             out += doble(0, 0, total, 'Titulo', 540, y0 + i * int(fs * .9), l.upper(), f'\\fs{fs}', sombra=(7, 10), blur=8)
-    if plan.get('subtitulos'):
+    if plan.get('subtitulos') and parte in ('todo', 'subs'):
         ws = json.load(open(os.path.join(RAIZ, plan['palabras'])))['words']
         rep = {k.lower(): v for k, v in plan.get('reemplazos', {}).items()}
         claves = {c.lower() for c in plan.get('claves', [])}
         pal = []
+        tapados = [(x['de'] - .05, x['a']) for x in plan.get('textos', [])]
         for w in ws:
+            if any(a <= w['start'] < b for a, b in tapados):
+                continue
             base = w['text'].strip().strip('.,¿?¡!')
             nuevo = rep.get(base.lower(), base)
             for i, p in enumerate(nuevo.split()):
                 pal.append(dict(t=p.upper(), a=w['start'], b=w['end'], clave=base.lower() in claves,
                                 fin=(i == len(nuevo.split()) - 1) and w['text'].strip()[-1:] in '.,?!'))
+        if plan['subtitulos'] == 'cartel':
+            return out + ass_cartel(grupos_cartel(pal), plan.get('subs_y', 1250))
         grupos, g = [], []
         for w in pal:
             if g and (len(g) >= 3 or w['a'] - g[-1]['b'] > .3 or g[-1]['fin'] or w['clave'] != g[-1]['clave']):
@@ -183,10 +233,27 @@ def main():
     if plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
         extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]
         cadena += f"[vb];[vb][{nv + 1}:v]overlay=x=(W-w)/2:y={plan.get('mapa_y', 60)}"
-    if plan.get('titulo') or plan.get('subtitulos'):
-        ass = os.path.join(RAIZ, os.path.dirname(sys.argv[1]), 'subs.ass')
+    fdir = os.path.join(RAIZ, 'fuentes')
+    carpeta = os.path.join(RAIZ, os.path.dirname(sys.argv[1]))
+    if plan.get('subtitulos') == 'cartel':
+        if plan.get('titulo'):
+            ass = os.path.join(carpeta, 'titulo.ass'); open(ass, 'w').write(hacer_ass(plan, total, 'titulo'))
+            cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
+        ass = os.path.join(carpeta, 'subs.ass'); txt = hacer_ass(plan, total, 'subs'); open(ass, 'w').write(txt)
+        solo = os.path.join(carpeta, 'subs-mascara.ass')        # solo las letras (sin resplandor) para la máscara de desgaste
+        open(solo, 'w').write(''.join(l for l in txt.splitlines(True) if 'CartelGlow,' not in l))
+        tex = os.path.join(RAIZ, 'assets', 'textura-gastada.png')
+        idx = nv + 1 + (1 if plan.get('mapa') else 0)
+        extra += ['-loop', '1', '-i', tex]
+        cadena += (f",subtitles=filename='{ass}':fontsdir='{fdir}'[vb2];"
+                   f"color=c=black:s=1080x1920:r=30:d={total:.3f},subtitles=filename='{solo}':fontsdir='{fdir}',format=gray,lut=y='if(gt(val,110),255,0)'[am];"
+                   f"[{idx}:v]format=gray,trim=duration={total:.3f},fps=30[tg];"
+                   f"[am][tg]blend=all_mode=multiply,lutyuv=y='val*0.9'[mk];color=c=black:s=1080x1920:r=30:d={total:.3f},format=rgba[neg];"
+                   f"[neg][mk]alphamerge[manchas];[vb2][manchas]overlay=format=auto:shortest=1")
+    elif plan.get('titulo') or plan.get('subtitulos'):
+        ass = os.path.join(carpeta, 'subs.ass')
         open(ass, 'w').write(hacer_ass(plan, total))
-        cadena += f",subtitles=filename='{ass}':fontsdir='{os.path.join(RAIZ, 'fuentes')}'"
+        cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
     filtro = ';'.join(partes) + ';' + cadena + '[v];' + f'[{nv}:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]'
     salida = os.path.join(RAIZ, plan['salida'])
     os.makedirs(os.path.dirname(salida), exist_ok=True)

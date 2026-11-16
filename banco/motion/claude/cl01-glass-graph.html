@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "titulo", "type": "string", "label": "Título pequeño", "default": "Vistas este mes"},
+  {"id": "desde", "type": "number", "label": "Número inicial", "default": 1204},
+  {"id": "hasta", "type": "number", "label": "Número final", "default": 412000},
+  {"id": "acento", "type": "color", "label": "Color de la línea", "default": "#D97757"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background-color: #1b1b1f; }
+  #cl01-card { position: absolute; left: 160px; top: 1010px; width: 760px; height: 520px; border-radius: 36px; overflow: hidden;
+    background: linear-gradient(160deg, rgba(255,255,255,.20), rgba(255,255,255,.08)), rgba(20,20,24,.35);
+    border: 1.5px solid rgba(255,255,255,.3); backdrop-filter: blur(34px) saturate(1.3);
+    box-shadow: 0 30px 70px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.3); }
+  #cl01-titulo { position: absolute; left: 40px; top: 36px; font: 600 30px var(--body); color: rgba(255,255,255,.7); }
+  #cl01-num { position: absolute; left: 38px; top: 76px; font: 800 120px var(--body); letter-spacing: -4px; color: #fff; font-variant-numeric: tabular-nums; }
+  #cl01-svg { position: absolute; inset: 0; overflow: visible; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl01" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cl01-card">
+      <div id="cl01-titulo" data-lu="titulo"></div>
+      <div id="cl01-num">0</div>
+      <svg id="cl01-svg" viewBox="0 0 760 520">
+        <defs>
+          <linearGradient id="cl01-rel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--acento)" stop-opacity=".45"/><stop offset="1" stop-color="var(--acento)" stop-opacity="0"/></linearGradient>
+          <clipPath id="cl01-corte"><rect id="cl01-rect" x="30" y="0" width="0" height="520"/></clipPath>
+          <filter id="cl01-glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <g clip-path="url(#cl01-corte)">
+          <path id="cl01-area" fill="url(#cl01-rel)"/>
+          <path id="cl01-brillo" fill="none" stroke="var(--acento)" stroke-width="10" opacity=".55" filter="url(#cl01-glow)"/>
+          <path id="cl01-linea" fill="none" stroke="var(--acento)" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <circle id="cl01-halo" r="22" fill="var(--acento)" opacity="0"/>
+        <circle id="cl01-punto" r="11" fill="#fff" stroke="var(--acento)" stroke-width="5"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const GX = 40, GY = 250, GW = 680, GH = 220;
+  const P = [0.02, 0.06, 0.05, 0.12, 0.18, 0.15, 0.27, 0.35, 0.31, 0.46, 0.58, 0.54, 0.7, 0.83, 1];
+  const pts = P.map((v, i) => [GX + (i / (P.length - 1)) * GW, GY + GH - v * GH]);
+  let d = `M ${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], cx = (x0 + x1) / 2; d += ` C ${cx} ${y0}, ${cx} ${y1}, ${x1} ${y1}`; }
+  ['#cl01-linea', '#cl01-brillo'].forEach((s) => document.querySelector(s).setAttribute('d', d));
+  document.querySelector('#cl01-area').setAttribute('d', `${d} L ${GX + GW} ${GY + GH} L ${GX} ${GY + GH} Z`);
+  const linea = document.querySelector('#cl01-linea'), largo = linea.getTotalLength();
+  const punto = document.querySelector('#cl01-punto'), halo = document.querySelector('#cl01-halo'), rect = document.querySelector('#cl01-rect');
+  const num = document.querySelector('#cl01-num');
+  const desde = +LU.vars.desde || 0, hasta = +LU.vars.hasta || 0;
+  const fmt = (n) => n >= 10000 ? Math.round(n / 1000).toLocaleString('en-US') + 'K' : Math.round(n).toLocaleString('en-US');
+  const est = { p: 0 };
+  const pinta = () => {
+    const p = est.p, q = linea.getPointAtLength(Math.max(.01, largo * p));
+    num.textContent = fmt(desde + (hasta - desde) * p);
+    rect.setAttribute('width', (GW + 10) * p + 10);
+    punto.setAttribute('cx', q.x); punto.setAttribute('cy', q.y); halo.setAttribute('cx', q.x); halo.setAttribute('cy', q.y);
+  };
+  pinta();
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cl01-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 8 / 30, ease: 'power3.out' }, 0)
+    .fromTo(est, { p: 0 }, { p: 1, duration: 52 / 30, ease: 'power3.out', onUpdate: pinta }, 8 / 30)
+    .fromTo('#cl01-halo', { attr: { r: 11 }, opacity: .9 }, { attr: { r: 40 }, opacity: 0, duration: 14 / 30, ease: 'power2.out', immediateRender: false }, 60 / 30)
+    .to('#cl01-card', { y: 30, opacity: 0, duration: 10 / 30, ease: 'power2.in' }, 80 / 30);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl01"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

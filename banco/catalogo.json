@@ -1,0 +1,933 @@
+{
+ "version": 1,
+ "estilos": [
+  {
+   "id": "cinematico",
+   "nombre": "Viral Edits",
+   "para": "Voz en off · lanzamientos, masterclass",
+   "descripcion": "Base oscura con resplandor dorado tipo eclipse, tarjetas de vidrio, interfaces animadas (prompt, terminal, línea de tiempo) y texto 3D.",
+   "estado": "listo",
+   "motion": [
+    {
+     "id": "ci01",
+     "archivo": "motion/cinematico/ci01-eclipse.html",
+     "nombre": "Eclipse de lanzamiento",
+     "comando": "/ci-eclipse",
+     "dur": 4,
+     "tipo": "pantalla",
+     "uso": "Pantalla de lanzamiento: anillo de luz dorada + título brillante.",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0.6
+      }
+     ]
+    },
+    {
+     "id": "ci02",
+     "archivo": "motion/cinematico/ci02-prompt.html",
+     "nombre": "Barra de prompt",
+     "comando": "/ci-prompt",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Se escribe una instrucción y se envía (\"y en un solo prompt…\").",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0.6
+      },
+      {
+       "s": "clic",
+       "en": 2.35
+      }
+     ]
+    },
+    {
+     "id": "ci03",
+     "archivo": "motion/cinematico/ci03-timeline.html",
+     "nombre": "Línea de tiempo",
+     "comando": "/ci-timeline",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "Editor con clips: se borran las tomas malas y se juntan las buenas.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 1.2
+      },
+      {
+       "s": "clic",
+       "en": 1.55
+      },
+      {
+       "s": "clic",
+       "en": 1.9
+      }
+     ]
+    },
+    {
+     "id": "ci04",
+     "archivo": "motion/cinematico/ci04-lista.html",
+     "nombre": "Tarjeta de vidrio con lista",
+     "comando": "/ci-lista",
+     "dur": 4.5,
+     "tipo": "encima",
+     "uso": "Lista que se marca al ritmo de lo que dices.",
+     "sfx": [
+      {
+       "s": "clic-suave",
+       "en": 0.45
+      },
+      {
+       "s": "clic-suave",
+       "en": 1.05
+      },
+      {
+       "s": "clic-suave",
+       "en": 1.65
+      },
+      {
+       "s": "clic-suave",
+       "en": 2.25
+      }
+     ]
+    },
+    {
+     "id": "ci05",
+     "archivo": "motion/cinematico/ci05-3d.html",
+     "nombre": "Texto 3D dorado",
+     "comando": "/ci-3d",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Palabra en 3D que gira y entra desde el fondo.",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0
+      }
+     ]
+    },
+    {
+     "id": "ci06",
+     "archivo": "motion/cinematico/ci06-pasos.html",
+     "nombre": "Pasos 1·2·3",
+     "comando": "/ci-pasos",
+     "dur": 4.5,
+     "tipo": "encima",
+     "uso": "Tres pasos en vidrio, uno por uno.",
+     "sfx": [
+      {
+       "s": "tic-pasos",
+       "en": 0.1
+      }
+     ]
+    },
+    {
+     "id": "ci07",
+     "archivo": "motion/cinematico/ci07-ventana.html",
+     "nombre": "Ventana de Claude Code",
+     "comando": "/ci-ventana",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "Terminal que escribe lo que Claude va haciendo.",
+     "sfx": [
+      {
+       "s": "texto-digital",
+       "en": 0.45
+      }
+     ]
+    },
+    {
+     "id": "ci08",
+     "archivo": "motion/cinematico/ci08-insignia.html",
+     "nombre": "Insignia \"Editado por Claude\"",
+     "comando": "/ci-insignia",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Tarjeta con barra de render que llega a 100%.",
+     "sfx": [
+      {
+       "s": "texto-digital",
+       "en": 0.6
+      },
+      {
+       "s": "ding",
+       "en": 2.0
+      }
+     ]
+    },
+    {
+     "id": "ci09",
+     "archivo": "motion/cinematico/ci09-cta.html",
+     "nombre": "Tarjeta CTA",
+     "comando": "/ci-cta",
+     "dur": 4.5,
+     "tipo": "pantalla",
+     "uso": "Cierre: tarjeta + botón dorado con brillo (\"Comenta CLAUDE\").",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0.1
+      },
+      {
+       "s": "clic",
+       "en": 0.7
+      }
+     ]
+    },
+    {
+     "id": "ci10",
+     "archivo": "motion/cinematico/ci10-anillo.html",
+     "nombre": "Anillo de progreso",
+     "comando": "/ci-anillo",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Número dentro de un anillo que se llena (%).",
+     "sfx": [
+      {
+       "s": "texto-digital",
+       "en": 0.3
+      },
+      {
+       "s": "ding",
+       "en": 1.8
+      }
+     ]
+    }
+   ],
+   "tipografias": {
+    "titulos": "Inter 800",
+    "fuerte": "Inter 700",
+    "subtitulos": "Inter 700",
+    "mano": "DM Mono"
+   },
+   "subtitulos": "1–2 palabras, Inter 700 crema con sombra; palabra clave con degradado dorado"
+  },
+  {
+   "id": "claude",
+   "nombre": "Claude Edits",
+   "para": "Efectos de la guía · sobre cualquier estilo",
+   "descripcion": "Los 8 efectos de la guía de Claude: gráfica de vidrio, ranking, palabra detrás, tarjetas sobre los hombros, congelado tipo sticker, corrección de color y la intro de chat.",
+   "tipografias": {
+    "titulos": "Inter 800",
+    "fuerte": "Anton",
+    "subtitulos": "Inter",
+    "mano": "—"
+   },
+   "subtitulos": "usa los del estilo del video",
+   "estado": "listo",
+   "motion": [
+    {
+     "id": "cl01",
+     "archivo": "motion/claude/cl01-glass-graph.html",
+     "nombre": "Glass Graph",
+     "comando": "/glass-graph",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Tarjeta de vidrio en el pecho: número que sube y gráfica naranja que se dibuja.",
+     "sfx": []
+    },
+    {
+     "id": "cl02",
+     "archivo": "motion/claude/cl02-tier-list.html",
+     "nombre": "Tier List",
+     "comando": "/tier-list",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Ranking S-A-B-C-D que se llena solo, con \"Clasificando…\" → \"Clasificado ✓\".",
+     "sfx": []
+    },
+    {
+     "id": "cl03",
+     "archivo": "motion/claude/cl03-text-behind.html",
+     "nombre": "Text Behind",
+     "comando": "/text-behind",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Palabra gigante DETRÁS de tu cabeza. En el plan: \"detras\": true.",
+     "sfx": [],
+     "fondo": "video"
+    },
+    {
+     "id": "cl04",
+     "archivo": "motion/claude/cl04-over-the-shoulder.html",
+     "nombre": "Over The Shoulder",
+     "comando": "/over-the-shoulder",
+     "dur": 2.8,
+     "tipo": "encima",
+     "uso": "Tarjetas ANTES/DESPUÉS detrás de tus hombros. En el plan: \"detras\": true.",
+     "sfx": [],
+     "fondo": "video"
+    },
+    {
+     "id": "cl05",
+     "archivo": "motion/claude/cl05-freeze-tag.html",
+     "nombre": "Freeze Frame (etiqueta)",
+     "comando": "/freeze-frame",
+     "dur": 2.5,
+     "tipo": "encima",
+     "uso": "Flash + tu nombre. En el plan junto con el zoom \"congelar\" (imagen tipo sticker).",
+     "sfx": [],
+     "fondo": "video"
+    },
+    {
+     "id": "cl06",
+     "archivo": "motion/claude/cl06-grade-wipe.html",
+     "nombre": "Color Grade (barrido)",
+     "comando": "/color-grade",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Línea de luz + ANTES/DESPUÉS. En el plan junto con el zoom \"grade\".",
+     "sfx": [],
+     "fondo": "video"
+    },
+    {
+     "id": "cl07",
+     "archivo": "motion/claude/cl07-chat-render.html",
+     "nombre": "Chat Render (intro)",
+     "comando": "/chat-render",
+     "dur": 2.5,
+     "tipo": "pantalla",
+     "uso": "Intro tipo chat: escribes el comando, se envía y el resultado se \"renderiza\".",
+     "sfx": []
+    }
+   ]
+  },
+  {
+   "id": "editorial",
+   "nombre": "Editorial Level",
+   "para": "Hablando a cámara · marca personal, educación, lifestyle",
+   "descripcion": "Serif elegante en cursiva + letra gruesa, beige, café y oro. Texto encima de la cabeza, tarjetas tipo póster y detalles hechos a mano.",
+   "tipografias": {
+    "titulos": "Playfair Display",
+    "fuerte": "Poppins",
+    "subtitulos": "Inter",
+    "mano": "Caveat"
+   },
+   "subtitulos": "1–2 palabras, Poppins 700 blanco con sombra suave, en el pecho; palabra clave en Playfair cursiva color acento",
+   "estado": "listo",
+   "motion": [
+    {
+     "id": "ed01",
+     "archivo": "motion/editorial/ed01-titular.html",
+     "nombre": "Titular editorial",
+     "comando": "/ed-titular",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "Gancho de los primeros 2 s: línea fuerte + palabra elegante + línea fuerte.",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0
+      }
+     ]
+    },
+    {
+     "id": "ed02",
+     "archivo": "motion/editorial/ed02-palabra.html",
+     "nombre": "Palabra con resaltador",
+     "comando": "/ed-palabra",
+     "dur": 3.5,
+     "tipo": "pantalla",
+     "uso": "Una palabra clave centrada sobre la hoja con trazo de resaltador.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 0.2
+      },
+      {
+       "s": "texto-escribe",
+       "en": 0.7
+      }
+     ]
+    },
+    {
+     "id": "ed03",
+     "archivo": "motion/editorial/ed03-circulo.html",
+     "nombre": "Palabra clave a mano",
+     "comando": "/ed-circulo",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "La palabra en cursiva con un círculo dibujado a mano y una nota.",
+     "sfx": [
+      {
+       "s": "clic-suave",
+       "en": 0
+      },
+      {
+       "s": "texto-escribe",
+       "en": 0.35
+      }
+     ]
+    },
+    {
+     "id": "ed04",
+     "archivo": "motion/editorial/ed04-tarjetas.html",
+     "nombre": "Tarjetas póster",
+     "comando": "/ed-tarjetas",
+     "dur": 5,
+     "tipo": "pantalla",
+     "uso": "Explicar 3 tipos/ideas: cada tarjeta cae cuando la nombras.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0
+      },
+      {
+       "s": "notificacion",
+       "en": 1.1
+      },
+      {
+       "s": "notificacion",
+       "en": 2.2
+      }
+     ]
+    },
+    {
+     "id": "ed05",
+     "archivo": "motion/editorial/ed05-numero.html",
+     "nombre": "Número + título",
+     "comando": "/ed-numero",
+     "dur": 3.5,
+     "tipo": "pantalla",
+     "uso": "\"3 tipos de contenido\", \"5 errores\": número gigante en oro.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 0
+      }
+     ]
+    },
+    {
+     "id": "ed06",
+     "archivo": "motion/editorial/ed06-rec.html",
+     "nombre": "Marco de cámara REC",
+     "comando": "/ed-rec",
+     "dur": 4,
+     "tipo": "encima",
+     "fondo": "video",
+     "uso": "Momento \"detrás de cámara\" o confesión. Combínalo con el video en blanco y negro.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 0
+      }
+     ]
+    },
+    {
+     "id": "ed07",
+     "archivo": "motion/editorial/ed07-calendario.html",
+     "nombre": "Calendario con meta",
+     "comando": "/ed-calendario",
+     "dur": 4,
+     "tipo": "pantalla",
+     "uso": "Fechas, plazos, \"antes de fin de año\": marca el día a mano.",
+     "sfx": [
+      {
+       "s": "tic-pasos",
+       "en": 0.35
+      },
+      {
+       "s": "ding",
+       "en": 1.5
+      }
+     ]
+    },
+    {
+     "id": "ed08",
+     "archivo": "motion/editorial/ed08-reloj.html",
+     "nombre": "Reloj que corre",
+     "comando": "/ed-reloj",
+     "dur": 4,
+     "tipo": "pantalla",
+     "uso": "Tiempo perdido o ahorrado (\"horas editando\").",
+     "sfx": [
+      {
+       "s": "reloj",
+       "en": 0.4
+      }
+     ]
+    },
+    {
+     "id": "ed09",
+     "archivo": "motion/editorial/ed09-contador.html",
+     "nombre": "Contador",
+     "comando": "/ed-contador",
+     "dur": 3.5,
+     "tipo": "pantalla",
+     "uso": "Resultados reales: vistas, ventas, alumnos. Solo cifras que la persona dice.",
+     "sfx": [
+      {
+       "s": "texto-digital",
+       "en": 0.2
+      },
+      {
+       "s": "ding",
+       "en": 1.8
+      }
+     ]
+    },
+    {
+     "id": "ed10",
+     "archivo": "motion/editorial/ed10-cierre.html",
+     "nombre": "Cierre Instagram",
+     "comando": "/ed-cierre",
+     "dur": 4,
+     "tipo": "encima",
+     "fondo": "video",
+     "uso": "Últimos 3 s: se oscurece, logo de Instagram, @usuario y frase final.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chica-rosa",
+   "nombre": "Girls",
+   "para": "Hablando a cámara · branding femenino",
+   "descripcion": "Beige rosado con café vino, letra a mano, píldoras con check, pasos 01·02·03, antes/ahora y burbujas de comentario.",
+   "estado": "listo",
+   "motion": [
+    {
+     "id": "cr01",
+     "archivo": "motion/chica-rosa/cr01-portada.html",
+     "nombre": "Portada de serie",
+     "comando": "/cr-portada",
+     "dur": 3.5,
+     "tipo": "pantalla",
+     "uso": "\"bienvenida a la PARTE 02\": portada con letra a mano y estrellas.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0.2
+      },
+      {
+       "s": "pop",
+       "en": 0.75
+      }
+     ]
+    },
+    {
+     "id": "cr02",
+     "archivo": "motion/chica-rosa/cr02-pildoras.html",
+     "nombre": "Píldoras con check",
+     "comando": "/cr-pildoras",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Lista de píldoras que aparecen una por una.",
+     "sfx": [
+      {
+       "s": "clic-suave",
+       "en": 0.1
+      },
+      {
+       "s": "clic-suave",
+       "en": 0.6
+      },
+      {
+       "s": "clic-suave",
+       "en": 1.1
+      }
+     ]
+    },
+    {
+     "id": "cr03",
+     "archivo": "motion/chica-rosa/cr03-gigante.html",
+     "nombre": "Texto gigante",
+     "comando": "/cr-gigante",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Dos líneas gigantes que entran de lados opuestos.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0.15
+      },
+      {
+       "s": "pop",
+       "en": 0.4
+      }
+     ]
+    },
+    {
+     "id": "cr04",
+     "archivo": "motion/chica-rosa/cr04-numero.html",
+     "nombre": "Número + palabra",
+     "comando": "/cr-numero",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "\"5 HORAS\" con nota a mano.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0
+      },
+      {
+       "s": "clic",
+       "en": 0.7
+      }
+     ]
+    },
+    {
+     "id": "cr05",
+     "archivo": "motion/chica-rosa/cr05-paleta.html",
+     "nombre": "Paleta de marca",
+     "comando": "/cr-paleta",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Tus colores y tipografías (\"mis colores\").",
+     "sfx": [
+      {
+       "s": "clic-suave",
+       "en": 0.1
+      },
+      {
+       "s": "clic-suave",
+       "en": 0.35
+      },
+      {
+       "s": "clic-suave",
+       "en": 0.6
+      }
+     ]
+    },
+    {
+     "id": "cr06",
+     "archivo": "motion/chica-rosa/cr06-paso.html",
+     "nombre": "Paso 01 con captura",
+     "comando": "/cr-paso",
+     "dur": 3.5,
+     "tipo": "pantalla",
+     "uso": "Número + título a mano + marco con tu captura.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0
+      },
+      {
+       "s": "notificacion",
+       "en": 0.3
+      }
+     ]
+    },
+    {
+     "id": "cr07",
+     "archivo": "motion/chica-rosa/cr07-antes-ahora.html",
+     "nombre": "Antes / Ahora",
+     "comando": "/cr-antes-ahora",
+     "dur": 4,
+     "tipo": "pantalla",
+     "uso": "Dos tarjetas con flecha: antes y después.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0
+      },
+      {
+       "s": "notificacion",
+       "en": 0.9
+      }
+     ]
+    },
+    {
+     "id": "cr08",
+     "archivo": "motion/chica-rosa/cr08-etiquetas.html",
+     "nombre": "Etiquetas flotantes",
+     "comando": "/cr-etiquetas",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "Etiquetas que aparecen alrededor mientras las nombras.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0.05
+      },
+      {
+       "s": "pop",
+       "en": 0.4
+      },
+      {
+       "s": "pop",
+       "en": 0.75
+      },
+      {
+       "s": "pop",
+       "en": 1.1
+      }
+     ]
+    },
+    {
+     "id": "cr09",
+     "archivo": "motion/chica-rosa/cr09-comenta.html",
+     "nombre": "Comenta + burbuja",
+     "comando": "/cr-comenta",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "CTA: palabra en burbuja de chat + etiqueta.",
+     "sfx": [
+      {
+       "s": "mensaje",
+       "en": 0.15
+      }
+     ]
+    },
+    {
+     "id": "cr10",
+     "archivo": "motion/chica-rosa/cr10-polaroid.html",
+     "nombre": "Polaroid volando",
+     "comando": "/cr-polaroid",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Foto/captura tipo polaroid con cinta que entra volando.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0
+      }
+     ]
+    }
+   ],
+   "tipografias": {
+    "titulos": "Poppins 900",
+    "fuerte": "Poppins 700",
+    "subtitulos": "Poppins 600",
+    "mano": "Caveat"
+   },
+   "subtitulos": "2–3 palabras Poppins 600 blanco; palabra clave dentro de una píldora de color"
+  },
+  {
+   "id": "tutorial",
+   "nombre": "Tutorial dividido",
+   "para": "Pantalla dividida · paso a paso",
+   "descripcion": "Pantalla dividida: gráficos arriba sobre hoja cuadriculada y tu cámara abajo. Ventanas, celular, gráficas, mapa mental.",
+   "estado": "listo",
+   "motion": [
+    {
+     "id": "tu01",
+     "archivo": "motion/tutorial/tu01-portada.html",
+     "nombre": "Portada pregunta",
+     "comando": "/tu-portada",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "\"¿Cómo empezar en ___?\" con barras que suben.",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0
+      },
+      {
+       "s": "tic-pasos",
+       "en": 0.7
+      }
+     ]
+    },
+    {
+     "id": "tu02",
+     "archivo": "motion/tutorial/tu02-paso.html",
+     "nombre": "Paso con progreso",
+     "comando": "/tu-paso",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "PASO 1 + título + puntitos de progreso.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 0
+      },
+      {
+       "s": "exito",
+       "en": 0.7
+      }
+     ]
+    },
+    {
+     "id": "tu03",
+     "archivo": "motion/tutorial/tu03-web.html",
+     "nombre": "Página web",
+     "comando": "/tu-web",
+     "dur": 3,
+     "tipo": "encima",
+     "uso": "Navegador que escribe la dirección y carga.",
+     "sfx": [
+      {
+       "s": "texto-escribe",
+       "en": 0.35
+      },
+      {
+       "s": "clic",
+       "en": 1.3
+      }
+     ]
+    },
+    {
+     "id": "tu04",
+     "archivo": "motion/tutorial/tu04-celular.html",
+     "nombre": "App en el celular",
+     "comando": "/tu-celular",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Celular sube, descarga la app y queda lista.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0.1
+      },
+      {
+       "s": "exito",
+       "en": 1.95
+      }
+     ]
+    },
+    {
+     "id": "tu05",
+     "archivo": "motion/tutorial/tu05-apps.html",
+     "nombre": "App + App",
+     "comando": "/tu-apps",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Dos apps con + y \"solo necesitas estas 2\".",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0
+      },
+      {
+       "s": "pop",
+       "en": 0.55
+      },
+      {
+       "s": "exito",
+       "en": 1.2
+      }
+     ]
+    },
+    {
+     "id": "tu06",
+     "archivo": "motion/tutorial/tu06-opciones.html",
+     "nombre": "Elige una opción",
+     "comando": "/tu-opciones",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "4 opciones, se marca una y se escribe la búsqueda.",
+     "sfx": [
+      {
+       "s": "clic",
+       "en": 1.0
+      },
+      {
+       "s": "texto-escribe",
+       "en": 1.9
+      }
+     ]
+    },
+    {
+     "id": "tu07",
+     "archivo": "motion/tutorial/tu07-grafica.html",
+     "nombre": "Gráfica de velas",
+     "comando": "/tu-grafica",
+     "dur": 4.5,
+     "tipo": "encima",
+     "uso": "Velas que se dibujan + marcas de techo y piso.",
+     "sfx": [
+      {
+       "s": "tic-pasos",
+       "en": 0.4
+      },
+      {
+       "s": "pop",
+       "en": 2.1
+      },
+      {
+       "s": "ding",
+       "en": 3.0
+      }
+     ]
+    },
+    {
+     "id": "tu08",
+     "archivo": "motion/tutorial/tu08-mapa.html",
+     "nombre": "Mapa mental",
+     "comando": "/tu-mapa",
+     "dur": 4,
+     "tipo": "encima",
+     "uso": "Centro + ramas que se dibujan.",
+     "sfx": [
+      {
+       "s": "pop",
+       "en": 0
+      },
+      {
+       "s": "clic-suave",
+       "en": 0.6
+      },
+      {
+       "s": "clic-suave",
+       "en": 0.96
+      },
+      {
+       "s": "clic-suave",
+       "en": 1.32
+      }
+     ]
+    },
+    {
+     "id": "tu09",
+     "archivo": "motion/tutorial/tu09-barras.html",
+     "nombre": "Número + barras",
+     "comando": "/tu-barras",
+     "dur": 3.5,
+     "tipo": "encima",
+     "uso": "Número que sube con barras y una destacada.",
+     "sfx": [
+      {
+       "s": "texto-digital",
+       "en": 0.1
+      },
+      {
+       "s": "ding",
+       "en": 1.2
+      }
+     ]
+    },
+    {
+     "id": "tu10",
+     "archivo": "motion/tutorial/tu10-referencias.html",
+     "nombre": "Tablero de referencias",
+     "comando": "/tu-referencias",
+     "dur": 4.5,
+     "tipo": "encima",
+     "uso": "3 tarjetas de referencia con notas a mano en rojo.",
+     "sfx": [
+      {
+       "s": "notificacion",
+       "en": 0.15
+      },
+      {
+       "s": "clic",
+       "en": 1.4
+      },
+      {
+       "s": "clic",
+       "en": 1.9
+      },
+      {
+       "s": "clic",
+       "en": 2.4
+      }
+     ]
+    }
+   ],
+   "tipografias": {
+    "titulos": "Poppins 800",
+    "fuerte": "Poppins 700",
+    "subtitulos": "Poppins 700",
+    "mano": "Caveat"
+   },
+   "subtitulos": "Poppins 700 blanco abajo (y 1500); palabra clave en oro"
+  }
+ ]
+}

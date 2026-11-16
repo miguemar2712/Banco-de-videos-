@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "antes", "type": "string", "label": "Frase pequeña arriba (cursiva)", "default": "lo más importante es"},
+  {"id": "palabra", "type": "string", "label": "Palabra", "default": "constancia"},
+  {"id": "nota", "type": "string", "label": "Etiqueta abajo", "default": "palabra clave"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color palabra", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color detalles", "default": "#C9A15F"},
+  {"id": "acento2", "type": "color", "label": "Color resaltador", "default": "#E9D88C"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed02-g { position: absolute; left: 0; right: 0; top: 780px; text-align: center; }
+  #ed02-antes { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 64px; color: var(--tinta2); margin-bottom: 18px; }
+  #ed02-caja { position: relative; display: inline-block; padding: 0 34px; }
+  #ed02-marca { position: absolute; left: 0; right: 0; top: 52%; height: 46%; background: var(--acento2); border-radius: 10px 30px 14px 26px; transform-origin: left center; rotate: -1.5deg; }
+  #ed02-palabra { position: relative; font-family: var(--serif); font-weight: 800; font-size: 168px; line-height: 1.05; letter-spacing: -5px; color: var(--tinta); white-space: nowrap; }
+  #ed02-nota { display: inline-flex; align-items: center; gap: 14px; margin-top: 30px; font: 500 30px var(--mono); letter-spacing: 4px; text-transform: uppercase; color: var(--tinta2); }
+  #ed02-nota i { display: block; width: 70px; height: 2px; background: var(--acento); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed02" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div id="ed02-bg" class="hoja"></div>
+  <div class="capa">
+    <div id="ed02-g">
+      <div id="ed02-antes" data-lu="antes"></div>
+      <div id="ed02-caja"><div id="ed02-marca"></div><div id="ed02-palabra" data-lu="palabra"></div></div><br />
+      <div id="ed02-nota"><i></i><span data-lu="nota"></span><i></i></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const p = document.querySelector('#ed02-palabra');
+  if (p.textContent.length > 9) p.style.fontSize = Math.max(90, 168 * 9 / p.textContent.length) + 'px';
+  const letras = LU.split(p, 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed02-antes', { y: 24, opacity: 0, filter: 'blur(6px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: .5, ease: 'power3.out' }, 0)
+    .fromTo(letras, { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out', stagger: .03 }, .2)
+    .fromTo('#ed02-marca', { scaleX: 0 }, { scaleX: 1, duration: .55, ease: 'power3.inOut' }, .7)
+    .fromTo('#ed02-nota', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .45, ease: 'power2.out' }, 1.0)
+    .to('#ed02-caja', { scale: 1.03, duration: 1.6, ease: 'sine.inOut' }, 1.2)
+    .to('#ed02-g', { y: -30, opacity: 0, filter: 'blur(8px)', duration: .4, ease: 'power2.in' }, 3.05);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed02"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

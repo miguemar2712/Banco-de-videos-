@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "arriba", "type": "string", "label": "Texto pequeño", "default": "este video fue"},
+  {"id": "texto", "type": "string", "label": "Texto grande", "default": "Editado por Claude"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { display: none; }
+  #ci08-card { position: absolute; left: 140px; right: 140px; top: 200px; padding: 36px 44px 40px; text-align: center; }
+  #ci08-arriba { font: 600 34px 'Inter'; color: #CBB99F; letter-spacing: .5px; }
+  #ci08-texto { font: 800 84px 'Inter'; letter-spacing: -3px; line-height: 1.05; margin: 10px 0 26px; }
+  #ci08-barra { height: 16px; border-radius: 10px; background: rgba(241,217,166,.14); overflow: hidden; }
+  #ci08-rel { height: 100%; width: 100%; border-radius: 10px; background: linear-gradient(90deg, #9C7238, #F1D9A6); transform-origin: left; box-shadow: 0 0 20px var(--acento); }
+  #ci08-pie { display: flex; justify-content: space-between; margin-top: 14px; font: 500 28px var(--mono); color: #CBB99F; }
+  #ci08-chispa { position: absolute; right: -26px; top: -26px; width: 80px; height: 80px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ci08" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="cine"></div>
+  <div class="capa">
+    <div id="ci08-card" class="vidrio">
+      <svg id="ci08-chispa" viewBox="0 0 100 100"><path d="M50 0 L58 42 L100 50 L58 58 L50 100 L42 58 L0 50 L42 42 Z" fill="#F1D9A6"/></svg>
+      <div id="ci08-arriba" data-lu="arriba"></div>
+      <div id="ci08-texto" class="oro-txt brillo-oro" data-lu="texto"></div>
+      <div id="ci08-barra"><div id="ci08-rel"></div></div>
+      <div id="ci08-pie"><span>render</span><span id="ci08-pc">0%</span></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const pc = document.querySelector('#ci08-pc'), n = { v: 0 };
+  const pinta = () => { pc.textContent = Math.round(n.v) + '%'; };
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ci08-card', { y: 60, opacity: 0, scale: .9 }, { y: 0, opacity: 1, scale: 1, duration: .6, ease: 'expo.out' }, 0)
+    .fromTo('#ci08-arriba', { opacity: 0 }, { opacity: 1, duration: .4 }, .2)
+    .fromTo('#ci08-texto', { opacity: 0, y: 20, filter: 'blur(10px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: .55, ease: 'power3.out' }, .3)
+    .fromTo('#ci08-rel', { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: 'power2.inOut' }, .6)
+    .fromTo(n, { v: 0 }, { v: 100, duration: 1.4, ease: 'power2.inOut', onUpdate: pinta }, .6)
+    .fromTo('#ci08-chispa', { scale: 0, rotate: -90 }, { scale: 1, rotate: 0, duration: .5, ease: 'back.out(3)' }, 2.0)
+    .to('#ci08-chispa', { rotate: 90, duration: 1.1, ease: 'none' }, 2.5)
+    .to('#ci08-card', { opacity: 0, y: -30, duration: .35, ease: 'power2.in' }, 3.15);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ci08"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

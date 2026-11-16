@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "p1", "type": "string", "label": "Paso 1", "default": "Sube tu video"},
+  {"id": "p2", "type": "string", "label": "Paso 2", "default": "Usa mis skills"},
+  {"id": "p3", "type": "string", "label": "Paso 3", "default": "Claude hace todo"},
+  {"id": "ritmo", "type": "number", "label": "Segundos entre pasos", "default": 0.9},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { display: none; }
+  #ci06-col { position: absolute; left: 150px; right: 150px; top: 150px; }
+  .ci06-p { display: flex; align-items: center; gap: 26px; padding: 24px 30px; border-radius: 28px; margin-bottom: 26px; position: relative; }
+  .ci06-n { width: 76px; height: 76px; border-radius: 22px; flex: none; display: flex; align-items: center; justify-content: center; font: 800 40px 'Inter'; color: #1A1410; background: linear-gradient(135deg, #F1D9A6, var(--acento)); box-shadow: 0 0 30px color-mix(in srgb, var(--acento) 55%, transparent); }
+  .ci06-t { font: 700 50px 'Inter'; letter-spacing: -1.5px; color: #F7F1E8; }
+  .ci06-linea { position: absolute; left: 68px; top: 100%; width: 4px; height: 26px; background: linear-gradient(var(--acento), transparent); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ci06" data-start="0" data-duration="4.5" data-width="1080" data-height="1920">
+  <div class="cine"></div>
+  <div class="capa"><div id="ci06-col"></div></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const col = document.querySelector('#ci06-col'), ritmo = +LU.vars.ritmo || .9;
+  const pasos = ['p1', 'p2', 'p3'].map((k) => LU.vars[k]).filter(Boolean).map((t, i, a) => {
+    const d = document.createElement('div'); d.className = 'ci06-p vidrio';
+    d.innerHTML = `<div class="ci06-n">${i + 1}</div><div class="ci06-t"></div>${i < a.length - 1 ? '<div class="ci06-linea"></div>' : ''}`;
+    d.querySelector('.ci06-t').textContent = t; col.appendChild(d); return d;
+  });
+  const tl = gsap.timeline({ paused: true });
+  pasos.forEach((p, i) => {
+    const t = .1 + i * ritmo;
+    tl.fromTo(p, { x: 120, opacity: 0, filter: 'blur(8px)' }, { x: 0, opacity: 1, filter: 'blur(0px)', duration: .5, ease: 'expo.out' }, t)
+      .fromTo(p.querySelector('.ci06-n'), { scale: 0, rotate: -90 }, { scale: 1, rotate: 0, duration: .45, ease: 'back.out(2.4)' }, t + .1);
+    const l = p.querySelector('.ci06-linea'); if (l) tl.fromTo(l, { scaleY: 0, transformOrigin: 'top' }, { scaleY: 1, duration: .3 }, t + .45);
+  });
+  tl.to('#ci06-col', { opacity: 0, y: -30, duration: .35, ease: 'power2.in' }, 4.15);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ci06"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "antes", "type": "string", "label": "Etiqueta antes", "default": "ANTES"},
+  {"id": "despues", "type": "string", "label": "Etiqueta después", "default": "DESPUÉS"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background: linear-gradient(90deg, #3d3a36 50%, #8a8580 50%); }
+  #cl06-linea { position: absolute; top: 0; bottom: 0; left: -2px; width: 4px; background: #fff; box-shadow: 0 0 18px 6px rgba(255,255,255,.75), 0 0 60px 20px rgba(255,236,210,.35); opacity: 0; }
+  .cl06-pill { position: absolute; top: 340px; transform: translateX(-50%); background: rgba(10,10,12,.72); border-radius: 999px; padding: 12px 26px; font: 700 26px var(--body); letter-spacing: 6px; color: #fff; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl06" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="cl06-linea"></div>
+    <div class="cl06-pill" id="cl06-a" data-lu="antes"></div>
+    <div class="cl06-pill" id="cl06-d" data-lu="despues"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  // Capa del ColorGrade: la línea de luz que barre (25→45) y las etiquetas que la siguen.
+  // El cambio de color (plano → cinematográfico) lo hace scripts/editar.py ("grade" en el plan) con el mismo tiempo.
+  const linea = document.querySelector('#cl06-linea'), a = document.querySelector('#cl06-a'), d = document.querySelector('#cl06-d');
+  const lim = (v) => Math.max(200, Math.min(880, v));
+  const est = { w: 0 };
+  const pinta = () => {
+    const x = est.w * 1080;
+    linea.style.left = (x - 2) + 'px'; linea.style.opacity = est.w > 0 && est.w < 1 ? 1 : 0;
+    a.style.left = (est.w === 0 ? 540 : lim((x + 1080) / 2)) + 'px'; a.style.opacity = 1 - est.w;
+    d.style.left = (est.w >= 1 ? 540 : lim(x / 2)) + 'px'; d.style.opacity = Math.min(1, est.w / .15);
+  };
+  pinta();
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo(est, { w: 0 }, { w: 1, duration: 20 / 30, ease: 'power2.inOut', onUpdate: pinta }, 25 / 30)
+    .to('#cl06-d', { opacity: 0, duration: 8 / 30 }, 82 / 30);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl06"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "antes", "type": "string", "label": "Etiqueta izquierda", "default": "ANTES"},
+  {"id": "ahora", "type": "string", "label": "Etiqueta derecha", "default": "AHORA"},
+  {"id": "pie1", "type": "string", "label": "Pie izquierda", "default": "crudo y sin cortar"},
+  {"id": "pie2", "type": "string", "label": "Pie derecha", "default": "editado por Claude"},
+  {"id": "imagen1", "type": "string", "label": "Imagen antes (opcional)", "default": ""},
+  {"id": "imagen2", "type": "string", "label": "Imagen ahora (opcional)", "default": ""},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "papel", "type": "color", "label": "Fondo", "default": "#F5E6DF"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#5A2630"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; }
+  .cr07-col { position: absolute; top: 380px; width: 430px; text-align: center; }
+  #cr07-a { left: 70px; } #cr07-b { right: 70px; }
+  .cr07-tag { display: inline-block; font: 900 46px var(--sans); color: #fff; background: var(--tinta); padding: 8px 28px; border-radius: 999px; margin-bottom: 18px; }
+  #cr07-a .cr07-tag { background: #fff; color: var(--tinta); }
+  .cr07-m { height: 700px; border-radius: 28px; border: 10px solid #fff; overflow: hidden; box-shadow: 0 30px 60px rgba(60,20,30,.22); background: linear-gradient(160deg, color-mix(in srgb, var(--tinta) 10%, #fff), color-mix(in srgb, var(--tinta) 30%, #fff)); }
+  .cr07-m img { width: 100%; height: 100%; object-fit: cover; }
+  #cr07-b .cr07-m { background: linear-gradient(160deg, color-mix(in srgb, var(--tinta) 30%, #fff), var(--tinta)); }
+  .cr07-pie { font: 700 36px var(--mano); color: var(--tinta); margin-top: 14px; }
+  #cr07-flecha { position: absolute; left: 430px; top: 250px; width: 220px; height: 120px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr07" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <svg id="cr07-flecha" viewBox="0 0 220 120"><path id="cr07-fp" d="M20 90 C 60 10, 150 10, 196 70" fill="none" stroke="var(--tinta)" stroke-width="7" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><path id="cr07-punta" d="M172 64 L198 74 L192 46" fill="none" stroke="var(--tinta)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0"/></svg>
+    <div class="cr07-col" id="cr07-a"><span class="cr07-tag" data-lu="antes"></span><div class="cr07-m" id="cr07-m1"></div><div class="cr07-pie" data-lu="pie1"></div></div>
+    <div class="cr07-col" id="cr07-b"><span class="cr07-tag" data-lu="ahora"></span><div class="cr07-m" id="cr07-m2"></div><div class="cr07-pie" data-lu="pie2"></div></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  [['imagen1', '#cr07-m1'], ['imagen2', '#cr07-m2']].forEach(([k, s]) => { if (LU.vars[k]) { const im = document.createElement('img'); im.src = LU.vars[k]; document.querySelector(s).appendChild(im); } });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cr07-a', { x: -500, rotate: -8 }, { x: 0, rotate: -2, duration: .6, ease: 'back.out(1.3)' }, 0)
+    .fromTo('#cr07-b', { x: 500, rotate: 8 }, { x: 0, rotate: 2, duration: .6, ease: 'back.out(1.3)' }, .9)
+    .to('#cr07-fp', { attr: { 'stroke-dashoffset': 0 }, duration: .5, ease: 'power2.inOut' }, .5)
+    .to('#cr07-punta', { opacity: 1, duration: .1 }, .95)
+    .fromTo('.cr07-tag', { scale: 0 }, { scale: 1, duration: .35, ease: 'back.out(3)', stagger: .9 }, .3)
+    .to('#cr07-b', { scale: 1.03, duration: .5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 2.0)
+    .to('.capa', { opacity: 0, duration: .3 }, 3.7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr07"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

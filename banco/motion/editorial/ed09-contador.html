@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "arriba", "type": "string", "label": "Texto arriba", "default": "vistas con Claude"},
+  {"id": "prefijo", "type": "string", "label": "Antes del número", "default": "+"},
+  {"id": "valor", "type": "number", "label": "Número final", "default": 12500},
+  {"id": "sufijo", "type": "string", "label": "Después del número", "default": ""},
+  {"id": "abajo", "type": "string", "label": "Texto abajo (cursiva)", "default": "en un solo video"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color número", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed09-grupo { position: absolute; left: 0; right: 0; top: 460px; text-align: center; }
+  #ed09-arriba { display: inline-block; font-family: var(--mono); font-size: 36px; letter-spacing: 6px; text-transform: uppercase; color: var(--tinta2); border: 2px solid color-mix(in srgb, var(--tinta) 25%, transparent); padding: 12px 28px; border-radius: 999px; }
+  #ed09-num { font-family: var(--serif); font-weight: 900; font-size: 250px; line-height: 1.05; letter-spacing: -8px; color: var(--tinta); font-variant-numeric: tabular-nums; margin-top: 30px; white-space: nowrap; }
+  #ed09-num em { font-style: normal; color: var(--acento); }
+  #ed09-barra { width: 640px; height: 12px; margin: 10px auto 0; border-radius: 12px; background: color-mix(in srgb, var(--tinta) 10%, transparent); overflow: hidden; }
+  #ed09-relleno { width: 100%; height: 100%; background: linear-gradient(90deg, var(--acento2), var(--acento)); transform-origin: left; }
+  #ed09-abajo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 76px; color: var(--tinta); margin-top: 40px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed09" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed09-grupo">
+      <div id="ed09-arriba" data-lu="arriba"></div>
+      <div id="ed09-num"><em id="ed09-pre"></em><span id="ed09-valor">0</span><em id="ed09-suf"></em></div>
+      <div id="ed09-barra"><div id="ed09-relleno"></div></div>
+      <div id="ed09-abajo" data-lu="abajo"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  document.querySelector('#ed09-pre').textContent = LU.vars.prefijo || '';
+  document.querySelector('#ed09-suf').textContent = LU.vars.sufijo || '';
+  const valorEl = document.querySelector('#ed09-valor');
+  const final = +LU.vars.valor || 0;
+  const n = { v: 0 };
+  const pinta = () => { valorEl.textContent = Math.round(n.v).toLocaleString('es-MX'); };
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed09-arriba', { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: 'power3.out' }, 0)
+    .fromTo('#ed09-num', { scale: .6, opacity: 0, filter: 'blur(16px)' }, { scale: 1, opacity: 1, filter: 'blur(0px)', duration: .55, ease: 'expo.out' }, .15)
+    .fromTo(n, { v: 0 }, { v: final, duration: 1.6, ease: 'power3.out', onUpdate: pinta }, .2)
+    .fromTo('#ed09-relleno', { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: 'power3.out' }, .2)
+    .to('#ed09-num', { scale: 1.06, duration: .18, yoyo: true, repeat: 1, ease: 'power2.out' }, 1.8)
+    .fromTo('#ed09-abajo', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, 1.75)
+    .to('#ed09-grupo', { y: -50, opacity: 0, filter: 'blur(10px)', duration: .45, ease: 'power2.in' }, 3.0);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed09"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

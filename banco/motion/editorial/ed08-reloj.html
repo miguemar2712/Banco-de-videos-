@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "frase", "type": "string", "label": "Frase pequeña", "default": "cuando te tardas"},
+  {"id": "palabra", "type": "string", "label": "Palabra grande (cursiva)", "default": "horas"},
+  {"id": "vueltas", "type": "number", "label": "Vueltas del minutero", "default": 3},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed08-reloj { position: absolute; left: 240px; top: 330px; width: 600px; height: 600px; border-radius: 50%; background: #FFFDF8; box-shadow: var(--sombra), inset 0 0 0 16px var(--papel2), inset 0 0 0 19px var(--tinta2); }
+  .ed08-num { position: absolute; width: 80px; height: 60px; margin: -30px 0 0 -40px; text-align: center; font-family: var(--serif); font-weight: 700; font-size: 52px; color: var(--tinta); }
+  .ed08-aguja { position: absolute; left: 300px; bottom: 300px; transform-origin: 50% 100%; border-radius: 10px; }
+  #ed08-hora { width: 18px; height: 160px; margin-left: -9px; background: var(--tinta); }
+  #ed08-min { width: 10px; height: 230px; margin-left: -5px; background: var(--acento); }
+  #ed08-eje { position: absolute; left: 280px; top: 280px; width: 40px; height: 40px; border-radius: 50%; background: var(--tinta); box-shadow: 0 0 0 8px #FFFDF8; }
+  #ed08-palabra { position: absolute; left: 0; right: 0; top: 760px; text-align: center; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 230px; color: var(--tinta); letter-spacing: -6px; }
+  #ed08-frase { position: absolute; left: 0; right: 0; top: 1010px; text-align: center; font-family: var(--sans); font-weight: 700; font-size: 54px; color: var(--tinta2); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed08" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed08-reloj">
+      <div class="ed08-aguja" id="ed08-hora"></div>
+      <div class="ed08-aguja" id="ed08-min"></div>
+      <div id="ed08-eje"></div>
+    </div>
+    <div id="ed08-palabra" data-lu="palabra"></div>
+    <div id="ed08-frase" data-lu="frase"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const reloj = document.querySelector('#ed08-reloj');
+  for (let i = 1; i <= 12; i++) {
+    const a = (i / 12) * Math.PI * 2, n = document.createElement('div');
+    n.className = 'ed08-num'; n.textContent = i;
+    n.style.left = (300 + Math.sin(a) * 222) + 'px'; n.style.top = (300 - Math.cos(a) * 222) + 'px';
+    reloj.appendChild(n);
+  }
+  const vueltas = +LU.vars.vueltas || 3;
+  const letras = LU.split(document.querySelector('#ed08-palabra'), 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed08-reloj', { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, duration: .8, ease: 'back.out(1.5)' }, 0)
+    .fromTo('.ed08-num', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .3, stagger: .03, ease: 'back.out(2)' }, .3)
+    .fromTo('#ed08-min', { rotate: 0 }, { rotate: 360 * vueltas, duration: 2.6, ease: 'power2.inOut' }, .5)
+    .fromTo('#ed08-hora', { rotate: 60 }, { rotate: 60 + 30 * vueltas, duration: 2.6, ease: 'power2.inOut' }, .5)
+    .fromTo(letras, { y: 120, opacity: 0, filter: 'blur(10px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: .6, stagger: .04, ease: 'expo.out' }, .9)
+    .fromTo('#ed08-frase', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .45, ease: 'power3.out' }, 1.3)
+    .to('#ed08-reloj', { x: 6, duration: .06, yoyo: true, repeat: 5, ease: 'none' }, 3.05)
+    .to('.capa', { opacity: 0, scale: .94, filter: 'blur(10px)', duration: .45, ease: 'power2.in' }, 3.5);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed08"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

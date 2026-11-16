@@ -1,0 +1,485 @@
+{
+ "carpetas": [
+  {
+   "id": "detras",
+   "nombre": "Detrás de ti",
+   "uso": "Palabras, letreros y portadas gigantes detrás de tu cabeza"
+  },
+  {
+   "id": "redes",
+   "nombre": "Reels y redes",
+   "uso": "Tus reels, tu perfil, comentarios, mensajes y el botón de seguir"
+  },
+  {
+   "id": "apps",
+   "nombre": "Apps y vidrio",
+   "uso": "Interfaces tipo iPhone y Claude: vidrio, gráficas, listas y terminal"
+  },
+  {
+   "id": "papel",
+   "nombre": "Papel y marcador",
+   "uso": "Look editorial hecho a mano: marcador, cinta, sellos y titulares"
+  },
+  {
+   "id": "camara",
+   "nombre": "Cámara y color",
+   "uso": "Movimientos de cámara, zooms, color y transiciones"
+  }
+ ],
+ "efectos": [
+  {
+   "id": "noise",
+   "nombre": "Ruido de reels",
+   "uso": "Tus reels se apilan detrás de tu cabeza",
+   "carpeta": "redes",
+   "ejemplo": {}
+  },
+  {
+   "id": "lineup",
+   "nombre": "Fila numerada",
+   "uso": "Tarjetas numeradas en abanico sobre tu cabeza",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "Cortes|Subtítulos|Zoom|Color"
+   }
+  },
+  {
+   "id": "locked-on",
+   "nombre": "Fijado",
+   "uso": "Corchetes se fijan en tu cara y la cámara te sigue",
+   "carpeta": "camara",
+   "ejemplo": {
+    "text": "CREADOR"
+   }
+  },
+  {
+   "id": "orbit",
+   "nombre": "Órbita",
+   "uso": "Tus reels giran alrededor de tu cabeza",
+   "carpeta": "redes",
+   "ejemplo": {}
+  },
+  {
+   "id": "lean-in",
+   "nombre": "Acercamiento",
+   "uso": "Zoom rápido en una palabra",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "backdrop-word",
+   "nombre": "Palabra detrás",
+   "uso": "Palabra gigante que cae detrás de ti",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CLAUDE"
+   }
+  },
+  {
+   "id": "spotlight",
+   "nombre": "Foco",
+   "uso": "Se apagan las luces y solo tú quedas iluminado",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CLAUDE"
+   }
+  },
+  {
+   "id": "glitter-spotlight",
+   "nombre": "Foco dorado",
+   "uso": "Rayos dorados y destellos detrás de tu cabeza",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CLAUDE"
+   }
+  },
+  {
+   "id": "the-bill",
+   "nombre": "Ticket",
+   "uso": "Tus instrucciones se imprimen como un ticket",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "Corta las pausas|Pon subtítulos|Agrega zoom|Color de cine"
+   }
+  },
+  {
+   "id": "moody",
+   "nombre": "Color moody",
+   "uso": "Corrección de color oscura y cinematográfica",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "swipe",
+   "nombre": "Antes y después",
+   "uso": "Barra que desliza del antes al después",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "todo",
+   "nombre": "Lista de tareas",
+   "uso": "Lista junto a tu cabeza que se va marcando",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "Grabar|Subir a Claude|Publicar",
+    "title": "Hoy"
+   }
+  },
+  {
+   "id": "comment-box",
+   "nombre": "Caja de comentario",
+   "uso": "Un comentario de Instagram se escribe solo",
+   "carpeta": "redes",
+   "ejemplo": {
+    "text": "CLAUDE"
+   }
+  },
+  {
+   "id": "tap",
+   "nombre": "Botón Seguir",
+   "uso": "El botón Seguir pasa a Siguiendo",
+   "carpeta": "redes",
+   "ejemplo": {}
+  },
+  {
+   "id": "pause-point",
+   "nombre": "Pausa y flecha",
+   "uso": "Congela la imagen y te señala con una flecha",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "yo"
+   }
+  },
+  {
+   "id": "uninstall",
+   "nombre": "Desinstalar",
+   "uso": "Barra de desinstalar con glitch",
+   "carpeta": "camara",
+   "ejemplo": {
+    "text": "Desinstalando CapCut"
+   }
+  },
+  {
+   "id": "reel-frame",
+   "nombre": "Marco de reel",
+   "uso": "Tu video se encoge a una tarjeta de reel",
+   "carpeta": "redes",
+   "ejemplo": {
+    "text": "@tu_usuario"
+   }
+  },
+  {
+   "id": "shortcut-rain",
+   "nombre": "Lluvia de teclas",
+   "uso": "Teclas que llueven detrás de ti",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "reject-stamp",
+   "nombre": "Sello",
+   "uso": "Un sello rojo cae de golpe",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "NO"
+   }
+  },
+  {
+   "id": "countdown-flip",
+   "nombre": "Cuenta regresiva",
+   "uso": "Reloj 3, 2, 1 sobre tu cabeza",
+   "carpeta": "papel",
+   "ejemplo": {}
+  },
+  {
+   "id": "rabbit-hole",
+   "nombre": "Túnel",
+   "uso": "La imagen se mete en sí misma girando",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "cover-star",
+   "nombre": "Portada de revista",
+   "uso": "Te vuelves portada de revista",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "LEVEL UP",
+    "lines": "Edita con Claude|Sin CapCut|Gratis"
+   }
+  },
+  {
+   "id": "scribble",
+   "nombre": "Garabatos",
+   "uso": "Garabatos de marcador alrededor de ti",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "yo"
+   }
+  },
+  {
+   "id": "glass-widgets",
+   "nombre": "Widgets de vidrio",
+   "uso": "Widgets de vidrio flotando alrededor de tu cabeza",
+   "carpeta": "apps",
+   "ejemplo": {
+    "name": "Level Up",
+    "handle": "@tu_usuario"
+   }
+  },
+  {
+   "id": "red-collage",
+   "nombre": "Collage rojo",
+   "uso": "Tú en blanco y negro, palabra roja gigante detrás",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CLAUDE",
+    "lines": "Corta|Edita|Publica"
+   }
+  },
+  {
+   "id": "split-headline",
+   "nombre": "Titular dividido",
+   "uso": "Un titular baja y te empuja a la mitad de abajo",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "Claude edita|tus videos",
+    "hl": "Claude"
+   }
+  },
+  {
+   "id": "pastel-word",
+   "nombre": "Palabra pastel",
+   "uso": "Cuarto lavanda, palabra gigante y tarjeta de perfil",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CLAUDE",
+    "name": "Level Up",
+    "handle": "@tu_usuario"
+   }
+  },
+  {
+   "id": "check-pills",
+   "nombre": "Píldoras con clic",
+   "uso": "Hoja cuadriculada, reels detrás, un cursor hace clic",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "Subtítulos|Zoom|Color"
+   }
+  },
+  {
+   "id": "timeline",
+   "nombre": "Línea de tiempo",
+   "uso": "Look de película con línea de edición y REC",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "Editando",
+    "sub": "con Claude"
+   }
+  },
+  {
+   "id": "headline-box",
+   "nombre": "Titular en caja",
+   "uso": "Zoom con titular de dos líneas",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "Esto lo editó|Claude"
+   }
+  },
+  {
+   "id": "profile-wall",
+   "nombre": "Muro de perfil",
+   "uso": "Tus reels llenan la pared con un contador",
+   "carpeta": "redes",
+   "ejemplo": {
+    "label": "videos"
+   }
+  },
+  {
+   "id": "tier-list",
+   "nombre": "Tier list",
+   "uso": "Una tier list y Claude vuela a la S",
+   "carpeta": "apps",
+   "ejemplo": {
+    "title": "Editores",
+    "item": "Claude"
+   }
+  },
+  {
+   "id": "broll-split",
+   "nombre": "B-roll dividido",
+   "uso": "B-roll arriba con etiqueta, tú abajo",
+   "carpeta": "camara",
+   "ejemplo": {
+    "text": "Gratis"
+   }
+  },
+  {
+   "id": "phone-fan",
+   "nombre": "Abanico de teléfonos",
+   "uso": "Tus reels en abanico como cartas",
+   "carpeta": "redes",
+   "ejemplo": {
+    "text": "Mis videos|editados con Claude"
+   }
+  },
+  {
+   "id": "dot-reveal",
+   "nombre": "Puntos",
+   "uso": "Tu imagen se arma con puntos brillantes",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "headline-wall",
+   "nombre": "Muro de titulares",
+   "uso": "Tus titulares se apilan detrás y aparece un total",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "Corta las pausas::1 clic|Subtítulos solos::Claude|Color de cine::auto",
+    "total": "3",
+    "label": "pasos"
+   }
+  },
+  {
+   "id": "checklist",
+   "nombre": "Checklist de Claude",
+   "uso": "Lista de tareas de Claude bajo tu barbilla",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "Cortes::listo|Subtítulos::listo|Zoom::listo",
+    "title": "Claude"
+   }
+  },
+  {
+   "id": "liquid-glass-graph",
+   "nombre": "Gráfica de vidrio",
+   "uso": "Tarjeta de vidrio con gráfica que sube",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "seguidores",
+    "from": "0",
+    "to": "10K"
+   }
+  },
+  {
+   "id": "carousel-spin",
+   "nombre": "Carrusel 3D",
+   "uso": "Tus reels giran alrededor de ti en 3D",
+   "carpeta": "redes",
+   "ejemplo": {}
+  },
+  {
+   "id": "match-cut",
+   "nombre": "Corte de noticias",
+   "uso": "Páginas de noticias que cortan en una palabra",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "Claude"
+   }
+  },
+  {
+   "id": "apple-toggles",
+   "nombre": "Interruptores iPhone",
+   "uso": "Interruptores de iPhone que se encienden",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "Cortes|Subtítulos|Zoom"
+   }
+  },
+  {
+   "id": "led-sign",
+   "nombre": "Letrero LED",
+   "uso": "Se apagan las luces y un letrero LED se escribe",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "EDITADO|CON CLAUDE"
+   }
+  },
+  {
+   "id": "slow-push",
+   "nombre": "Empuje lento",
+   "uso": "Zoom lento de cine con el fondo desenfocado",
+   "carpeta": "camara",
+   "ejemplo": {}
+  },
+  {
+   "id": "over-the-shoulder-zoom",
+   "nombre": "Sobre el hombro",
+   "uso": "La cámara va a una esquina y aparece una gráfica",
+   "carpeta": "apps",
+   "ejemplo": {
+    "text": "antes|después",
+    "to": "1:50|0:37"
+   }
+  },
+  {
+   "id": "messages",
+   "nombre": "Mensajes",
+   "uso": "Notificaciones de iMessage una tras otra",
+   "carpeta": "redes",
+   "ejemplo": {
+    "text": "Ya está tu video|Quedó increíble|¿Cómo lo hiciste?",
+    "title": "Mensajes"
+   }
+  },
+  {
+   "id": "place-in-grid",
+   "nombre": "En tu perfil",
+   "uso": "Te encoges al centro de tu perfil de 3x3",
+   "carpeta": "redes",
+   "ejemplo": {}
+  },
+  {
+   "id": "tape-label",
+   "nombre": "Cinta",
+   "uso": "Una cinta amarilla con tu frase en el pecho",
+   "carpeta": "papel",
+   "ejemplo": {
+    "text": "editado con Claude"
+   }
+  },
+  {
+   "id": "select-resize",
+   "nombre": "Seleccionar y agrandar",
+   "uso": "Una caja azul agarra tu número y lo agranda",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "2X"
+   }
+  },
+  {
+   "id": "wave-trim",
+   "nombre": "Recorte de voz",
+   "uso": "Los silencios de tu voz se recortan en pantalla",
+   "carpeta": "apps",
+   "ejemplo": {}
+  },
+  {
+   "id": "huge-strike",
+   "nombre": "Palabra tachada",
+   "uso": "Palabra gigante detrás que se tacha",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "CapCut"
+   }
+  },
+  {
+   "id": "crayon-write",
+   "nombre": "Crayón",
+   "uso": "Un crayón rojo escribe tu palabra detrás",
+   "carpeta": "detras",
+   "ejemplo": {
+    "text": "Claude"
+   }
+  },
+  {
+   "id": "fan-build",
+   "nombre": "Abanico de portadas",
+   "uso": "Tus portadas se reparten en abanico detrás",
+   "carpeta": "redes",
+   "ejemplo": {}
+  }
+ ]
+}

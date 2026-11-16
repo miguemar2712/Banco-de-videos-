@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "items", "type": "string", "label": "Píldoras (separadas por coma)", "default": "subtítulos,cortes,animaciones"},
+  {"id": "ritmo", "type": "number", "label": "Segundos entre píldoras", "default": 0.5},
+  {"id": "lado", "type": "string", "label": "Lado (izquierda | derecha)", "default": "izquierda"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "tinta", "type": "color", "label": "Color píldora", "default": "#5A2630"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  :root { --papel: #F5E6DF; --tinta: #5A2630; }
+  #cr02-col { position: absolute; top: 230px; display: flex; flex-direction: column; gap: 18px; }
+  .izq #cr02-col { left: 70px; align-items: flex-start; } .der #cr02-col { right: 70px; align-items: flex-end; }
+  .cr02-p { display: inline-flex; align-items: center; gap: 16px; background: #fff; color: var(--tinta); font: 700 46px var(--sans); padding: 12px 30px 12px 14px; border-radius: 999px; box-shadow: 0 12px 30px rgba(60,20,30,.18); }
+  .cr02-c { width: 54px; height: 54px; border-radius: 50%; background: var(--tinta); display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cr02" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa"><div id="cr02-col"></div></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  document.querySelector('#root').classList.add(LU.vars.lado === 'derecha' ? 'der' : 'izq');
+  const col = document.querySelector('#cr02-col'), ritmo = +LU.vars.ritmo || .5;
+  const ps = String(LU.vars.items).split(',').map((s) => s.trim()).filter(Boolean).slice(0, 6).map((t) => {
+    const p = document.createElement('div'); p.className = 'cr02-p';
+    p.innerHTML = '<span class="cr02-c"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span></span>';
+    p.lastChild.textContent = t; col.appendChild(p); return p;
+  });
+  const tl = gsap.timeline({ paused: true });
+  ps.forEach((p, i) => {
+    tl.fromTo(p, { scale: 0, opacity: 0, transformOrigin: LU.vars.lado === 'derecha' ? '100% 50%' : '0% 50%' }, { scale: 1, opacity: 1, duration: .4, ease: 'back.out(2.4)' }, .1 + i * ritmo)
+      .fromTo(p.querySelector('.cr02-c'), { rotate: -120, scale: .3 }, { rotate: 0, scale: 1, duration: .4, ease: 'back.out(3)' }, .2 + i * ritmo);
+  });
+  tl.to(ps, { scale: 0, opacity: 0, duration: .22, stagger: .05, ease: 'back.in(2)' }, 3.1);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cr02"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

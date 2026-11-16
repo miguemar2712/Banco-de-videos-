@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "t1", "type": "string", "label": "Etiqueta 1", "default": "Storytelling"},
+  {"id": "c1", "type": "string", "label": "Texto 1", "default": "Es tu historia, los altos, los bajos"},
+  {"id": "t2", "type": "string", "label": "Etiqueta 2", "default": "Contenido de valor"},
+  {"id": "c2", "type": "string", "label": "Texto 2", "default": "Tutoriales, tips y educación"},
+  {"id": "t3", "type": "string", "label": "Etiqueta 3", "default": "Contenido de alcance"},
+  {"id": "c3", "type": "string", "label": "Texto 3", "default": "Trends, likes y vistas"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento2", "type": "color", "label": "Color resaltado", "default": "#E9D88C"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .ed04-tarjeta { position: absolute; top: 300px; width: 300px; }
+  .ed04-tarjeta .tag { font-size: 24px; padding: 8px 18px; margin-bottom: 14px; white-space: nowrap; }
+  .ed04-papel { background: #FFFDF8; border-radius: 6px; padding: 34px 26px; box-shadow: var(--sombra); min-height: 420px; display: flex; align-items: center; }
+  .ed04-papel p { font-family: var(--serif); font-weight: 700; font-size: 44px; line-height: 1.12; text-transform: uppercase; color: var(--tinta); text-align: center; width: 100%; }
+  .ed04-papel p .palabra:nth-child(3n+2) { font-style: italic; font-weight: 500; text-transform: lowercase; background: linear-gradient(transparent 55%, var(--acento2) 55%); }
+  #ed04-k1 { left: 50px; transform-origin: 50% 0; }
+  #ed04-k2 { left: 390px; top: 380px; }
+  #ed04-k3 { left: 730px; top: 300px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed04" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div class="ed04-tarjeta" id="ed04-k1"><span class="tag" data-lu="t1"></span><div class="ed04-papel"><p data-lu="c1"></p></div></div>
+    <div class="ed04-tarjeta" id="ed04-k2"><span class="tag" data-lu="t2"></span><div class="ed04-papel"><p data-lu="c2"></p></div></div>
+    <div class="ed04-tarjeta" id="ed04-k3"><span class="tag" data-lu="t3"></span><div class="ed04-papel"><p data-lu="c3"></p></div></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  document.querySelectorAll('.ed04-papel p').forEach((p) => LU.split(p));
+  const tl = gsap.timeline({ paused: true });
+  [['#ed04-k1', -5, 0], ['#ed04-k2', 3, 1.1], ['#ed04-k3', -2, 2.2]].forEach(([sel, rot, t]) => {
+    tl.fromTo(sel, { y: -260, opacity: 0, rotate: rot * 4 }, { y: 0, opacity: 1, rotate: rot, duration: .75, ease: 'back.out(1.4)' }, t)
+      .fromTo(sel + ' .tag', { scale: 0 }, { scale: 1, duration: .4, ease: 'back.out(2.5)' }, t + .25)
+      .fromTo(sel + ' .palabra', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .35, stagger: .05, ease: 'power2.out' }, t + .3);
+  });
+  tl.to('.ed04-tarjeta', { y: -12, duration: 1.2, ease: 'sine.inOut', stagger: .15 }, 3.0)
+    .to('.ed04-tarjeta', { y: -300, opacity: 0, duration: .45, ease: 'power3.in', stagger: .08 }, 4.4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed04"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

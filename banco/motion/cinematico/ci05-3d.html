@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "palabra", "type": "string", "label": "Palabra 3D", "default": "Claude"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "acento", "type": "color", "label": "Color", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { display: none; }
+  #ci05-esc { position: absolute; left: 0; right: 0; top: 260px; height: 400px; perspective: 1400px; display: flex; justify-content: center; align-items: center; }
+  #ci05-p { font: 900 230px 'Inter', sans-serif; letter-spacing: -10px; color: #F6E7C8; white-space: nowrap; transform-style: preserve-3d;
+    text-shadow: 0 1px 0 #d9bd87, 0 2px 0 #cfb17a, 0 3px 0 #c4a46c, 0 4px 0 #b9975f, 0 5px 0 #ad8a53, 0 6px 0 #a17d47, 0 7px 0 #94703c, 0 8px 0 #866332, 0 9px 0 #785728, 0 10px 0 #6a4b1f,
+      0 14px 30px rgba(0,0,0,.6), 0 0 80px color-mix(in srgb, var(--acento) 45%, transparent); }
+  #ci05-reflejo { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.75) 48%, transparent 60%); mix-blend-mode: overlay; -webkit-background-clip: text; background-clip: text; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ci05" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="cine"></div>
+  <div class="capa"><div id="ci05-esc"><div id="ci05-p" data-lu="palabra"></div></div></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const p = document.querySelector('#ci05-p'); if (p.textContent.length > 6) p.style.fontSize = Math.max(110, 230 * 6 / p.textContent.length) + 'px';
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo(p, { rotateX: 75, rotateY: -30, z: -900, opacity: 0, filter: 'blur(14px)' }, { rotateX: 0, rotateY: 0, z: 0, opacity: 1, filter: 'blur(0px)', duration: 1.0, ease: 'expo.out' }, 0)
+    .to(p, { rotateY: 14, rotateX: -6, duration: 1.6, ease: 'sine.inOut' }, 1.0)
+    .to(p, { rotateY: 40, z: -500, opacity: 0, filter: 'blur(10px)', duration: .4, ease: 'power2.in' }, 2.6);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ci05"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

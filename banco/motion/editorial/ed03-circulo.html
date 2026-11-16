@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "palabra", "type": "string", "label": "Palabra clave", "default": "nicho"},
+  {"id": "nota", "type": "string", "label": "Nota a mano", "default": "¡esto es la base!"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color palabra", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color del trazo", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed03-g { position: absolute; left: 140px; top: 1140px; width: 640px; height: 300px; }
+  #ed03-palabra { position: absolute; left: 0; right: 0; top: 70px; text-align: center; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 132px; line-height: 1; color: var(--tinta); white-space: nowrap; text-shadow: 0 2px 10px rgba(255,255,255,.35); }
+  #ed03-trazo { position: absolute; left: -20px; top: -10px; width: 680px; height: 290px; overflow: visible; }
+  #ed03-nota { position: absolute; right: -40px; top: -50px; font-family: var(--mano); font-weight: 700; font-size: 58px; color: var(--acento); rotate: 6deg; white-space: nowrap; }
+  #ed03-flecha { position: absolute; right: 40px; top: 10px; width: 90px; height: 70px; overflow: visible; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed03" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed03-g">
+      <svg id="ed03-trazo" viewBox="0 0 680 290"><path id="ed03-p" d="M372 28 C 190 6, 40 40, 30 140 C 22 230, 200 268, 360 262 C 520 256, 660 214, 650 128 C 642 54, 520 18, 330 34" fill="none" stroke="var(--acento)" stroke-width="7" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+      <div id="ed03-palabra" data-lu="palabra"></div>
+      <svg id="ed03-flecha" viewBox="0 0 90 70"><path id="ed03-f" d="M80 6 C 60 20, 40 40, 14 56 M14 56 L34 54 M14 56 L20 38" fill="none" stroke="var(--acento)" stroke-width="5" stroke-linecap="butt" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+      <div id="ed03-nota" data-lu="nota"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const letras = LU.split(document.querySelector('#ed03-palabra'), 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo(letras, { y: 40, opacity: 0, rotate: 6 }, { y: 0, opacity: 1, rotate: 0, duration: .5, ease: 'expo.out', stagger: .04 }, 0)
+    .to('#ed03-p', { attr: { 'stroke-dashoffset': 0 }, duration: .75, ease: 'power2.inOut' }, .35)
+    .to('#ed03-f', { attr: { 'stroke-dashoffset': 0 }, duration: .35, ease: 'power2.out' }, 1.05)
+    .fromTo('#ed03-nota', { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .4, ease: 'back.out(2.4)' }, 1.25)
+    .to('#ed03-g', { opacity: 0, y: -20, duration: .3, ease: 'power2.in' }, 2.7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed03"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Banco de Motion Graphics · Level Up</title>
+<link rel="icon" href="assets/levelup-logo.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,500&family=DM+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --papel: #F3ECE0; --blanco: #FFFFFF; --linea: #E2D6C4; --tinta: #3A2A1F; --tinta2: #8C7865;
+    --cafe: #5E4D40; --oro: #C9A15F; --oro2: #E6C98F; --oro-txt: #8E6630;
+    --sombra: 0 1px 2px rgba(58,42,31,.06), 0 10px 30px rgba(58,42,31,.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--tinta); font: 14px/1.45 Inter, system-ui, sans-serif;
+    background-color: var(--papel);
+    background-image: linear-gradient(rgba(58,42,31,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(58,42,31,.05) 1px, transparent 1px);
+    background-size: 36px 36px; }
+  button { font: inherit; cursor: pointer; }
+
+  header { color: #fff; padding: 22px 0 0;
+    background: radial-gradient(rgba(226,196,140,.16) 1px, transparent 1.4px) 0 0/7px 7px, linear-gradient(120deg, #4E4035 0%, #7A6858 45%, #5A4A3D 100%); }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+  .top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .top img { height: 58px; }
+  .top .sep { width: 1px; height: 40px; background: rgba(226,196,140,.4); }
+  .top h1 { margin: 0; font: 600 20px Inter; letter-spacing: .2px; }
+  .top p { margin: 2px 0 0; color: #E2C48C; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; }
+  .colores { margin-left: auto; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.08); border: 1px solid rgba(226,196,140,.35); padding: 8px 12px; border-radius: 14px; }
+  .colores span { font-size: 12px; color: #EADBC4; }
+  .colores label { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10px; color: #EADBC4; cursor: pointer; }
+  .colores input { width: 30px; height: 30px; padding: 0; border: 2px solid rgba(255,255,255,.6); border-radius: 50%; background: none; cursor: pointer; overflow: hidden; }
+  .colores input::-webkit-color-swatch-wrapper { padding: 0; } .colores input::-webkit-color-swatch { border: 0; border-radius: 50%; }
+  .colores button { background: transparent; color: #EADBC4; border: 1px solid rgba(226,196,140,.4); border-radius: 9px; padding: 5px 10px; font-size: 12px; }
+
+  nav { display: flex; gap: 6px; margin-top: 22px; overflow-x: auto; }
+  nav button { flex: none; background: transparent; border: 0; color: #EADBC4; padding: 12px 18px; border-radius: 14px 14px 0 0; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  nav button.on { background: var(--papel); color: var(--tinta); }
+  nav small { font-size: 11px; opacity: .75; }
+  nav .pronto { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; background: rgba(226,196,140,.25); color: #F1D9A6; padding: 2px 7px; border-radius: 99px; }
+  nav button.on .pronto { background: rgba(201,161,95,.18); color: var(--oro-txt); }
+
+  .estilo { display: grid; grid-template-columns: 1fr auto; gap: 16px 30px; align-items: end; padding: 28px 0 22px; }
+  .estilo h2 { margin: 0; font: 700 40px/1.1 'Playfair Display', serif; }
+  .estilo h2 em { font-weight: 500; color: var(--oro-txt); }
+  .estilo .para { color: var(--tinta2); font-weight: 600; margin-top: 6px; }
+  .estilo .desc { color: var(--tinta2); max-width: 680px; margin-top: 8px; }
+  .fichas { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .ficha { background: var(--blanco); border: 1px solid var(--linea); border-radius: 99px; padding: 4px 12px; font-size: 12px; color: var(--tinta2); }
+  .ficha b { color: var(--tinta); font-weight: 600; }
+  .switch { display: flex; align-items: center; gap: 10px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 10px 14px; box-shadow: var(--sombra); font-weight: 600; white-space: nowrap; cursor: pointer; user-select: none; }
+  .switch i { width: 38px; height: 22px; border-radius: 99px; background: var(--linea); position: relative; transition: .2s; }
+  .switch i::after { content: ''; position: absolute; left: 3px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: .2s; }
+  .switch.on i { background: var(--oro); } .switch.on i::after { left: 19px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 20px; padding-bottom: 60px; }
+  .card { background: var(--blanco); border: 1px solid var(--linea); border-radius: 20px; overflow: hidden; box-shadow: var(--sombra); display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(58,42,31,.14); }
+  .vista { position: relative; aspect-ratio: 9/16; overflow: hidden; background: #2a221c center/cover no-repeat; cursor: zoom-in; }
+  .vista video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .vista iframe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  .switches { display: flex; flex-direction: column; gap: 8px; }
+  .guia { position: absolute; inset: 0; pointer-events: none; display: none; font: 700 9px Inter; letter-spacing: .5px; text-transform: uppercase; }
+  .zonas .guia { display: block; }
+  .guia b { position: absolute; display: flex; align-items: flex-start; padding: 3px 5px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+  .g-arriba { left: 0; right: 0; top: 0; height: 16.7%; background: rgba(214,69,65,.28); border-bottom: 1px dashed #D64541; }
+  .g-cara { left: 8.9%; right: 8.9%; top: 16.7%; height: 31.2%; border: 1px dashed rgba(255,255,255,.7); }
+  .g-subs { left: 11.1%; right: 11.1%; top: 47.9%; height: 7.8%; background: rgba(46,160,90,.25); border: 1px dashed #2EA05A; }
+  .g-elem { left: 11.1%; width: 77.8%; top: 56.25%; height: 21.9%; background: rgba(201,161,95,.22); border: 1px dashed #C9A15F; }
+  .g-abajo { left: 0; right: 0; top: 78.6%; bottom: 0; background: rgba(214,69,65,.28); border-top: 1px dashed #D64541; }
+  .meta { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .l1 { display: flex; justify-content: space-between; align-items: center; }
+  .cod { font: 500 12px 'DM Mono', monospace; color: var(--oro-txt); background: rgba(201,161,95,.13); padding: 2px 8px; border-radius: 6px; }
+  .dur { font: 12px 'DM Mono', monospace; color: var(--tinta2); }
+  .meta h3 { margin: 2px 0 0; font-size: 16px; }
+  .meta p { margin: 0; color: var(--tinta2); font-size: 13px; flex: 1; }
+  .cmd { display: flex; gap: 6px; margin-top: 8px; }
+  .cmd code { flex: 1; background: var(--papel); border: 1px solid var(--linea); border-radius: 10px; padding: 8px 10px; font: 13px 'DM Mono', monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cmd button { background: var(--cafe); color: #fff; border: 0; border-radius: 10px; padding: 0 14px; font-weight: 600; font-size: 12px; }
+  .cmd button:hover { background: var(--oro); }
+
+  .carpetas { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+  .carpetas button { text-align: left; background: var(--blanco); border: 1px solid var(--linea); border-radius: 16px; padding: 12px 14px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: center; cursor: pointer; color: var(--tinta); box-shadow: var(--sombra); }
+  .carpetas button span { grid-row: span 2; font-size: 22px; }
+  .carpetas button b { font: 700 16px 'Playfair Display', serif; }
+  .carpetas button small { color: var(--tinta2); font-size: 11.5px; line-height: 1.3; }
+  .carpetas button.on { border-color: var(--oro); background: #FBF4E6; box-shadow: 0 0 0 2px rgba(201,161,95,.35); }
+  .sin-previa { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 18px; color: #E9DCCB; font-size: 13px; text-align: center; }
+  .sin-previa b { font: 700 20px 'Playfair Display', serif; color: #fff; }
+  .sin-previa code { font: 11px 'DM Mono', monospace; background: rgba(255,255,255,.08); padding: 6px; border-radius: 8px; word-break: break-all; }
+  .vacio { text-align: center; padding: 70px 20px 90px; color: var(--tinta2); }
+  .vacio b { display: block; font: 500 italic 30px 'Playfair Display', serif; color: var(--tinta); margin-bottom: 8px; }
+
+  .modal { position: fixed; inset: 0; background: rgba(42,32,24,.72); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+  .modal.on { display: flex; }
+  .modal .caja { display: flex; gap: 26px; align-items: center; }
+  .modal .vista { width: min(420px, 46vh); border-radius: 22px; box-shadow: 0 40px 90px rgba(0,0,0,.5); cursor: default; }
+  .modal .info { color: #fff; max-width: 320px; }
+  .modal .info h3 { font: 700 34px/1.1 'Playfair Display', serif; margin: 8px 0; }
+  .modal .info p { color: #E9DCCB; }
+  .modal .info button { margin-top: 10px; margin-right: 6px; background: #F3ECE0; color: var(--tinta); border: 0; border-radius: 10px; padding: 9px 14px; font-weight: 700; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--cafe); color: #fff; padding: 9px 18px; border-radius: 99px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 60; }
+  .toast.on { opacity: 1; }
+  @media (max-width: 700px) {
+    .wrap { padding: 0 16px; } .colores { margin-left: 0; width: 100%; justify-content: space-between; }
+    .estilo { grid-template-columns: 1fr; } .estilo h2 { font-size: 30px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .modal .caja { flex-direction: column; } .modal .info { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="assets/levelup-logo.png" alt="Level Up" />
+      <span class="sep"></span>
+      <div><h1>Banco de Motion Graphics Level Up</h1><p>Copia el comando y pégaselo a Claude</p></div>
+      <div class="colores" id="colores">
+        <span>Tus colores</span>
+        <label><input type="color" data-k="papel" />fondo</label>
+        <label><input type="color" data-k="tinta" />texto</label>
+        <label><input type="color" data-k="acento" />acento</label>
+        <label><input type="color" data-k="acento2" />suave</label>
+        <button id="reset" title="Volver a la paleta Level Up">Restablecer</button>
+      </div>
+    </div>
+    <nav id="tabs"></nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="estilo" id="estilo"></section>
+  <section class="grid" id="grid"></section>
+</main>
+<div class="modal" id="modal"><div class="caja"><div class="vista" id="m-vista"></div><div class="info" id="m-info"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const BASE = { papel: '#F3ECE0', tinta: '#3A2A1F', acento: '#C9A15F', acento2: '#E9D88C' };
+const guarda = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+const lee = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } };
+let colores = lee('lu-colores', { ...BASE });
+let sobreVideo = lee('lu-sobre-video', false);
+let verZona = lee('lu-ver-zona', false);
+let catalogo = null, estiloActual = lee('lu-estilo', 'cinematico');
+// Optimización: solo se cargan y reproducen los motion que están en pantalla (el resto se desmonta)
+const visor = new IntersectionObserver((entradas) => entradas.forEach((e) => {
+  const v = e.target;
+  if (e.isIntersecting && !v._montado) { v._montado = true; montar(v, v._m); }
+  else if (!e.isIntersecting && v._montado) { v._montado = false; v.querySelectorAll('iframe, video').forEach((f) => f.remove()); }
+}), { rootMargin: '200px 0px' });
+const $ = (s) => document.querySelector(s);
+
+function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 1800); }
+
+const sobreFoto = (m) => m.fondo === 'video' || (sobreVideo && m.tipo === 'encima');
+function url(m) {
+  const q = new URLSearchParams();
+  Object.keys(colores).forEach((k) => { if (colores[k].toLowerCase() !== BASE[k].toLowerCase()) q.set(k, colores[k]); });
+  q.set('fondo', sobreFoto(m) ? 'transparente' : 'hoja');
+  return m.archivo + '?' + q.toString();
+}
+
+/* Monta un iframe que reproduce la composición en bucle */
+function montar(contenedor, m) {
+  contenedor.innerHTML = '';
+  if (m.video) {   // efectos de cámara: vista previa en video (van sobre tu propio video)
+    contenedor.style.backgroundImage = 'none';
+    const v = document.createElement('video');
+    Object.assign(v, { src: m.video, muted: true, loop: true, autoplay: true, playsInline: true });
+    v.onerror = () => { contenedor.innerHTML = '<div class="sin-previa"><b>' + m.nombre + '</b>Genera la vista previa con tu video:<code>python3 scripts/previews-camara.py tu-video.mp4</code></div>'; };
+    contenedor.appendChild(v);
+    return;
+  }
+  contenedor.style.backgroundImage = sobreFoto(m) ? "url('assets/fondo-demo.jpg')" : 'none';
+  const f = document.createElement('iframe');
+  f.loading = 'lazy'; f.src = url(m); f.title = m.nombre;
+  contenedor.appendChild(f);
+  const z = document.createElement('div'); z.className = 'guia'; z.innerHTML = '<b class="g-arriba">nada</b><b class="g-cara">cara</b><b class="g-subs">subtítulos</b><b class="g-elem">elementos</b><b class="g-abajo">nada</b>';
+  contenedor.appendChild(z);
+  const ajusta = () => { f.style.transform = `scale(${contenedor.clientWidth / 1080})`; };
+  ajusta(); new ResizeObserver(ajusta).observe(contenedor);
+  f.addEventListener('load', () => {
+    const w = f.contentWindow;
+    let intentos = 0;
+    const arranca = () => {
+      const tl = w.__timelines && w.__timelines[m.id];
+      if (!tl) { if (intentos++ < 40) setTimeout(arranca, 100); return; }
+      tl.eventCallback('onComplete', () => setTimeout(() => tl.restart(), 700));
+      w.document.fonts.ready.then(() => tl.restart());
+      contenedor._tl = tl;
+    };
+    arranca();
+  });
+}
+
+function pintarTabs() {
+  $('#tabs').innerHTML = '';
+  catalogo.estilos.forEach((e) => {
+    const b = document.createElement('button');
+    b.className = e.id === estiloActual ? 'on' : '';
+    b.innerHTML = `${e.nombre} ${e.motion.length ? `<small>${e.motion.length}</small>` : '<span class="pronto">pronto</span>'}`;
+    b.onclick = () => { estiloActual = e.id; guarda('lu-estilo', e.id); pintar(); };
+    $('#tabs').appendChild(b);
+  });
+}
+
+function pintar() {
+  if (!catalogo.estilos.some((x) => x.id === estiloActual)) estiloActual = catalogo.estilos[0].id;
+  pintarTabs();
+  const e = catalogo.estilos.find((x) => x.id === estiloActual) || catalogo.estilos[0];
+  const [a, ...b] = e.nombre.split(' ');
+  $('#estilo').innerHTML = `
+    <div>
+      <h2>${a} <em>${b.join(' ')}</em></h2>
+      <div class="para">${e.para}</div>
+      <div class="desc">${e.descripcion}</div>
+      ${e.tipografias ? `<div class="fichas">
+        <span class="ficha">Títulos <b>${e.tipografias.titulos}</b></span>
+        <span class="ficha">Fuerte <b>${e.tipografias.fuerte}</b></span>
+        <span class="ficha">Subtítulos <b>${e.tipografias.subtitulos}</b></span>
+        <span class="ficha">A mano <b>${e.tipografias.mano}</b></span></div>` : ''}
+    </div>
+    ${e.motion.length && !e.camara ? `<div class="switches"><div class="switch ${sobreVideo ? 'on' : ''}" id="sw"><i></i>Ver sobre video</div><div class="switch ${verZona ? 'on' : ''}" id="swz"><i></i>Ver zona segura</div></div>` : ''}`;
+  const sw = $('#sw');
+  if (sw) sw.onclick = () => { sobreVideo = !sobreVideo; guarda('lu-sobre-video', sobreVideo); pintar(); };
+  const swz = $('#swz');
+  if (swz) swz.onclick = () => { verZona = !verZona; guarda('lu-ver-zona', verZona); document.body.classList.toggle('zonas', verZona); swz.classList.toggle('on', verZona); };
+  document.body.classList.toggle('zonas', verZona);
+
+  if (e.carpetas) {
+    if (!e.carpetas.some((k) => k.id === carpetaActual)) carpetaActual = e.carpetas[0].id;
+    const fila = document.createElement('div'); fila.className = 'carpetas';
+    e.carpetas.forEach((k) => {
+      const n = e.motion.filter((m) => m.carpeta === k.id).length;
+      const b = document.createElement('button'); b.className = k.id === carpetaActual ? 'on' : '';
+      b.innerHTML = `<span>📁</span><b>${k.nombre}</b><small>${n} · ${k.uso}</small>`;
+      b.onclick = () => { carpetaActual = k.id; guarda('lu-carpeta', k.id); pintar(); };
+      fila.appendChild(b);
+    });
+    $('#estilo').appendChild(fila);
+  }
+  const lista = e.carpetas ? e.motion.filter((m) => m.carpeta === carpetaActual) : e.motion;
+  const grid = $('#grid');
+  grid.innerHTML = '';
+  if (!e.motion.length) {
+    grid.innerHTML = `<div class="vacio" style="grid-column:1/-1"><b>Pack en construcción</b>Este estilo tendrá su propio pack de 10 motion graphics.</div>`;
+    return;
+  }
+  lista.forEach((m) => {
+    const c = document.createElement('article');
+    c.className = 'card';
+    c.innerHTML = `<div class="vista"></div>
+      <div class="meta">
+        <div class="l1"><span class="cod">${m.id.toUpperCase()}</span><span class="dur">${m.dur}s · ${m.video ? 'cámara' : m.tipo === 'encima' ? 'sobre video' : 'pantalla'}</span></div>
+        <h3>${m.nombre}</h3>
+        <p>${m.uso}</p>
+        <div class="cmd"><code>${m.comando}</code><button>Copiar</button></div>
+      </div>`;
+    const vista = c.querySelector('.vista');
+    vista._m = m; visor.observe(vista);
+    vista.onclick = () => abrir(m);
+    c.querySelector('.cmd button').onclick = () => copiar(m.comando);
+    grid.appendChild(c);
+  });
+}
+
+function copiar(t) {
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => toast('Copiado: ' + t)).catch(() => toast(t));
+}
+
+function abrir(m) {
+  const v = $('#m-vista');
+  $('#modal').classList.add('on');
+  montar(v, m);
+  $('#m-info').innerHTML = `<span class="cod">${m.id.toUpperCase()}</span><h3>${m.nombre}</h3><p>${m.uso}</p>
+    <button id="m-copiar">Copiar ${m.comando}</button><button id="m-cerrar">Cerrar</button>`;
+  $('#m-copiar').onclick = () => copiar(m.comando);
+  $('#m-cerrar').onclick = cerrar;
+}
+function cerrar() { $('#modal').classList.remove('on'); $('#m-vista').innerHTML = ''; }
+$('#modal').onclick = (ev) => { if (ev.target.id === 'modal') cerrar(); };
+document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') cerrar(); });
+
+// Colores
+document.querySelectorAll('#colores input').forEach((inp) => {
+  inp.value = colores[inp.dataset.k];
+  inp.onchange = () => { colores[inp.dataset.k] = inp.value; guarda('lu-colores', colores); pintar(); };
+});
+$('#reset').onclick = () => { colores = { ...BASE }; guarda('lu-colores', colores); document.querySelectorAll('#colores input').forEach((i) => i.value = colores[i.dataset.k]); pintar(); };
+
+let carpetaActual = lee('lu-carpeta', 'detras');
+Promise.all([fetch('catalogo.json').then((r) => r.json()), fetch('camara.json').then((r) => r.json()).catch(() => null)]).then(([c, cam]) => {
+  if (cam && cam.efectos.length) c.estilos.push({
+    id: 'camara', nombre: 'Efectos de cámara', camara: true, carpetas: cam.carpetas,
+    para: 'Para cualquier estilo · siguen tu cara y van detrás de ti',
+    descripcion: 'Efectos que se aplican sobre tu propio video (no encima como los motion): siguen tu cara y pueden ir detrás de tu cabeza. Elige una carpeta y pídelos por el chat con su comando.',
+    motion: cam.efectos.map((x) => ({ id: x.id, nombre: x.nombre, uso: x.uso, carpeta: x.carpeta, dur: 3.6, video: 'assets/camara/' + x.carpeta + '/' + x.id + '.mp4', comando: '/cam-' + x.id })),
+  });
+  catalogo = c; pintar();
+});
+</script>
+</body>
+</html>

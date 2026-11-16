@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es" data-zona="panel" data-composition-variables='[
+  {"id": "titulo", "type": "string", "label": "Título", "default": "03 tus referencias"},
+  {"id": "tarjetas", "type": "string", "label": "3 tarjetas: emoji|cifra (separadas por coma)", "default": "🎬|97x,🤖|21x,📸|105x"},
+  {"id": "notas", "type": "string", "label": "Notas a mano (separadas por coma)", "default": "el diálogo,la lista,el número"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color notas", "default": "#C0392B"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "panel"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #tu10-t { position: absolute; left: 70px; top: 90px; font: 500 34px var(--mono); color: var(--tinta); }
+  #tu10-fila { position: absolute; left: 60px; right: 60px; top: 170px; display: flex; justify-content: space-between; }
+  .tu10-c { width: 290px; position: relative; }
+  .tu10-m { height: 440px; border-radius: 16px; background: linear-gradient(160deg, #2A221C, #4a3a2e); display: flex; align-items: center; justify-content: center; font-size: 120px; box-shadow: var(--sombra); border: 6px solid #fff; }
+  .tu10-x { position: absolute; right: -14px; top: -16px; font: 800 30px var(--sans); color: #fff; background: #E8743B; padding: 4px 14px; border-radius: 999px; }
+  .tu10-n { font: 700 46px var(--mano); color: var(--acento); text-align: center; margin-top: 70px; line-height: 1; }
+  .tu10-f { position: absolute; left: 50%; top: 452px; width: 60px; height: 70px; margin-left: -30px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="tu10" data-start="0" data-duration="4.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa mitad">
+    <div id="tu10-t" data-lu="titulo"></div>
+    <div id="tu10-fila"></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const fila = document.querySelector('#tu10-fila');
+  const notas = String(LU.vars.notas).split(',').map((s) => s.trim());
+  const cs = String(LU.vars.tarjetas).split(',').slice(0, 3).map((s, i) => {
+    const [emo, x] = s.split('|'); const c = document.createElement('div'); c.className = 'tu10-c';
+    c.innerHTML = `<div class="tu10-m emoji"></div><div class="tu10-x"></div><svg class="tu10-f" viewBox="0 0 60 70"><path d="M30 64 C 22 44, 38 26, 30 6" fill="none" stroke="var(--acento)" stroke-width="5" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg><div class="tu10-n"></div>`;
+    c.querySelector('.tu10-m').textContent = (emo || '🎬').trim(); c.querySelector('.tu10-x').textContent = (x || '').trim(); c.querySelector('.tu10-n').textContent = notas[i] || '';
+    fila.appendChild(c); return c;
+  });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#tu10-t', { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: .35 }, 0);
+  cs.forEach((c, i) => {
+    tl.fromTo(c, { y: 120, opacity: 0, rotate: [-6, 3, -3][i] * 3 }, { y: 0, opacity: 1, rotate: [-3, 2, -2][i], duration: .5, ease: 'back.out(1.6)' }, .15 + i * .15)
+      .fromTo(c.querySelector('.tu10-x'), { scale: 0 }, { scale: 1, duration: .3, ease: 'back.out(3)' }, .6 + i * .15)
+      .to(c.querySelector('path'), { attr: { 'stroke-dashoffset': 0 }, duration: .35, ease: 'power2.out' }, 1.4 + i * .5)
+      .fromTo(c.querySelector('.tu10-n'), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .3 }, 1.6 + i * .5);
+  });
+  tl.to('.capa', { opacity: 0, duration: .25 }, 4.25);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["tu10"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

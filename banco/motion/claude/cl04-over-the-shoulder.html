@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "antesLabel", "type": "string", "label": "Etiqueta izquierda", "default": "ANTES"},
+  {"id": "antesNumero", "type": "string", "label": "Número izquierda", "default": "1,204"},
+  {"id": "antesUnidad", "type": "string", "label": "Unidad izquierda", "default": "vistas"},
+  {"id": "despuesLabel", "type": "string", "label": "Etiqueta derecha", "default": "DESPUÉS"},
+  {"id": "despuesNumero", "type": "string", "label": "Número derecha", "default": "412K"},
+  {"id": "despuesUnidad", "type": "string", "label": "Unidad derecha", "default": "vistas"},
+  {"id": "hombros", "type": "number", "label": "Altura de tus hombros (px)", "default": 840},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background-color: #3a3a40; }
+  .cl04-t { position: absolute; width: 300px; padding: 26px 28px 30px; border-radius: 34px; background: rgba(18,18,22,.62); border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(22px); box-shadow: 0 24px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12); }
+  .cl04-l { font: 600 24px var(--body); letter-spacing: 4px; color: rgba(255,255,255,.6); }
+  .cl04-n { font: 800 78px var(--body); line-height: 1.05; letter-spacing: -2px; color: #fff; }
+  .cl04-u { font: 500 26px var(--body); color: rgba(255,255,255,.7); }
+  #cl04-a { left: 120px; } #cl04-b { left: 660px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl04" data-start="0" data-duration="2.8" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div class="cl04-t" id="cl04-a"><div class="cl04-l" data-lu="antesLabel"></div><div class="cl04-n" data-lu="antesNumero"></div><div class="cl04-u" data-lu="antesUnidad"></div></div>
+    <div class="cl04-t" id="cl04-b"><div class="cl04-l" data-lu="despuesLabel"></div><div class="cl04-n" data-lu="despuesNumero"></div><div class="cl04-u" data-lu="despuesUnidad"></div></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  // tarjetas justo encima de la línea de los hombros (van DETRÁS de ti con "detras": true en el plan)
+  const arriba = (+LU.vars.hombros || 840) - 330;
+  document.querySelectorAll('.cl04-t').forEach((t) => { t.style.top = arriba + 'px'; });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cl04-a', { scale: .8, opacity: 0 }, { scale: 1, opacity: 1, duration: .45, ease: 'back.out(2.2)' }, 10 / 30)
+    .fromTo('#cl04-b', { scale: .8, opacity: 0 }, { scale: 1, opacity: 1, duration: .45, ease: 'back.out(2.2)' }, 40 / 30)
+    .to('.cl04-t', { opacity: 0, duration: 8 / 30 }, 76 / 30);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl04"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es" data-zona="libre" data-composition-variables='[
+  {"id": "comando", "type": "string", "label": "Comando", "default": "/glass-graph"},
+  {"id": "descripcion", "type": "string", "label": "Descripción", "default": "Una tarjeta de vidrio con una gráfica que sube"},
+  {"id": "miniatura", "type": "string", "label": "Imagen de tu clip (ruta)", "default": "../../assets/fondo-demo.jpg"},
+  {"id": "resultado", "type": "string", "label": "Primer cuadro del efecto (ruta)", "default": "../../assets/fondo-demo.jpg"},
+  {"id": "acento", "type": "color", "label": "Color del botón", "default": "#D97757"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "libre"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { background: #141414; }
+  #cl07 { position: absolute; inset: 0; background: #141414; font-family: var(--body); color: #EDEDED; }
+  .cl07-ico { position: absolute; width: 44px; height: 44px; }
+  #cl07-titulo { position: absolute; left: 0; right: 0; top: 156px; text-align: center; font-weight: 600; font-size: 34px; }
+  #cl07-card { position: absolute; left: 120px; width: 840px; top: 990px; background: #232323; border-radius: 24px; padding: 22px 28px; border: 1.5px solid #333; }
+  #cl07-card b { display: block; color: #fff; font-size: 32px; } #cl07-card span { color: #8E8E8E; font-size: 26px; }
+  #cl07-caja { position: absolute; left: 120px; width: 840px; top: 1110px; height: 214px; border-radius: 40px; background: #232323; border: 1.5px solid #2E2E2E; }
+  #cl07-txt { position: absolute; left: 150px; top: 34px; font-size: 34px; color: #8E8E8E; white-space: nowrap; }
+  #cl07-txt.lleno { color: #fff; }
+  #cl07-env { position: absolute; right: 22px; top: 130px; width: 64px; height: 64px; border-radius: 50%; background: var(--acento); display: flex; align-items: center; justify-content: center; }
+  #cl07-mini { position: absolute; left: 150px; top: 1132px; width: 96px; height: 170px; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.5); transform-origin: 0 0; }
+  #cl07-mini img, #cl07-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #cl07-x { position: absolute; right: 6px; top: 6px; width: 26px; height: 26px; border-radius: 50%; background: rgba(0,0,0,.7); color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+  #cl07-pill { position: absolute; left: 640px; width: 300px; top: 882px; text-align: right; opacity: 0; }
+  #cl07-pill span { background: var(--acento); color: #fff; font-weight: 700; font-size: 28px; padding: 10px 22px; border-radius: 999px; }
+  #cl07-edit { position: absolute; left: 120px; top: 960px; display: flex; align-items: center; gap: 14px; color: #8E8E8E; font-size: 30px; opacity: 0; }
+  #cl07-teclado { position: absolute; left: 0; right: 0; top: 1360px; bottom: 0; background: #1E1E1E; padding-top: 22px; }
+  .cl07-fila { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+  .cl07-k { min-width: 88px; height: 104px; border-radius: 14px; background: #2F2F2F; color: #EDEDED; font-size: 38px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #111; }
+  .cl07-k.on { background: #5A5A5A; box-shadow: 0 0 0 2px var(--acento); }
+  #cl07-tile { position: absolute; left: 240px; top: 520px; width: 600px; height: 1066px; border-radius: 30px; overflow: hidden; background: #0C0C0C; box-shadow: 0 30px 80px rgba(0,0,0,.6); opacity: 0; transform-origin: 50% 50%; }
+  #cl07-puntos { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(18, 1fr); grid-template-rows: repeat(32, 1fr); }
+  #cl07-puntos i { display: flex; align-items: center; justify-content: center; background: #0C0C0C; }
+  #cl07-puntos i::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #3A3A3A; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="cl07" data-start="0" data-duration="2.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa"><div id="cl07">
+    <svg class="cl07-ico" style="left:120px;top:150px" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#EDEDED" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="cl07-ico" style="left:916px;top:150px" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z" fill="none" stroke="#EDEDED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div id="cl07-titulo">Editor</div>
+    <div id="cl07-pill"><span data-lu="comando"></span></div>
+    <div id="cl07-edit"><svg width="30" height="30" viewBox="0 0 24 24" id="cl07-estrella"><g fill="var(--acento)"><rect x="11" y="2" width="2" height="20" rx="1"/><rect x="11" y="2" width="2" height="20" rx="1" transform="rotate(45 12 12)"/><rect x="11" y="2" width="2" height="20" rx="1" transform="rotate(90 12 12)"/><rect x="11" y="2" width="2" height="20" rx="1" transform="rotate(135 12 12)"/></g></svg>Editando con <span data-lu="comando"></span>…</div>
+    <div id="cl07-card"><b data-lu="comando"></b><span data-lu="descripcion"></span></div>
+    <div id="cl07-caja">
+      <div id="cl07-txt">Responder…</div>
+      <svg class="cl07-ico" style="left:26px;top:140px;width:42px;height:42px" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="cl07-ico" style="left:690px;top:140px;width:42px;height:42px" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3ZM5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round"/></svg>
+      <div id="cl07-env"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div id="cl07-mini"><img id="cl07-mini-img" alt="" /><div id="cl07-x">×</div></div>
+    <div id="cl07-teclado"></div>
+    <div id="cl07-tile"><img id="cl07-res" alt="" /><div id="cl07-puntos"></div></div>
+  </div></div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const S = (n) => n / 30;  // cuadros → segundos
+  document.querySelector('#cl07-mini-img').src = LU.vars.miniatura;
+  document.querySelector('#cl07-res').src = LU.vars.resultado;
+  const cmd = String(LU.vars.comando);
+  // teclado
+  const tec = document.querySelector('#cl07-teclado'), teclas = {};
+  ['qwertyuiop', 'asdfghjkl', 'zxcvbnm', ['123', '/', '-', '⏎'], ['espacio']].forEach((fila) => {
+    const f = document.createElement('div'); f.className = 'cl07-fila';
+    (typeof fila === 'string' ? fila.split('') : fila).forEach((k) => { const d = document.createElement('div'); d.className = 'cl07-k'; d.textContent = k; if (k.length > 1) d.style.minWidth = k === 'espacio' ? '520px' : '130px'; f.appendChild(d); teclas[k] = d; });
+    tec.appendChild(f);
+  });
+  // puntos del tile (orden con semilla)
+  const puntos = document.querySelector('#cl07-puntos'), r = LU.rand(17), celdas = [];
+  for (let i = 0; i < 18 * 32; i++) { const c = document.createElement('i'); puntos.appendChild(c); celdas.push([c, r()]); }
+  celdas.sort((a, b) => a[1] - b[1]);
+  const txt = document.querySelector('#cl07-txt');
+  const est = { n: 0 };
+  const pinta = () => {
+    const n = Math.round(est.n);
+    txt.textContent = n ? cmd.slice(0, n) : 'Responder…'; txt.classList.toggle('lleno', n > 0);
+    Object.values(teclas).forEach((k) => k.classList.remove('on'));
+    const k = n > 0 && n <= cmd.length ? cmd[n - 1].toLowerCase() : ''; if (teclas[k]) teclas[k].classList.add('on');
+  };
+  pinta();
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#cl07-card', { opacity: 0, y: 30, scale: .95 }, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'back.out(2)' }, S(8))
+    .fromTo(est, { n: 0 }, { n: 1, duration: S(1), ease: 'none', onUpdate: pinta }, S(8))
+    .to(est, { n: cmd.length, duration: S(20), ease: 'none', onUpdate: pinta }, S(12))
+    .to('#cl07-env', { scale: .85, duration: S(2), yoyo: true, repeat: 1 }, S(34))
+    .set(est, { n: 0, onComplete: pinta }, S(35)).call(pinta, null, S(35.01))
+    .to('#cl07-card', { opacity: 0, duration: S(4) }, S(35))
+    .set('#cl07-x', { opacity: 0 }, S(36))
+    .to('#cl07-mini', { left: 640, top: 330, width: 300, height: 534, borderRadius: 28, duration: S(8), ease: 'power2.inOut' }, S(35))
+    .to('#cl07-pill', { opacity: 1, duration: S(4) }, S(40))
+    .to('#cl07-edit', { opacity: 1, duration: S(4) }, S(40))
+    .to('#cl07-estrella', { rotation: 360, duration: S(35), ease: 'none' }, S(40))
+    .fromTo('#cl07-tile', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: S(8), ease: 'back.out(1.6)' }, S(43));
+  celdas.forEach(([c, u], i) => tl.to(c, { opacity: 0, duration: S(3) }, S(45) + (i / celdas.length) * S(12)));
+  tl.to('#cl07-tile', { left: 0, top: 0, width: 1080, height: 1920, borderRadius: 0, duration: S(12), ease: 'power3.in' }, S(60));
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cl07"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

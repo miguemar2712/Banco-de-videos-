@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es" data-zona="elementos" data-composition-variables='[
+  {"id": "titulo", "type": "string", "label": "Título de la tarjeta", "default": "Claude se encargó de"},
+  {"id": "items", "type": "string", "label": "Puntos (separados por coma)", "default": "Los sonidos,Los ruidos,El zoom,Cada corte"},
+  {"id": "ritmo", "type": "number", "label": "Segundos entre puntos", "default": 0.6},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "transparente"},
+  {"id": "acento", "type": "color", "label": "Color acento", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "elementos"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  .hoja { display: none; }
+  #ci04-card { position: absolute; left: 150px; right: 150px; top: 170px; padding: 40px 44px; }
+  #ci04-titulo { font: 600 34px 'Inter'; color: #CBB99F; margin-bottom: 22px; letter-spacing: .5px; }
+  .ci04-f { display: flex; align-items: center; gap: 24px; padding: 16px 0; border-top: 1px solid rgba(241,217,166,.14); }
+  .ci04-c { width: 54px; height: 54px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F1D9A6, var(--acento)); box-shadow: 0 0 24px color-mix(in srgb, var(--acento) 60%, transparent); }
+  .ci04-t { font: 700 54px 'Inter'; color: #F7F1E8; letter-spacing: -1.5px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ci04" data-start="0" data-duration="4.5" data-width="1080" data-height="1920">
+  <div class="cine"></div>
+  <div class="capa">
+    <div id="ci04-card" class="vidrio"><div id="ci04-titulo" data-lu="titulo"></div><div id="ci04-lista"></div></div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const lista = document.querySelector('#ci04-lista');
+  const items = String(LU.vars.items).split(',').map((s) => s.trim()).filter(Boolean).slice(0, 6);
+  const ritmo = +LU.vars.ritmo || .6;
+  const filas = items.map((t) => { const f = document.createElement('div'); f.className = 'ci04-f'; f.innerHTML = '<div class="ci04-c"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#1A1410" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ci04-t"></div>'; f.querySelector('.ci04-t').textContent = t; lista.appendChild(f); return f; });
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ci04-card', { y: 60, opacity: 0, scale: .95 }, { y: 0, opacity: 1, scale: 1, duration: .55, ease: 'expo.out' }, 0)
+    .fromTo('#ci04-titulo', { opacity: 0 }, { opacity: 1, duration: .4 }, .2);
+  filas.forEach((f, i) => {
+    const t = .35 + i * ritmo;
+    tl.fromTo(f, { opacity: 0, x: -30, filter: 'blur(6px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: .35, ease: 'power3.out' }, t)
+      .fromTo(f.querySelector('.ci04-c'), { scale: 0 }, { scale: 1, duration: .35, ease: 'back.out(3)' }, t + .1);
+  });
+  const fin = .35 + filas.length * ritmo + 1.0;
+  tl.to('#ci04-card', { opacity: 0, y: -30, duration: .35, ease: 'power2.in' }, Math.min(4.15, fin));
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ci04"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

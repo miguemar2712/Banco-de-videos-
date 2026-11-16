@@ -1,0 +1,12 @@
+{
+  "configured": false,
+  "name": "",
+  "handle": "",
+  "colors": { "papel": "#F3ECE0", "tinta": "#3A2A1F", "acento": "#C9A15F", "acento2": "#E9D88C" },
+  "fonts": { "display": "Anton", "fuerte": "Archivo Black", "serif": "Playfair Display", "texto": "Inter", "mano": "Caveat" },
+  "estilos": [],
+  "graba": "",
+  "likes": "",
+  "avoid": "",
+  "aprendido": []
+}

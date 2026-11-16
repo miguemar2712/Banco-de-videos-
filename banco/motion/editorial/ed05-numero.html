@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es" data-zona="pantalla" data-composition-variables='[
+  {"id": "numero", "type": "string", "label": "Número", "default": "3"},
+  {"id": "cursiva", "type": "string", "label": "Palabra en cursiva", "default": "tipos"},
+  {"id": "fuerte", "type": "string", "label": "Palabras fuertes", "default": "de contenido"},
+  {"id": "fondo", "type": "string", "label": "Fondo (hoja | transparente)", "default": "hoja"},
+  {"id": "tinta", "type": "color", "label": "Color texto", "default": "#3A2A1F"},
+  {"id": "acento", "type": "color", "label": "Color número", "default": "#C9A15F"},
+  {"id": "x", "type": "number", "label": "Mover a los lados (px)", "default": 0},
+  {"id": "y", "type": "number", "label": "Subir (-) / bajar (+) en px", "default": 0},
+  {"id": "escala", "type": "number", "label": "Tamaño (1 = normal)", "default": 1},
+  {"id": "zona", "type": "string", "label": "Zona (elementos | titulo | pantalla | libre)", "default": "pantalla"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="../../assets/lu.css" />
+<style>
+  #ed05-grupo { position: absolute; left: 0; right: 0; top: 330px; height: 760px; }
+  #ed05-numero { position: absolute; left: 130px; top: 0; font-family: var(--serif); font-weight: 900; font-size: 560px; line-height: .85; color: var(--acento); }
+  #ed05-cursiva { position: absolute; left: 430px; top: 250px; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 150px; color: var(--tinta); }
+  #ed05-fuerte { position: absolute; left: 0; right: 0; top: 540px; text-align: center; font-family: var(--serif); font-weight: 800; font-size: 140px; letter-spacing: -5px; color: var(--tinta); white-space: nowrap; }
+  #ed05-linea { position: absolute; left: 430px; top: 430px; width: 520px; height: 4px; background: var(--tinta); transform-origin: left; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ed05" data-start="0" data-duration="3.5" data-width="1080" data-height="1920">
+  <div class="hoja"></div>
+  <div class="capa">
+    <div id="ed05-grupo">
+      <div id="ed05-numero" data-lu="numero"></div>
+      <div id="ed05-cursiva" data-lu="cursiva"></div>
+      <div id="ed05-linea"></div>
+      <div id="ed05-fuerte" data-lu="fuerte"></div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/lu.js"></script>
+<script>
+  const fuerte = LU.split(document.querySelector('#ed05-fuerte'), 'letras');
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo('#ed05-numero', { scale: 2.4, opacity: 0, filter: 'blur(30px)', rotate: -12 }, { scale: 1, opacity: 1, filter: 'blur(0px)', rotate: 0, duration: .8, ease: 'expo.out' }, 0)
+    .fromTo('#ed05-cursiva', { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: .6, ease: 'power3.out' }, .35)
+    .fromTo('#ed05-linea', { scaleX: 0 }, { scaleX: 1, duration: .5, ease: 'power4.inOut' }, .55)
+    .fromTo(fuerte, { y: 80, opacity: 0, rotateX: -90 }, { y: 0, opacity: 1, rotateX: 0, duration: .55, ease: 'back.out(1.6)', stagger: .03 }, .7)
+    .to('#ed05-numero', { y: -20, rotate: 3, duration: 2, ease: 'sine.inOut' }, 1.0)
+    .to('#ed05-grupo', { scale: .9, opacity: 0, filter: 'blur(14px)', duration: .45, ease: 'power2.in' }, 3.0);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["ed05"] = tl;
+  LU.ajustarZona();
+</script>
+</body>
+</html>

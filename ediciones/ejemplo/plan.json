@@ -1,0 +1,30 @@
+{
+ "_nota": "Plan de ejemplo. Cambia video/palabras por los tuyos y pon los tiempos (t) en segundos del video ORIGINAL, sacados de videos/v1-palabras.json.",
+ "nombre": "mi-primer-video",
+ "estilo": "cinematico",
+ "video": "videos/v1-apple.mov",
+ "palabras": "videos/v1-palabras.json",
+ "silencio": 0.3,
+ "cola": 2.6,
+ "reemplazos": { "Cloud": "Claude" },
+ "tramos": [
+  { "de": 0.0, "a": 6.0, "texto": "(opcional) la frase corregida tal como la dices" },
+  { "de": 8.5, "a": 20.0 }
+ ],
+ "claves": ["Claude", "gratis", "todo"],
+ "zooms": [
+  { "t": 2.1, "tipo": "golpe", "dur": 0.9, "escala": 1.12 },
+  { "t": 12.0, "tipo": "suave", "dur": 2.0, "escala": 1.1 }
+ ],
+ "motions": [
+  { "id": "ci01", "t": 0.0, "dur": 3.0, "vars": { "etiqueta": "¿Sabías esto?", "titulo": "100% Claude", "sub": "Este video lo editó Claude" } },
+  { "id": "ci09", "t": 17.0, "dur": 3.0, "vars": { "etiqueta": "Gratis", "titulo": "Mis skills", "detalle": "Te las envío al privado", "boton": "Comenta CLAUDE" } }
+ ],
+ "camara_fx": [
+  { "fx": "glitter-spotlight", "t": 3.0, "dur": 2.4, "text": "CLAUDE" },
+  { "fx": "apple-toggles", "t": 9.0, "dur": 3.5, "text": "Cortes|Subtítulos|Zoom", "ticks": "9.3|10.2|11.0" },
+  { "fx": "tap", "t": 20.0, "dur": 2.5, "at": 20.8 }
+ ],
+ "efectos_sonido": false,
+ "marca": "final"
+}

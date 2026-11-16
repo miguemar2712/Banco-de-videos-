@@ -29,7 +29,8 @@
     "Sobre b-roll oscuro o con mucho detalle: texto en BLANCO (tinta #FFFFFF), resaltador café oscuro (acento2 #3A2A1F) y palabra grande (escala 1.2–1.5).",
     "Guion que le gusta: gancho con pregunta o resultado + precios concretos + dónde vender + CTA 'comenta PALABRA o escríbeme al WhatsApp'.",
     "B-roll libre: Mixkit (mixkit.co, licencia gratuita comercial); videos 16:9 recortados al centro a 1080x1920.",
-    "Subtítulos por defecto: \"subtitulos\": \"referencia\" en el plan → texto normal Inter 500 80px blanco que se escribe letra por letra; palabras clave (números, lugares, verbos de acción, CTA) en Archivo Black MAYÚSCULAS + 1 palabra en Playfair Display Italic debajo, entrando de un lado con desenfoque; números en Inter Light 210px. Emojis de bandera no se ven: usar 🚢 ✈️ 📦."
+    "Subtítulos por defecto: \"subtitulos\": \"referencia\" en el plan → texto normal Inter 500 80px blanco que se escribe letra por letra; palabras clave (números, lugares, verbos de acción, CTA) en Archivo Black MAYÚSCULAS + 1 palabra en Playfair Display Italic debajo, entrando de un lado con desenfoque; números en Inter Light 210px. Emojis de bandera no se ven: usar 🚢 ✈️ 📦.",
+    "NO poner subtítulos ni textos encima (pedido explícito): solo las tomas de la mercancía + b-roll relacionado, cortadas al ritmo de su audio."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -40,5 +41,5 @@
   "ritmo": "rápido: cortes seguidos sin pausas, efecto nuevo cada 2–3 s",
   "texto": "subtítulos siempre + pocos textos grandes con frases clave",
   "emojis": true,
-  "subtitulos": "referencia"
+  "subtitulos": false
 }

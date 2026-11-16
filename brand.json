@@ -1,5 +1,5 @@
 {
-  "configured": false,
+  "configured": true,
   "name": "Del Carmen",
   "handle": "@delcarmen__1",
   "colors": {
@@ -15,9 +15,12 @@
     "texto": "Inter",
     "mano": "Caveat"
   },
-  "estilos": [],
+  "estilos": [
+    "editorial",
+    "cinematico"
+  ],
   "graba": "a cámara",
-  "likes": "",
+  "likes": "Editorial Level + Viral Edits; identidad Level Up (colores y tipografías por defecto)",
   "avoid": "",
   "aprendido": [],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
@@ -25,5 +28,8 @@
   "redes": {
     "tiktok": "@delcarmen__1"
   },
-  "cta": "Al final de cada video: invitar a que le escriban o comenten para enviarles información del programa de importación."
+  "cta": "Al final de cada video: invitar a que le escriban o comenten para enviarles información del programa de importación.",
+  "ritmo": "rápido: cortes seguidos sin pausas, efecto nuevo cada 2–3 s",
+  "texto": "subtítulos siempre + pocos textos grandes con frases clave",
+  "emojis": true
 }

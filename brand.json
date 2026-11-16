@@ -2,11 +2,24 @@
   "configured": false,
   "name": "",
   "handle": "",
-  "colors": { "papel": "#F3ECE0", "tinta": "#3A2A1F", "acento": "#C9A15F", "acento2": "#E9D88C" },
-  "fonts": { "display": "Anton", "fuerte": "Archivo Black", "serif": "Playfair Display", "texto": "Inter", "mano": "Caveat" },
+  "colors": {
+    "papel": "#F3ECE0",
+    "tinta": "#3A2A1F",
+    "acento": "#C9A15F",
+    "acento2": "#E9D88C"
+  },
+  "fonts": {
+    "display": "Anton",
+    "fuerte": "Archivo Black",
+    "serif": "Playfair Display",
+    "texto": "Inter",
+    "mano": "Caveat"
+  },
   "estilos": [],
-  "graba": "",
+  "graba": "a cámara",
   "likes": "",
   "avoid": "",
-  "aprendido": []
+  "aprendido": [],
+  "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
+  "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa."
 }

@@ -38,13 +38,15 @@
   "sets-deportivos-tomas"
  ],
  "24061": [
-  "pedido-china-v3"
+  "pedido-china-v3",
+  "pedido-china-v4"
  ],
  "42130": [
   "pedido-china-v3"
  ],
  "35884": [
-  "pedido-china-v3"
+  "pedido-china-v3",
+  "pedido-china-v4"
  ],
  "39774": [
   "pedido-china-v3"
@@ -59,7 +61,11 @@
   "pedido-china-v3"
  ],
  "46500": [
-  "pedido-china-v3"
+  "pedido-china-v3",
+  "pedido-china-v4"
+ ],
+ "4065": [
+  "pedido-china-v4"
  ],
  "39773": [
   "pedido-china"

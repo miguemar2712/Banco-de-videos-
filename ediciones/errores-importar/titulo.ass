@@ -16,7 +16,9 @@ Style: CartelGlow,Ultra,80,&H10000000,&H10000000,&H10000000,&H00000000,0,0,0,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:36.40,Sombra,,0,0,0,,{\pos(546,378)\blur7\fnKaushan Script\fs219}3 errores
-Dialogue: 1,0:00:00.00,0:00:36.40,Titulo,,0,0,0,,{\pos(540,369)\fnKaushan Script\fs219}3 errores
-Dialogue: 0,0:00:00.00,0:00:36.40,Sombra,,0,0,0,,{\pos(546,513)\blur7\fnKaushan Script\fs219}al importar
-Dialogue: 1,0:00:00.00,0:00:36.40,Titulo,,0,0,0,,{\pos(540,504)\fnKaushan Script\fs219}al importar
+Dialogue: 0,0:00:00.00,0:00:36.40,Sombra,,0,0,0,,{\pos(546,341)\blur7\fnKaushan Script\fs168}3 errores al
+Dialogue: 1,0:00:00.00,0:00:36.40,Titulo,,0,0,0,,{\pos(540,332)\fnKaushan Script\fs168}3 errores al
+Dialogue: 0,0:00:00.00,0:00:36.40,Sombra,,0,0,0,,{\pos(546,445)\blur7\fnKaushan Script\fs168}Importar desde
+Dialogue: 1,0:00:00.00,0:00:36.40,Titulo,,0,0,0,,{\pos(540,436)\fnKaushan Script\fs168}Importar desde
+Dialogue: 0,0:00:00.00,0:00:36.40,Sombra,,0,0,0,,{\pos(546,549)\blur7\fnKaushan Script\fs168}China
+Dialogue: 1,0:00:00.00,0:00:36.40,Titulo,,0,0,0,,{\pos(540,540)\fnKaushan Script\fs168}China

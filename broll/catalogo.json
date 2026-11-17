@@ -48,19 +48,16 @@
    ]
   },
   "fabrica": {
-   "descripcion": "Fábricas y talleres de ropa (proveedores)",
+   "descripcion": "Fábricas/mercados grandes CON PERSONAS CAMINANDO, estilo tienda (no máquinas de cerca)",
    "tomas": [
-    {
-     "id": 34239
-    },
-    {
-     "id": 35387
-    },
     {
      "id": 35884
     },
     {
-     "id": 35388
+     "id": 23696
+    },
+    {
+     "id": 31086
     }
    ]
   },
@@ -166,6 +163,9 @@
     },
     {
      "id": 42121
+    },
+    {
+     "id": 9165
     }
    ]
   },

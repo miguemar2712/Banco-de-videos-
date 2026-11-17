@@ -24,6 +24,7 @@ RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 CAT = os.path.join(RAIZ, 'broll', 'catalogo.json')
 BROLL = os.path.join(RAIZ, 'videos', 'broll')
 FUENTES = os.path.join(RAIZ, 'fx-camara', 'fonts')
+MAPA_Y, MAPA_ESC, TITULO_ANCHO = 230, .85, 680   # gusto de @delcarmen__1: título más abajo y un poco más chico
 
 
 def sh(cmd):
@@ -138,7 +139,8 @@ def hacer_ass(plan, total, parte='todo'):
     t = plan.get('titulo') if parte in ('todo', 'titulo') else None
     if t:
         lineas = [t] if isinstance(t, str) else t
-        y0 = plan.get('titulo_y', 300 if plan.get('titulo_letra', 'Great Vibes') != 'Montserrat Black' else 290)
+        # centrado sobre el mapa (bajado de la orilla de arriba, donde TikTok pone sus botones)
+        y0 = plan.get('titulo_y', int(plan.get('mapa_y', MAPA_Y) + 486 * plan.get('mapa_escala', MAPA_ESC) * .5))
         letra = plan.get('titulo_letra', 'Great Vibes')     # su elección: cursiva caligráfica
         if letra == 'Montserrat Black':
             for i, l in enumerate(lineas):
@@ -148,7 +150,7 @@ def hacer_ass(plan, total, parte='todo'):
             from PIL import ImageFont
             archivo = os.path.join(RAIZ, 'fuentes', letra.replace(' ', '') + '.ttf')
             f = ImageFont.truetype(archivo, 200); asc, des = f.getmetrics()
-            fs = min(int(1.44 * 820 * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
+            fs = min(int(1.44 * TITULO_ANCHO * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
             paso = int(fs * .5)
             for i, l in enumerate(lineas):
                 out += doble(0, 0, total, 'Titulo', 540, y0 - paso // 2 * (len(lineas) - 1) + i * paso, l,
@@ -243,7 +245,8 @@ def main():
     extra = []
     if plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
         extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]
-        cadena += f"[vb];[vb][{nv + 1}:v]overlay=x=(W-w)/2:y={plan.get('mapa_y', 60)}"
+        esc = plan.get('mapa_escala', MAPA_ESC)
+        cadena += f"[vb];[{nv + 1}:v]scale=iw*{esc}:-1[mapa];[vb][mapa]overlay=x=(W-w)/2:y={plan.get('mapa_y', MAPA_Y)}"
     fdir = os.path.join(RAIZ, 'fuentes')
     carpeta = os.path.join(RAIZ, os.path.dirname(sys.argv[1]))
     if plan.get('subtitulos') == 'cartel':

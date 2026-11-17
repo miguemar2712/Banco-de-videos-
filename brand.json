@@ -37,7 +37,8 @@
     "Título de arriba en CURSIVA Great Vibes (la eligió entre 4 opciones), blanca con sombra suave, tal cual se escribe (no mayúsculas), ancho ~820 px sobre el mapa de China. En tomas.json: \"titulo_letra\": \"Great Vibes\" (por defecto).",
     "Subtítulos 'cartel' MÁS PEQUEÑOS (le parecían muy grandes): palabra grande máx. 120 px y ≤760 px de ancho; pequeñas 44–56 px.",
     "SIN sonido de monedas ni efectos de sonido: probó 5 y prefiere solo su voz. Al decir un precio, solo el texto grande (ej. '$15 dólares'). No poner \"sonidos\" en tomas.json salvo que lo pida.",
-    "Título y mapa MÁS ABAJO y un poco más chicos (estaba muy arriba, bajo los botones de TikTok): mapa en y=230 al 85 %, título cursiva centrado sobre el mapa con ~680 px de ancho (constantes MAPA_Y, MAPA_ESC, TITULO_ANCHO en scripts/montar-tomas.py)."
+    "Título y mapa MÁS ABAJO y un poco más chicos (estaba muy arriba, bajo los botones de TikTok): mapa en y=230 al 85 %, título cursiva centrado sobre el mapa con ~680 px de ancho (constantes MAPA_Y, MAPA_ESC, TITULO_ANCHO en scripts/montar-tomas.py).",
+    "NO repetir clips de b-roll entre videos (se molestó al ver los mismos). Antes de elegir, revisar broll/usados.json y usar solo clips libres; si se acaban, buscar nuevos en Mixkit y agregarlos a broll/catalogo.json."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

@@ -71,6 +71,8 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
   `"reemplazos"`. Modelo: `ediciones/sets-deportivos-cartel/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
 - Banco de b-roll por tema en `broll/catalogo.json` (Mixkit, uso comercial libre): china · avion · fabrica · cajas · entrega ·
   dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
+- **No repetir b-roll entre videos:** mira `broll/usados.json` (qué clip salió en qué video) y elige solo libres; si faltan,
+  busca nuevos en Mixkit y agrégalos al catálogo. Actualiza `usados.json` al entregar.
 - Montaje: transcribe la voz (`scripts/transcribir.py`), escribe `ediciones/<nombre>/tomas.json` (modelo:
   `ediciones/sets-deportivos-tomas/tomas.json`) y corre `.venv/bin/python scripts/montar-tomas.py ediciones/<nombre>/tomas.json`.
 - Textos grandes puntuales (p. ej. "$15 dólares"): campo `textos` del tomas.json. **Sin sonido de monedas**

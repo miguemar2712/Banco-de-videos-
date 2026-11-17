@@ -118,7 +118,7 @@ def ass_cartel(grupos, Y):
         while ancho(g[i]['t'], grande) > 760 and grande > 50:
             grande -= 5
         chico = max(44, min(56, int(grande * .46)))
-        w_g = ancho(g[i]['t'], grande); esp = ancho(' ', chico)
+        w_g = ancho(g[i]['t'], grande); esp = max(ancho(' ', chico) * 1.6, chico * .4)
         izq, der = 540 - w_g / 2, 540 + w_g / 2
         partes = [(g[i], 540, Y, grande, '\\an5')]
         ya, xa = Y - grande * .55 - chico * .42, der

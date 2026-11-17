@@ -1,0 +1,145 @@
+{
+ "voz": "videos/voz-4.m4a",
+ "salida": "out/errores-importar.mp4",
+ "titulo": [
+  "3 errores",
+  "al importar"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-4-palabras.json",
+ "claves": [
+  "errores",
+  "dinero",
+  "china",
+  "proveedor",
+  "verificar",
+  "real",
+  "calidad",
+  "fotos",
+  "videos",
+  "pagar",
+  "costo",
+  "caro",
+  "programa",
+  "importantes",
+  "reales",
+  "acompañamiento",
+  "aprender",
+  "importar"
+ ],
+ "reemplazos": {
+  "importarte": "importar",
+  "probador": "proveedor",
+  "100": "100%",
+  "%": "",
+  "1.": "",
+  "2.": "",
+  "3.": "",
+  "1": "",
+  "2": "",
+  "3": "",
+  "el": "al"
+ },
+ "tomas": [
+  {
+   "hasta": 3.1,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 5.3,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 7.3,
+   "clip": "videos/broll/mk-24139.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.0,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 11.1,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 6.2
+  },
+  {
+   "hasta": 14.8,
+   "clip": "videos/generados/chat-fotos-reales.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 18.3,
+   "clip": "videos/broll/mk-47007.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 20.0,
+   "clip": "videos/clip-c.mov",
+   "desde": 0.0
+  },
+  {
+   "hasta": 22.8,
+   "clip": "videos/broll/mk-34126.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 24.8,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 26.9,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 29.3,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 11.2
+  },
+  {
+   "hasta": 32.0,
+   "clip": "videos/broll/mk-21328.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 33.3,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 36.4,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 12.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 0.0,
+   "a": 3.0,
+   "grande": "3",
+   "cursiva": "errores",
+   "cursiva_de": 0.25
+  },
+  {
+   "de": 3.15,
+   "a": 4.6,
+   "grande": "1"
+  },
+  {
+   "de": 10.8,
+   "a": 12.0,
+   "grande": "2"
+  },
+  {
+   "de": 15.05,
+   "a": 16.4,
+   "grande": "3"
+  }
+ ]
+}

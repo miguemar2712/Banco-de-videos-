@@ -13,7 +13,7 @@ F = os.path.join(RAIZ, 'fx-camara', 'fonts')
 ap = argparse.ArgumentParser()
 ap.add_argument('salida'); ap.add_argument('--nombre', default='Comunidad'); ap.add_argument('--sub', default='')
 ap.add_argument('--dur', type=float, default=3.0); ap.add_argument('--fondo'); ap.add_argument('--fotos', default='')
-ap.add_argument('--privado', action='store_true'); ap.add_argument('--pedido', action='store_true'); ap.add_argument('--semilla', type=int, default=1)
+ap.add_argument('--privado', action='store_true'); ap.add_argument('--pedido', action='store_true'); ap.add_argument('--mensajes', default=''); ap.add_argument('--semilla', type=int, default=1)
 a = ap.parse_args()
 rnd = random.Random(a.semilla)
 W, H, FPS = 1080, 1920, 30
@@ -60,7 +60,14 @@ if a.pedido:   # chat 1 a 1 con su proveedor: ella pide, el proveedor manda foto
     guion = [(0.15, True, 'Hola, quiero hacer un pedido', None), (0.55, False, None, 0), (0.8, False, None, 1),
              (1.1, False, 'Estos son los modelos', None), (1.5, True, 'Me llevo estos', None), (1.9, False, None, 2),
              (2.25, False, 'Perfecto, lo empacamos hoy', None), (2.6, True, 'Gracias!', None)]
-    k = a.dur / 2.9
+    if a.mensajes:   # guion propio: "yo:texto|prov:texto|prov:foto|..." repartido en la duración
+        partes = [x.split(':', 1) for x in a.mensajes.split('|')]
+        paso = (a.dur - .3) / max(1, len(partes))
+        guion, nf = [], 0
+        for j, (quien, txt) in enumerate(partes):
+            foto = txt.strip() == 'foto'
+            guion.append((.15 + j * paso, quien == 'yo', None if foto else txt, nf if foto else None)); nf += foto
+    k = a.dur / 2.9 if not a.mensajes else 1
     msgs = [dict(t=t * k, yo=yo, n='Proveedor', c=(18, 140, 120), txt=txt, foto=(fotos[f % len(fotos)] if f is not None and fotos else None))
             for t, yo, txt, f in guion if (txt or (f is not None and fotos))]
 for m in msgs:

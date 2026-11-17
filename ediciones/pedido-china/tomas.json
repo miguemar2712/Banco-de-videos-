@@ -1,0 +1,27 @@
+{
+ "voz": "videos/voz-2.m4a",
+ "salida": "out/pedido-china.mp4",
+ "titulo": ["Mi pedido", "de China"],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-2-palabras.json",
+ "claves": ["china", "19", "proveedores", "seguros", "comunidad", "3000", "privada", "80", "pedido", "información"],
+ "reemplazos": {"enseñó": "enseño", "100": "100%", "%": "", "19": "$19", "3000": "3,000"},
+ "tomas": [
+  {"hasta": 3.3,   "clip": "videos/clip-a-1080.mp4", "desde": 0.0},
+  {"hasta": 5.0,   "clip": "videos/clip-b-limpio.mp4", "desde": 2.0},
+  {"hasta": 6.4,   "clip": "videos/broll/mk-18304.mp4", "desde": 1.5},
+  {"hasta": 7.5,   "clip": "videos/clip-a-1080.mp4", "desde": 4.0},
+  {"hasta": 9.1,   "clip": "videos/broll/mk-31297.mp4", "desde": 1.0},
+  {"hasta": 11.0,  "clip": "videos/clip-b-limpio.mp4", "desde": 6.0},
+  {"hasta": 12.6,  "clip": "videos/broll/mk-34239.mp4", "desde": 1.0},
+  {"hasta": 14.2,  "clip": "videos/broll/mk-39773.mp4", "desde": 1.0},
+  {"hasta": 15.6,  "clip": "videos/broll/mk-32847.mp4", "desde": 1.0},
+  {"hasta": 19.0,  "clip": "videos/clip-b-limpio.mp4", "desde": 8.5},
+  {"hasta": 20.9,  "clip": "videos/broll/mk-31346.mp4", "desde": 8.4},
+  {"hasta": 22.9,  "clip": "videos/broll/mk-15901.mp4", "desde": 1.0},
+  {"hasta": 26.1,  "clip": "videos/clip-a-1080.mp4", "desde": 19.5},
+  {"hasta": 28.73, "clip": "videos/broll/mk-7379.mp4", "desde": 1.0}
+ ],
+ "textos": [ {"de": 5.1, "a": 6.4, "grande": "$19", "cursiva": "dólares", "cursiva_de": 5.75} ]
+}

@@ -1,0 +1,121 @@
+{
+ "voz": "videos/voz-2.m4a",
+ "salida": "out/pedido-china-v2.mp4",
+ "titulo": [
+  "Mi pedido",
+  "de China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-2-palabras.json",
+ "claves": [
+  "china",
+  "19",
+  "proveedores",
+  "seguros",
+  "comunidad",
+  "3000",
+  "privada",
+  "80",
+  "pedido",
+  "información"
+ ],
+ "reemplazos": {
+  "enseñó": "enseño",
+  "100": "100%",
+  "%": "",
+  "19": "$19",
+  "3000": "3,000"
+ },
+ "tomas": [
+  {
+   "hasta": 3.3,
+   "clip": "videos/clip-c.mov",
+   "desde": 0.0
+  },
+  {
+   "hasta": 5.0,
+   "clip": "videos/clip-d.mov",
+   "desde": 0.0
+  },
+  {
+   "hasta": 6.4,
+   "clip": "videos/broll/mk-18304.mp4",
+   "desde": 1.5
+  },
+  {
+   "hasta": 7.5,
+   "clip": "videos/clip-c.mov",
+   "desde": 3.5
+  },
+  {
+   "hasta": 9.1,
+   "clip": "videos/broll/mk-31297.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 11.0,
+   "clip": "videos/clip-d.mov",
+   "desde": 3.0
+  },
+  {
+   "hasta": 12.6,
+   "clip": "videos/broll/mk-34239.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 14.2,
+   "clip": "videos/broll/mk-42123.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 15.6,
+   "clip": "videos/broll/mk-32847.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 17.3,
+   "clip": "videos/clip-d.mov",
+   "desde": 6.0
+  },
+  {
+   "hasta": 19.0,
+   "clip": "videos/broll/mk-4915.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 20.9,
+   "clip": "videos/broll/mk-31346.mp4",
+   "desde": 8.4
+  },
+  {
+   "hasta": 22.9,
+   "clip": "videos/clip-d.mov",
+   "desde": 10.0
+  },
+  {
+   "hasta": 24.9,
+   "clip": "videos/clip-c.mov",
+   "desde": 4.9
+  },
+  {
+   "hasta": 26.1,
+   "clip": "videos/clip-d.mov",
+   "desde": 13.0
+  },
+  {
+   "hasta": 28.73,
+   "clip": "videos/broll/mk-39461.mp4",
+   "desde": 1.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 5.1,
+   "a": 6.4,
+   "grande": "$19",
+   "cursiva": "dólares",
+   "cursiva_de": 5.75
+  }
+ ]
+}

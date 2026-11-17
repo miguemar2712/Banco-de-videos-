@@ -86,22 +86,33 @@
   "sets-deportivos-cartel",
   "sets-deportivos-tomas"
  ],
- "7025": [
-  "sin-viajar-china"
- ],
  "35387": [
-  "sin-viajar-china"
+  "sin-viajar-china",
+  "sin-viajar-china-v2"
  ],
  "42137": [
+  "sin-viajar-china",
+  "sin-viajar-china-v2"
+ ],
+ "44541": [
+  "sin-viajar-china",
+  "sin-viajar-china-v2"
+ ],
+ "45703": [
+  "sin-viajar-china",
+  "sin-viajar-china-v2"
+ ],
+ "35388": [
+  "sin-viajar-china",
+  "sin-viajar-china-v2"
+ ],
+ "7025": [
   "sin-viajar-china"
  ],
  "31354": [
   "sin-viajar-china"
  ],
  "15059": [
-  "sin-viajar-china"
- ],
- "44541": [
   "sin-viajar-china"
  ],
  "27467": [
@@ -111,12 +122,6 @@
   "sin-viajar-china"
  ],
  "21325": [
-  "sin-viajar-china"
- ],
- "45703": [
-  "sin-viajar-china"
- ],
- "35388": [
   "sin-viajar-china"
  ]
 }

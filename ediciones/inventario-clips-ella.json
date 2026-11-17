@@ -1,0 +1,26 @@
+{
+ "clip-e (mercancía variada)": {
+  "0-3.9": "bolsas + tenis blancos (logo Level Up arriba, borrado)",
+  "4-5.9": "caja llegando en el pasillo",
+  "6-8": "ropa Alo negra",
+  "8-10.9": "gorra Alo",
+  "11-13.4": "tenis + bolsos",
+  "13.4-fin": "NEGRO, no usar"
+ },
+ "clip-f (bolsas)": {
+  "0-17": "colección de bolsas rosas/negras, cajas"
+ },
+ "clip-g (perfumes)": {
+  "0-13.9": "perfumes (logo Level Up al centro, borrado)"
+ },
+ "clip-c (caja)": {
+  "0-7": "abriendo caja con ropa embolsada"
+ },
+ "clip-d (prendas)": {
+  "0-16": "prendas embolsadas (baja resolución)"
+ },
+ "clip-a/clip-b (sets)": {
+  "a": "abriendo caja / sets sobre silla",
+  "b": "sets deportivos sobre la cama"
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "voz": "videos/voz-3.m4a",
+ "salida": "out/sin-viajar-china-v2.mp4",
+ "titulo": [
+  "Sin viajar",
+  "a China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-3-palabras.json",
+ "claves": [
+  "china",
+  "fábricas",
+  "celular",
+  "empacan",
+  "casa",
+  "bolsas",
+  "tenis",
+  "lentes",
+  "ropa",
+  "perfumes",
+  "rubros",
+  "vender",
+  "proveedores",
+  "importar"
+ ],
+ "reemplazos": {
+  "ala": "Alo",
+  "100": "100%",
+  "%": ""
+ },
+ "tomas": [
+  {
+   "hasta": 1.6,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.6,
+   "clip": "videos/broll/mk-35387.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 5.1,
+   "clip": "videos/generados/chat-proveedor.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 6.8,
+   "clip": "videos/broll/mk-42137.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 8.9,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 3.85
+  },
+  {
+   "hasta": 10.1,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 10.8,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 11.2
+  },
+  {
+   "hasta": 11.5,
+   "clip": "videos/broll/mk-44541.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 12.3,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 6.2
+  },
+  {
+   "hasta": 13.0,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 14.4,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 15.5,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 17.6,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 9.0
+  },
+  {
+   "hasta": 19.6,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 12.0
+  },
+  {
+   "hasta": 22.0,
+   "clip": "videos/broll/mk-45703.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 23.8,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 25.8,
+   "clip": "videos/broll/mk-35388.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 28.56,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 10.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 15.5,
+   "a": 16.0,
+   "grande": "$11"
+  },
+  {
+   "de": 16.0,
+   "a": 16.6,
+   "grande": "$12"
+  },
+  {
+   "de": 16.6,
+   "a": 17.6,
+   "grande": "$13",
+   "cursiva": "dólares",
+   "cursiva_de": 16.9
+  },
+  {
+   "de": 19.75,
+   "a": 22.0,
+   "grande": "$65 a $90",
+   "cursiva": "dólares",
+   "cursiva_de": 21.25
+  }
+ ]
+}

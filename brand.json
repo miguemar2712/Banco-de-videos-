@@ -41,7 +41,8 @@
     "NO repetir clips de b-roll entre videos (se molestó al ver los mismos). Antes de elegir, revisar broll/usados.json y usar solo clips libres; si se acaban, buscar nuevos en Mixkit y agregarlos a broll/catalogo.json.",
     "NO repartidores/mensajeros en el b-roll (no le gustan). Para 'llega a la puerta de mi casa' usar SU propia caja.",
     "Cuando dice 'comunidad'/'grupo': animación de celular con un grupo abierto y muchos mensajes llegando (scripts/chat-grupo.py → videos/generados/), no gente al azar. Mensajes neutros (saludos + fotos de su mercancía), nunca reseñas inventadas.",
-    "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía)."
+    "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía).",
+    "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

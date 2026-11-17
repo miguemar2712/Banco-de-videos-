@@ -34,7 +34,6 @@
     "ESTILO DEFINITIVO (su ejemplo de CapCut): título fijo arriba en Montserrat Black blanca MAYÚSCULAS con sombra oscura sobre el mapa de China rojo con estrellas (\"mapa\": true, \"titulo\": [\"línea 1\",\"línea 2\"]); subtítulos en MAYÚSCULAS Montserrat ExtraBold blanca con sombra, palabra por palabra, escalonados izquierda/derecha; palabras clave grandes y centradas (\"subtitulos\": \"capcut\", \"claves\": [...]). Ver ediciones/sets-deportivos-capcut/tomas.json.",
     "SUBTÍTULOS DEFINITIVOS = estilo 'cartel' (su plantilla de CapCut tipo THE/QUICK/BROWN, letra 'Poffen' de CapCut Pro → equivalente libre: Ultra): blanca con resplandor negro y textura gastada; palabra clave (o la más larga) ENORME al centro, las de antes pequeñas arriba a la derecha, las de después pequeñas abajo a la izquierda; aparecen palabra por palabra. En tomas.json: \"subtitulos\": \"cartel\". El título de arriba sigue en Montserrat Black sobre el mapa de China.",
     "Subtítulos 'cartel' SIEMPRE blancos lisos, un solo color, SIN textura ni manchas (pedido explícito). Solo la sombra/resplandor negro suave alrededor para que se lean. No poner \"textura\": true.",
-    "Título de arriba en CURSIVA Great Vibes (la eligió entre 4 opciones), blanca con sombra suave, tal cual se escribe (no mayúsculas), ancho ~820 px sobre el mapa de China. En tomas.json: \"titulo_letra\": \"Great Vibes\" (por defecto).",
     "Subtítulos 'cartel' MÁS PEQUEÑOS (le parecían muy grandes): palabra grande máx. 120 px y ≤760 px de ancho; pequeñas 44–56 px.",
     "SIN sonido de monedas ni efectos de sonido: probó 5 y prefiere solo su voz. Al decir un precio, solo el texto grande (ej. '$15 dólares'). No poner \"sonidos\" en tomas.json salvo que lo pida.",
     "Título y mapa MÁS ABAJO y un poco más chicos (estaba muy arriba, bajo los botones de TikTok): mapa en y=230 al 85 %, título cursiva centrado sobre el mapa con ~680 px de ancho (constantes MAPA_Y, MAPA_ESC, TITULO_ANCHO en scripts/montar-tomas.py).",
@@ -42,7 +41,8 @@
     "NO repartidores/mensajeros en el b-roll (no le gustan). Para 'llega a la puerta de mi casa' usar SU propia caja.",
     "Cuando dice 'comunidad'/'grupo': animación de celular con un grupo abierto y muchos mensajes llegando (scripts/chat-grupo.py → videos/generados/), no gente al azar. Mensajes neutros (saludos + fotos de su mercancía), nunca reseñas inventadas.",
     "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía).",
-    "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165)."
+    "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165).",
+    "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -54,5 +54,5 @@
   "texto": "subtítulos siempre + pocos textos grandes con frases clave",
   "emojis": true,
   "subtitulos": "cartel",
-  "titulo_letra": "Great Vibes"
+  "titulo_letra": "Kaushan Script"
 }

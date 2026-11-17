@@ -239,9 +239,12 @@ def main():
                     f"shadowx=0:shadowy=7:x='(w-tw)/2{lado}360*pow(max(0\\,1-(t-{t0})/0.3)\\,3)':y={y}:"
                     f"alpha='min(1\\,max(0\\,(t-{t0})/0.12))':enable='between(t,{t0},{b})'")
         if x.get('grande'):
-            cadena += dt(x['grande'], 'ArchivoBlack-Regular.ttf', x.get('tam', 300 if len(x['grande']) <= 5 else 170), x.get('y', 640), a, '-')
+            from PIL import ImageFont
+            fa = ImageFont.truetype(os.path.join(FUENTES, 'ArchivoBlack-Regular.ttf'), 100)
+            tam = x.get('tam', min(300, int(100 * 940 / fa.getlength(x['grande']))))   # que nunca se salga (≤ 940 px)
+            cadena += dt(x['grande'], 'ArchivoBlack-Regular.ttf', tam, x.get('y', 780 if plan.get('mapa') else 640), a, '-')
         if x.get('cursiva'):
-            cadena += dt(x['cursiva'], 'PlayfairDisplay-Italic.ttf', 170, x.get('y', 640) + 325, x.get('cursiva_de', a + .3), '+')
+            cadena += dt(x['cursiva'], 'PlayfairDisplay-Italic.ttf', 170, x.get('y', 780 if plan.get('mapa') else 640) + 325, x.get('cursiva_de', a + .3), '+')
     extra = []
     if plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
         extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]

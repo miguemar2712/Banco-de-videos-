@@ -40,7 +40,8 @@
     "Título y mapa MÁS ABAJO y un poco más chicos (estaba muy arriba, bajo los botones de TikTok): mapa en y=230 al 85 %, título cursiva centrado sobre el mapa con ~680 px de ancho (constantes MAPA_Y, MAPA_ESC, TITULO_ANCHO en scripts/montar-tomas.py).",
     "NO repetir clips de b-roll entre videos (se molestó al ver los mismos). Antes de elegir, revisar broll/usados.json y usar solo clips libres; si se acaban, buscar nuevos en Mixkit y agregarlos a broll/catalogo.json.",
     "NO repartidores/mensajeros en el b-roll (no le gustan). Para 'llega a la puerta de mi casa' usar SU propia caja.",
-    "Cuando dice 'comunidad'/'grupo': animación de celular con un grupo abierto y muchos mensajes llegando (scripts/chat-grupo.py → videos/generados/), no gente al azar. Mensajes neutros (saludos + fotos de su mercancía), nunca reseñas inventadas."
+    "Cuando dice 'comunidad'/'grupo': animación de celular con un grupo abierto y muchos mensajes llegando (scripts/chat-grupo.py → videos/generados/), no gente al azar. Mensajes neutros (saludos + fotos de su mercancía), nunca reseñas inventadas.",
+    "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

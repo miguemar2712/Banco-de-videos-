@@ -38,6 +38,12 @@
     },
     {
      "id": 4065
+    },
+    {
+     "id": 7025
+    },
+    {
+     "id": 28000
     }
    ]
   },
@@ -75,6 +81,9 @@
     },
     {
      "id": 42130
+    },
+    {
+     "id": 42137
     }
    ]
   },
@@ -168,6 +177,56 @@
     },
     {
      "id": 21328
+    }
+   ]
+  },
+  "bolsas": {
+   "descripcion": "Bolsas y bolsos",
+   "tomas": [
+    {
+     "id": 31354
+    }
+   ]
+  },
+  "tenis": {
+   "descripcion": "Tenis / calzado",
+   "tomas": [
+    {
+     "id": 15059
+    },
+    {
+     "id": 345
+    },
+    {
+     "id": 15060
+    },
+    {
+     "id": 4755
+    }
+   ]
+  },
+  "lentes": {
+   "descripcion": "Lentes de sol",
+   "tomas": [
+    {
+     "id": 44541
+    },
+    {
+     "id": 4640
+    }
+   ]
+  },
+  "perfumes": {
+   "descripcion": "Perfumes",
+   "tomas": [
+    {
+     "id": 27467
+    },
+    {
+     "id": 24161
+    },
+    {
+     "id": 23437
     }
    ]
   }

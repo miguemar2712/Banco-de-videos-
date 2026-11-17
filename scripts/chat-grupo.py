@@ -13,7 +13,7 @@ F = os.path.join(RAIZ, 'fx-camara', 'fonts')
 ap = argparse.ArgumentParser()
 ap.add_argument('salida'); ap.add_argument('--nombre', default='Comunidad'); ap.add_argument('--sub', default='')
 ap.add_argument('--dur', type=float, default=3.0); ap.add_argument('--fondo'); ap.add_argument('--fotos', default='')
-ap.add_argument('--privado', action='store_true'); ap.add_argument('--semilla', type=int, default=1)
+ap.add_argument('--privado', action='store_true'); ap.add_argument('--pedido', action='store_true'); ap.add_argument('--semilla', type=int, default=1)
 a = ap.parse_args()
 rnd = random.Random(a.semilla)
 W, H, FPS = 1080, 1920, 30
@@ -56,20 +56,30 @@ while t < a.dur + .3:
     msgs.append(dict(t=t, n=rnd.choice(NOMBRES), c=rnd.choice(COLORES), txt=None if foto else rnd.choice(TEXTOS),
                      foto=rnd.choice(fotos) if foto else None))
     t += rnd.uniform(.11, .22)
+if a.pedido:   # chat 1 a 1 con su proveedor: ella pide, el proveedor manda fotos y confirma
+    guion = [(0.15, True, 'Hola, quiero hacer un pedido', None), (0.55, False, None, 0), (0.8, False, None, 1),
+             (1.1, False, 'Estos son los modelos', None), (1.5, True, 'Me llevo estos', None), (1.9, False, None, 2),
+             (2.25, False, 'Perfecto, lo empacamos hoy', None), (2.6, True, 'Gracias!', None)]
+    k = a.dur / 2.9
+    msgs = [dict(t=t * k, yo=yo, n='Proveedor', c=(18, 140, 120), txt=txt, foto=(fotos[f % len(fotos)] if f is not None and fotos else None))
+            for t, yo, txt, f in guion if (txt or (f is not None and fotos))]
 for m in msgs:
-    m['h'] = 360 if m['foto'] else 118
+    m.setdefault('yo', False)
+    m['h'] = (360 if m['foto'] else 118) - (40 if m['yo'] or a.pedido else 0)
 
 
 def burbuja(m):
     w = 340 if m['foto'] else min(560, 60 + int(fnt(36).getlength(m['txt'])) + 40)
     w = max(w, 60 + int(fnt(28).getlength(m['n'])) + 30)
     b = Image.new('RGBA', (w, m['h'] - 14), (0, 0, 0, 0)); d = ImageDraw.Draw(b)
-    d.rounded_rectangle((0, 0, w - 1, m['h'] - 15), 26, fill=(255, 255, 255, 255))
-    d.text((26, 14), '~ ' + m['n'], font=fnt(28), fill=m['c'])
+    d.rounded_rectangle((0, 0, w - 1, m['h'] - 15), 26, fill=(217, 253, 211, 255) if m['yo'] else (255, 255, 255, 255))
+    top = 18
+    if not (m['yo'] or a.pedido):
+        d.text((26, 14), '~ ' + m['n'], font=fnt(28), fill=m['c']); top = 58
     if m['foto']:
-        b.paste(m['foto'].resize((w - 40, m['h'] - 80)), (20, 58))
+        b.paste(m['foto'].resize((w - 40, m['h'] - top - 22)), (20, top))
     else:
-        d.text((26, 52), m['txt'], font=fnt(36), fill=(30, 30, 30))
+        d.text((26, top - 6), m['txt'], font=fnt(36), fill=(30, 30, 30))
     return b
 
 
@@ -89,11 +99,11 @@ for k in range(N):
         y -= int(m['h'] * anim)
         if y < 150: break
         b = cache.setdefault(id(m), burbuja(m))
-        pant.alpha_composite(b, (28, max(150, y)))
+        pant.alpha_composite(b, (pant.width - b.width - 28 if m['yo'] else 28, max(150, y)))
     # barra de arriba (nombre del grupo)
     dp.rectangle((0, 0, pant.width, 150), fill=(18, 110, 96, 255))
     dp.ellipse((90, 30, 180, 120), fill=(230, 60, 60, 255))
-    dp.text((135, 75), 'DC', font=fnt(34), fill='white', anchor='mm')
+    dp.text((135, 75), 'P' if a.pedido else 'DC', font=fnt(34), fill='white', anchor='mm')
     dp.text((200, 34), a.nombre + ('  🔒' if False else ''), font=fnt(40), fill='white')
     if a.privado:
         dp.rounded_rectangle((200 + fnt(40).getlength(a.nombre) + 16, 40, 200 + fnt(40).getlength(a.nombre) + 136, 82), 12, fill=(255, 255, 255, 60))
@@ -108,7 +118,7 @@ for k in range(N):
     dp.ellipse((pant.width - 100, pant.height - 88, pant.width - 24, pant.height - 12), fill=(18, 140, 120, 255))
     # contador de mensajes nuevos
     nuevos = len(vis)
-    if nuevos:
+    if nuevos and not a.pedido:
         dp.rounded_rectangle((pant.width - 130, 170, pant.width - 24, 218), 24, fill=(37, 211, 102, 255))
         dp.text((pant.width - 77, 194), f'+{nuevos}', font=fnt(28), fill='white', anchor='mm')
     m = Image.new('L', pant.size, 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, pant.width - 1, pant.height - 1), 56, fill=255)

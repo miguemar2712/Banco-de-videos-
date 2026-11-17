@@ -141,7 +141,7 @@ def hacer_ass(plan, total, parte='todo'):
         lineas = [t] if isinstance(t, str) else t
         # centrado sobre el mapa (bajado de la orilla de arriba, donde TikTok pone sus botones)
         y0 = plan.get('titulo_y', int(plan.get('mapa_y', MAPA_Y) + 486 * plan.get('mapa_escala', MAPA_ESC) * .5))
-        letra = plan.get('titulo_letra', 'Great Vibes')     # su elección: cursiva caligráfica
+        letra = plan.get('titulo_letra', 'Kaushan Script')     # su elección: cursiva caligráfica
         if letra == 'Montserrat Black':
             for i, l in enumerate(lineas):
                 fs = min(170, int(960 / (len(l) * .56)))
@@ -150,8 +150,9 @@ def hacer_ass(plan, total, parte='todo'):
             from PIL import ImageFont
             archivo = os.path.join(RAIZ, 'fuentes', letra.replace(' ', '') + '.ttf')
             f = ImageFont.truetype(archivo, 200); asc, des = f.getmetrics()
-            fs = min(int(1.44 * TITULO_ANCHO * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
-            paso = int(fs * .5)
+            ajuste, interl = {'Great Vibes': (1.44, .5)}.get(letra, (1.0, .62))   # libass dibuja cada letra a distinta escala
+            fs = min(int(ajuste * TITULO_ANCHO * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
+            paso = int(fs * interl)
             for i, l in enumerate(lineas):
                 out += doble(0, 0, total, 'Titulo', 540, y0 - paso // 2 * (len(lineas) - 1) + i * paso, l,
                              f'\\fn{letra}\\fs{fs}', sombra=(6, 9), blur=7)

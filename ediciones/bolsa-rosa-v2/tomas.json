@@ -1,0 +1,120 @@
+{
+ "voz": "videos/voz-5b.m4a",
+ "salida": "out/bolsa-rosa-v2.mp4",
+ "titulo": [
+  "Mi bolsa",
+  "desde China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-5b-palabras.json",
+ "claves": [
+  "costó",
+  "bolsa",
+  "cartera",
+  "china",
+  "detalles",
+  "diseño",
+  "asas",
+  "incluida",
+  "vende",
+  "conseguirlas",
+  "proveedores",
+  "bolsas",
+  "bolsa"
+ ],
+ "reemplazos": {
+  "casas": "asas",
+  "25": "$25",
+  "80": "$80",
+  "100": "$100"
+ },
+ "tomas": [
+  {
+   "hasta": 2.9,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 5.0,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 3.5
+  },
+  {
+   "hasta": 6.4,
+   "clip": "videos/broll/mk-4011.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 7.5,
+   "clip": "videos/broll/mk-4003.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 8.4,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 9.3,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 14.0
+  },
+  {
+   "hasta": 10.0,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 11.6,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 24.0
+  },
+  {
+   "hasta": 13.0,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 14.4,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 17.0
+  },
+  {
+   "hasta": 16.2,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 18.2,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 12.5
+  },
+  {
+   "hasta": 19.1,
+   "clip": "videos/clip-j-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 21.82,
+   "clip": "videos/clip-j-1080.mp4",
+   "desde": 2.5
+  }
+ ],
+ "textos": [
+  {
+   "de": 3.9,
+   "a": 5.0,
+   "grande": "$25",
+   "cursiva": "dólares",
+   "cursiva_de": 4.6
+  },
+  {
+   "de": 13.1,
+   "a": 14.45,
+   "grande": "$80 a $100",
+   "cursiva": "dólares",
+   "cursiva_de": 13.9
+  }
+ ]
+}

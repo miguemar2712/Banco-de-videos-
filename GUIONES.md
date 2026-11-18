@@ -125,6 +125,15 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | …y a venderlo en tus redes. | vender → TU MERCANCÍA |
 | Comenta **PROGRAMA** o escríbeme al WhatsApp de mi perfil y te doy toda la información. | TU MERCANCÍA → whatsapp |
 
+## 13 · La bolsa rosa (producto estrella)  ·  CTA: BOLSAS
+| Frase | Tomas |
+|---|---|
+| ¿Cuánto crees que me costó esta bolsa con su cartera? | TU MERCANCÍA (bolsa rosa) |
+| Me salió en solo **[$precio]** importándola directamente desde China. | bolsa + precio grande → china/avión |
+| Mira los detalles: el diseño, las asas, la cartera que trae incluida… | bolsa: cada detalle cuando lo nombra |
+| Y aquí se vende entre **[$precio de venta]**. | vender → bolsa + precio grande |
+| Si quieres vender bolsas como esta y no sabes dónde conseguirlas, comenta **BOLSAS** y te paso la información de mis proveedores. | colección de bolsas → bolsa con guantes |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

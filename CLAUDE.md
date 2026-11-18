@@ -66,7 +66,7 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
 ## 6 · Videos de tomas con voz en off (formato de @delcarmen__1)
 - Ella NO sale a cámara: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
 - **Su estilo de texto (de su ejemplo en CapCut):** título fijo arriba en **cursiva Kaushan Script** blanca sobre el mapa de China rojo (`"titulo"`, `"mapa": true`) +
-  subtítulos estilo **cartel** (`"subtitulos": "cartel"`): letra Ultra **blanca lisa, sin manchas** (ella no quiere textura) con resplandor negro suave, palabra
+  subtítulos estilo **cartel** (`"subtitulos": "cartel"`): letra **Montserrat Black rosa pastel #FFB6D5**, lisa, sin manchas, con resplandor negro suave, palabra
   clave ENORME al centro + pequeñas arriba-derecha / abajo-izquierda (su plantilla de CapCut). Campos: `"claves"`, `"palabras"`,
   `"reemplazos"`. Modelo: `ediciones/sets-deportivos-cartel/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
 - **Su colección de videos de mercancía** está en `coleccion/` (qué hay en cada uno: `coleccion/inventario.json`). En una sesión

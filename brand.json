@@ -42,7 +42,8 @@
     "Cuando dice 'comunidad'/'grupo': animación de celular con un grupo abierto y muchos mensajes llegando (scripts/chat-grupo.py → videos/generados/), no gente al azar. Mensajes neutros (saludos + fotos de su mercancía), nunca reseñas inventadas.",
     "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía).",
     "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165).",
-    "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py."
+    "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py.",
+    "'Aquí se vende' hablando de BOLSAS → tienda de bolsas, no de ropa. Mixkit no tiene tiendas de bolsas: usar su colección en exhibición (coleccion/06-coleccion-bolsas, seg. 4–6)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

@@ -24,7 +24,8 @@ RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 CAT = os.path.join(RAIZ, 'broll', 'catalogo.json')
 BROLL = os.path.join(RAIZ, 'videos', 'broll')
 FUENTES = os.path.join(RAIZ, 'fx-camara', 'fonts')
-MAPA_Y, MAPA_ESC, TITULO_ANCHO = 230, .85, 680   # gusto de @delcarmen__1: título más abajo y un poco más chico
+MAPA_Y, MAPA_ESC, TITULO_ANCHO = 230, .85, 680
+SUB_SOMBRA = False   # ella quiere los subtítulos SOLO blancos, sin borde ni sombra negra
 
 
 def sh(cmd):
@@ -129,8 +130,8 @@ def ass_cartel(grupos, Y):
             partes.append((w, xb, yb, chico, '\\an4')); xb += ancho(w['t'], chico) + esp
         for w, x, y, fs, al in partes:
             pop = f"{al}\\fs{fs}\\fscx118\\fscy118\\t(0,100,\\fscx100\\fscy100)"
-            out += (f"Dialogue: 2,{tc(w['a'])},{tc(fin)},CartelGlow,,0,0,0,,{{\\pos({x:.0f},{y:.0f})\\blur18{pop}}}{w['t']}\n"
-                    f"Dialogue: 3,{tc(w['a'])},{tc(fin)},Cartel,,0,0,0,,{{\\pos({x:.0f},{y:.0f}){pop}}}{w['t']}\n")
+            out += ((f"Dialogue: 2,{tc(w['a'])},{tc(fin)},CartelGlow,,0,0,0,,{{\\pos({x:.0f},{y:.0f})\\blur18{pop}}}{w['t']}\n" if SUB_SOMBRA else '')
+                    + f"Dialogue: 3,{tc(w['a'])},{tc(fin)},Cartel,,0,0,0,,{{\\pos({x:.0f},{y:.0f}){pop}}}{w['t']}\n")
     return out
 
 

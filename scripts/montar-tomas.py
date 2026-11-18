@@ -70,7 +70,7 @@ Style: Titulo,Montserrat Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0
 Style: Sombra,Montserrat Black,128,&H70000000,&H70000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
 Style: Sub,Montserrat ExtraBold,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
 Style: SubSombra,Montserrat ExtraBold,64,&H80000000,&H80000000,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
-Style: Cartel,Montserrat Black,80,&H00D5B6FF,&H00D5B6FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Cartel,Montserrat Black,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
 Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H00000000,0,0,0,0,100,100,0,0,1,13,0,5,0,0,0,1
 
 [Events]
@@ -105,7 +105,7 @@ def ass_cartel(grupos, Y):
     negro; la palabra más importante (la clave más larga, o la más larga) ENORME al centro; las de antes pequeñas arriba
     a la derecha y las de después pequeñas abajo a la izquierda. Cada palabra aparece cuando se dice."""
     from PIL import ImageFont
-    fuente = os.path.join(RAIZ, 'fuentes', 'Montserrat-Black.ttf')   # su elección: Montserrat en rosa pastel (#FFB6D5)
+    fuente = os.path.join(RAIZ, 'fuentes', 'Montserrat-Black.ttf')   # su elección: Montserrat Black BLANCA
     def ancho(t, fs):   # libass escala la letra para que ascendente+descendente = fs; PIL usa el cuadro 'em'
         f = ImageFont.truetype(fuente, 200); a, d = f.getmetrics()
         return f.getlength(t) * fs / (a + d)

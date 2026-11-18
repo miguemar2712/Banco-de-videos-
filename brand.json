@@ -44,7 +44,7 @@
     "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165).",
     "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py.",
     "'Aquí se vende' hablando de BOLSAS → tienda de bolsas, no de ropa. Mixkit no tiene tiendas de bolsas: usar su colección en exhibición (coleccion/06-coleccion-bolsas, seg. 4–6).",
-    "SUBTÍTULOS: letra MONTSERRAT BLACK en ROSA PASTEL #FFB6D5 (lo eligió entre 6 letras y 6 colores; antes Ultra blanca), mismo acomodo 'cartel' y resplandor negro suave."
+    "SUBTÍTULOS: letra MONTSERRAT BLACK, TODO EN BLANCO (probó rosa pastel y volvió al blanco), acomodo 'cartel' y resplandor negro suave."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -58,5 +58,5 @@
   "subtitulos": "cartel",
   "titulo_letra": "Kaushan Script",
   "subtitulos_letra": "Montserrat Black",
-  "subtitulos_color": "#FFB6D5"
+  "subtitulos_color": "#FFFFFF"
 }

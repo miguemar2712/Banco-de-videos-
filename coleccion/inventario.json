@@ -1,0 +1,42 @@
+{
+ "01-caja-sets-silla.mov": {
+  "alias": "videos/clip-a.mov",
+  "contenido": "abriendo caja (0-4 s), set café sobre silla, mano con set (19-25 s)"
+ },
+ "02-sets-cama.mov": {
+  "alias": "videos/clip-b.mov",
+  "contenido": "sets deportivos Alo sobre la cama; trae logo Level Up al centro (borrar: delogo x=165 y=472 w=250 h=88, en 576x1024)"
+ },
+ "03-caja-abriendo.mov": {
+  "alias": "videos/clip-c.mov",
+  "contenido": "caja con ropa embolsada abriéndose (7 s)"
+ },
+ "04-prendas-embolsadas.mov": {
+  "alias": "videos/clip-d.mov",
+  "contenido": "montón de prendas embolsadas (16 s, baja resolución)"
+ },
+ "05-bolsas-tenis-ropa-alo-caja.mov": {
+  "alias": "videos/clip-e.mov",
+  "contenido": "0-3.9 bolsas+tenis · 4-5.9 caja en el pasillo · 6-8 ropa Alo · 8-10.9 gorra · 11-13.4 tenis+bolsos · 13.4-fin NEGRO; logo Level Up arriba (delogo x=205 y=33 w=165 h=152 en 0-3.95 y 10.9-13.5)"
+ },
+ "06-coleccion-bolsas.mov": {
+  "alias": "videos/clip-f.mov",
+  "contenido": "colección de bolsas rosas/negras con cajas (17 s)"
+ },
+ "07-perfumes.mov": {
+  "alias": "videos/clip-g.mov",
+  "contenido": "perfumes (14 s); logo Level Up al centro (delogo x=135 y=465 w=310 h=110)"
+ },
+ "08-ropa-alo-perfumes.mp4": {
+  "alias": "videos/clip-h.mp4",
+  "contenido": "ropa Alo: tops blancos, pantalones café, etiquetas; cajas de perfume ~7.7 s (15 s, 464x832)"
+ },
+ "09-bolsa-rosa-horizontal.mov": {
+  "alias": "videos/clip-i.mov",
+  "contenido": "bolsa rosa grande + cartera rosa de cerca (28 s, HORIZONTAL 1280x720: recortar al centro)"
+ },
+ "10-bolsa-unboxing-guantes.mov": {
+  "alias": "videos/clip-j.mov",
+  "contenido": "bolsa saliendo de caja blanca con guantes negros, detalles del herraje (21 s, 464x832)"
+ }
+}

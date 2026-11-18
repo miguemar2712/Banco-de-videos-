@@ -2,8 +2,9 @@
  "voz": "videos/voz-4.m4a",
  "salida": "out/errores-importar.mp4",
  "titulo": [
-  "3 errores",
-  "al importar"
+  "3 errores al",
+  "Importar desde",
+  "China"
  ],
  "mapa": true,
  "subtitulos": "cartel",

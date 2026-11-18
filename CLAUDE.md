@@ -69,6 +69,9 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
   subtítulos estilo **cartel** (`"subtitulos": "cartel"`): letra Ultra **blanca lisa, sin manchas** (ella no quiere textura) con resplandor negro suave, palabra
   clave ENORME al centro + pequeñas arriba-derecha / abajo-izquierda (su plantilla de CapCut). Campos: `"claves"`, `"palabras"`,
   `"reemplazos"`. Modelo: `ediciones/sets-deportivos-cartel/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.
+- **Su colección de videos de mercancía** está en `coleccion/` (qué hay en cada uno: `coleccion/inventario.json`). En una sesión
+  nueva corre primero `.venv/bin/python scripts/restaurar-coleccion.py` (copia a `videos/clip-*` y genera las versiones limpias).
+  Videos nuevos que mande para su colección → guárdalos ahí y regístralos. Úsalos SIEMPRE antes que b-roll de Mixkit.
 - Banco de b-roll por tema en `broll/catalogo.json` (Mixkit, uso comercial libre): china · avion · fabrica · cajas · entrega ·
   dinero · whatsapp · vender · clienta. Bajar todo: `.venv/bin/python scripts/montar-tomas.py --descargar`.
 - **No repetir b-roll entre videos:** mira `broll/usados.json` (qué clip salió en qué video) y elige solo libres; si faltan,

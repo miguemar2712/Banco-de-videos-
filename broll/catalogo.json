@@ -48,22 +48,10 @@
    ]
   },
   "fabrica": {
-   "descripcion": "Fábricas/mercados grandes CON PERSONAS CAMINANDO, estilo tienda (no máquinas de cerca)",
+   "descripcion": "Fábricas/mercados grandes CON PERSONAS CAMINANDO, estilo tienda (no máquinas de cerca) · SIN personas caminando (no le gustan)",
    "tomas": [
     {
      "id": 35884
-    },
-    {
-     "id": 23696
-    },
-    {
-     "id": 31086
-    },
-    {
-     "id": 4147
-    },
-    {
-     "id": 4705
     }
    ]
   },

@@ -82,5 +82,6 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
   ni efectos: solo su voz (lo probó y no lo quiere; `"sonidos"` queda disponible solo si lo vuelve a pedir).
 - **NO usar celulares con grupos, chats o pedidos animados** (`scripts/chat-grupo.py` queda solo por si algún día lo pide): no le
   gustan. Para comunidad / pedidos / acompañamiento / link en mi perfil usa su mercancía o lugares con gente (mercado, bodega).
+- **Nada de personas caminando** (mercados, bodegas, fábricas con gente) **ni tomas acercadas que se vean borrosas**.
 - **Nada de repartidores** en el b-roll; para "llega a mi casa" usa su propia caja.
 - Guiones listos: `GUIONES.md`.

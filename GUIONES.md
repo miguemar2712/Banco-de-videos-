@@ -152,6 +152,16 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Y aquí se venden en **[$]** dólares o más. | bolsas + precio grande |
 | Si quieres vender bolsas y ganar desde casa, comenta **BOLSAS** y te paso mis proveedores. | fila completa |
 
+## 16 · ¿Qué venía en estas cajas?  ·  CTA: CAJA  (~20 s, solo coleccion/14 cajas + coleccion/15 bolsas)
+| Frase | Tomas |
+|---|---|
+| ¡Me llegó mi pedido de China! | cajas en la puerta (coleccion/14, 0-5 s) |
+| ¿Y adivinas qué venía en estas cajas? | cajas de cerca (intriga) |
+| Estas bolsas con cadenita dorada… | fila de bolsas de cadena (coleccion/15) |
+| …en azul, rosa pastel, café, negra, rosa y beige. | cada color cuando lo dice |
+| Cada una me salió en **[$]** dólares, y las vendo en **[$]**. | bolsas + precios grandes |
+| ¿Quieres que te llegue tu propio pedido a la puerta de tu casa? Comenta **CAJA** y te paso mis proveedores. | cajas en la puerta → fila de bolsas |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

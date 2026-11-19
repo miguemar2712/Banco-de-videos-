@@ -80,7 +80,7 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
   `ediciones/sets-deportivos-tomas/tomas.json`) y corre `.venv/bin/python scripts/montar-tomas.py ediciones/<nombre>/tomas.json`.
 - Textos grandes puntuales (p. ej. "$15 dólares"): campo `textos` del tomas.json. **Sin sonido de monedas**
   ni efectos: solo su voz (lo probó y no lo quiere; `"sonidos"` queda disponible solo si lo vuelve a pedir).
-- Cuando dice **comunidad / grupo**: `.venv/bin/python scripts/chat-grupo.py videos/generados/<x>.mp4 --nombre "Comunidad" --sub "3,000+ miembros"
-  --dur 3 --fondo <su clip> --fotos <sus clips>` (celular con grupo y mensajes llegando; `--privado` para el grupo privado).
+- **NO usar celulares con grupos, chats o pedidos animados** (`scripts/chat-grupo.py` queda solo por si algún día lo pide): no le
+  gustan. Para comunidad / pedidos / acompañamiento / link en mi perfil usa su mercancía o lugares con gente (mercado, bodega).
 - **Nada de repartidores** en el b-roll; para "llega a mi casa" usa su propia caja.
 - Guiones listos: `GUIONES.md`.

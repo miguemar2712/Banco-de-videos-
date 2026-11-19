@@ -1,0 +1,38 @@
+{
+ "voz": "videos/voz-7.m4a",
+ "salida": "out/puerta-de-tu-casa.mp4",
+ "titulo": [
+  "Importa",
+  "desde China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-7-palabras.json",
+ "claves": [
+  "mercancía",
+  "casa",
+  "tranquilidad",
+  "calidad",
+  "china",
+  "escríbeme",
+  "programa",
+  "proveedores",
+  "envíos",
+  "acompañamiento",
+  "negocio",
+  "rentable",
+  "fabrican",
+  "intermediarios",
+  "ganancias",
+  "lista",
+  "perfil"
+ ],
+ "reemplazos": {},
+ "tomas": [
+  {
+   "hasta": 29.41,
+   "clip": "videos/clip-n-ajustado.mp4",
+   "desde": 0.0
+  }
+ ]
+}

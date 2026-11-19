@@ -21,6 +21,7 @@ limpias = {   # salida: (entrada, filtro, duración máx.)
  'videos/clip-j-1080.mp4': ('videos/clip-j.mov', E, None),
  'videos/clip-k-limpio.mp4': ('videos/clip-k.mov', 'crop=414:736:150:544,scale=1080:1920:flags=lanczos,unsharp=5:5:0.6,format=yuv420p', 4.15),  # sin letras
  'videos/clip-l-1080.mp4': ('videos/clip-l.mov', E, None),
+ 'videos/clip-n-1080.mp4': ('videos/clip-n.mov', E, None),
 }
 for out, (src, vf, dur) in limpias.items():
     if os.path.exists(out) or not os.path.exists(src): continue

@@ -45,7 +45,8 @@
     "'Aquí se vende' hablando de BOLSAS → tienda de bolsas, no de ropa. Mixkit no tiene tiendas de bolsas: usar su colección en exhibición (coleccion/06-coleccion-bolsas, seg. 4–6).",
     "SUBTÍTULOS: Montserrat Black TODO BLANCO, SIN borde ni sombra/resplandor negro (SUB_SOMBRA = False en scripts/montar-tomas.py).",
     "PROHIBIDO: celulares/teléfonos con grupos, chats o pedidos animados (scripts/chat-grupo.py) — NO le gustan. Para comunidad, pedidos, acompañamiento, 'link en mi perfil' o 'sin mínimos' usar su mercancía (coleccion/) o b-roll de lugares y personas (mercado 4147, bodega 4705).",
-    "NO le gustan: (1) tomas acercadas/recortadas que se ven borrosas (ej. cajas en la puerta acercadas para quitar letras) — mejor otra toma nítida suya; (2) b-roll de PERSONAS CAMINANDO (mercado 4147, bodega 4705, fábrica con gente). Preferir SIEMPRE su propia mercancía; de Mixkit solo objetos/lugares sin gente (avión, puerto)."
+    "NO le gustan: (1) tomas acercadas/recortadas que se ven borrosas (ej. cajas en la puerta acercadas para quitar letras) — mejor otra toma nítida suya; (2) b-roll de PERSONAS CAMINANDO (mercado 4147, bodega 4705, fábrica con gente). Preferir SIEMPRE su propia mercancía; de Mixkit solo objetos/lugares sin gente (avión, puerto).",
+    "Cuando manda UN video y dice 'solo ese': usar únicamente ese clip, en su orden, sin b-roll; si dura más que el audio, acelerarlo un poco (setpts) para que entre completo."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

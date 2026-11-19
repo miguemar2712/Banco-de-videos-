@@ -44,7 +44,8 @@
     "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165).",
     "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py.",
     "'Aquí se vende' hablando de BOLSAS → tienda de bolsas, no de ropa. Mixkit no tiene tiendas de bolsas: usar su colección en exhibición (coleccion/06-coleccion-bolsas, seg. 4–6).",
-    "SUBTÍTULOS: Montserrat Black TODO BLANCO, SIN borde ni sombra/resplandor negro (SUB_SOMBRA = False en scripts/montar-tomas.py)."
+    "SUBTÍTULOS: Montserrat Black TODO BLANCO, SIN borde ni sombra/resplandor negro (SUB_SOMBRA = False en scripts/montar-tomas.py).",
+    "Si manda clips y dice 'haz clicks relacionados a lo que hablo': sus clips son la base y en cada idea abstracta va algo relacionado: proveedores → mercado/bodega con gente (Mixkit 4147, 4705); sin mínimos / acompañamiento / link en mi perfil → chats animados (scripts/chat-grupo.py --pedido --mensajes ...)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

@@ -50,5 +50,9 @@
  "13-cajas-en-la-puerta-sin-capcut.mov": {
   "alias": "videos/clip-m.mov",
   "contenido": "igual que #11 (cajas en la puerta) pero sin el final de CapCut, 4.2 s; trae las mismas letras arriba → usar videos/clip-k-limpio.mp4 · NO USAR la versión acercada (se ve borrosa, no le gustó). Pedirle el original sin letras."
+ },
+ "14-cajas-puerta-bolsas-gorros-ORIGINAL.mov": {
+  "alias": "videos/clip-n.mov",
+  "contenido": "ORIGINAL SIN LETRAS: 0-5 cajas en la puerta de su casa (nítidas, a distancia) · 5-26 bolsas con fundas en el piso · 26-33.5 gorros de lana (33.5 s, 476x854). Usar este en vez de #11/#13."
  }
 }

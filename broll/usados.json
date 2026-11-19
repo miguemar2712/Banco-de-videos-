@@ -1,11 +1,13 @@
 {
  "4011": [
   "bolsa-rosa",
-  "bolsa-rosa-v2"
+  "bolsa-rosa-v2",
+  "bolsa-rosa-v3"
  ],
  "4003": [
   "bolsa-rosa",
-  "bolsa-rosa-v2"
+  "bolsa-rosa-v2",
+  "bolsa-rosa-v3"
  ],
  "33167": [
   "bolsa-rosa"
@@ -21,6 +23,9 @@
  ],
  "21328": [
   "errores-importar"
+ ],
+ "6935": [
+  "pedido-bolsas"
  ],
  "18304": [
   "pedido-china",

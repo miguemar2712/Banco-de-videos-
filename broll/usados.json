@@ -25,13 +25,17 @@
   "errores-importar"
  ],
  "4147": [
-  "pedido-bolsas-v2"
+  "pedido-bolsas-v2",
+  "pedido-bolsas-v3"
  ],
  "27996": [
-  "pedido-bolsas-v2"
+  "pedido-bolsas-v2",
+  "pedido-bolsas-v3",
+  "pedido-bolsas-v4"
  ],
  "4705": [
-  "pedido-bolsas-v2"
+  "pedido-bolsas-v2",
+  "pedido-bolsas-v3"
  ],
  "6935": [
   "pedido-bolsas"
@@ -112,6 +116,15 @@
  ],
  "7379": [
   "pedido-china"
+ ],
+ "39463": [
+  "puerta-de-tu-casa-v2"
+ ],
+ "28000": [
+  "puerta-de-tu-casa-v2"
+ ],
+ "47005": [
+  "puerta-de-tu-casa-v2"
  ],
  "23327": [
   "sets-deportivos-capcut",

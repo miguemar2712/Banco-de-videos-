@@ -54,5 +54,9 @@
  "14-cajas-puerta-bolsas-gorros-ORIGINAL.mov": {
   "alias": "videos/clip-n.mov",
   "contenido": "ORIGINAL SIN LETRAS: 0-5 cajas en la puerta de su casa (nítidas, a distancia) · 5-26 bolsas con fundas en el piso · 26-33.5 gorros de lana (33.5 s, 476x854). Usar este en vez de #11/#13."
+ },
+ "15-bolsas-cadena-colores.mov": {
+  "alias": "videos/clip-o.mov",
+  "contenido": "fila de bolsas con cadena dorada y funda: 0-1 azul · 1-3 blanca/crema · 4-8 azul · 8-11 café · 11-14 negra · 14-16 rosa · 16-17.8 beige (17.8 s, 720x1280)"
  }
 }

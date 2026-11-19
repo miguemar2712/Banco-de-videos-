@@ -143,6 +143,15 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Cada bolsa me salió en solo **[$]** dólares, y aquí se venden en **[$]** dólares. | bolsas + precio grande |
 | Si quieres vender bolsas y no sabes dónde conseguirlas, comenta **PEDIDO** y te paso la información de mis proveedores. | sus bolsas |
 
+## 15 · Bolsas a $10 con mis proveedores chinitos  ·  CTA: BOLSAS  (< 25 s, solo coleccion/15)
+| Frase | Tomas |
+|---|---|
+| Compra bolsas como estas a solo **$10 dólares** directamente con mis proveedores chinitos 😍 | bolsa azul (0-1) + **$10** grande |
+| Mira todos los colores: **azul, blanca, café, negra, rosa y beige**… | cada color cuando lo dice (azul 4-8 · blanca 1-3 · café 8-11 · negra 11-14 · rosa 14-16 · beige 16-17.8) |
+| …cada una con su cadena dorada y su funda. | bolsas de cerca |
+| Y aquí se venden en **[$]** dólares o más. | bolsas + precio grande |
+| Si quieres vender bolsas y ganar desde casa, comenta **BOLSAS** y te paso mis proveedores. | fila completa |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

@@ -22,6 +22,7 @@ limpias = {   # salida: (entrada, filtro, duración máx.)
  'videos/clip-k-limpio.mp4': ('videos/clip-k.mov', 'crop=414:736:150:544,scale=1080:1920:flags=lanczos,unsharp=5:5:0.6,format=yuv420p', 4.15),  # sin letras
  'videos/clip-l-1080.mp4': ('videos/clip-l.mov', E, None),
  'videos/clip-n-1080.mp4': ('videos/clip-n.mov', E, None),
+ 'videos/clip-o-1080.mp4': ('videos/clip-o.mov', E, None),
  'videos/clip-n-ajustado.mp4': ('videos/clip-n.mov', 'setpts=PTS/1.1376,fps=30,' + E, None),   # acelerado para el audio voz-7 (ediciones/puerta-de-tu-casa)
 }
 for out, (src, vf, dur) in limpias.items():

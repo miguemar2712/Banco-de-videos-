@@ -1,0 +1,127 @@
+{
+ "voz": "videos/voz-9.m4a",
+ "salida": "out/bolsas-10-dolares.mp4",
+ "titulo": [
+  "Bolsas a $10",
+  "desde China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-9-palabras.json",
+ "claves": [
+  "bolsas",
+  "chinitos",
+  "colores",
+  "azul",
+  "pastel",
+  "café",
+  "negra",
+  "rosa",
+  "beige",
+  "cadenita",
+  "funda",
+  "proveedores",
+  "vender",
+  "casa",
+  "proveedor",
+  "información"
+ ],
+ "reemplazos": {
+  "éstas": "estas"
+ },
+ "tomas": [
+  {
+   "hasta": 2.4,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 4.6,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 6.0,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 5.0
+  },
+  {
+   "hasta": 6.4,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 0.2
+  },
+  {
+   "hasta": 7.1,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 1.6
+  },
+  {
+   "hasta": 7.6,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 9.0
+  },
+  {
+   "hasta": 8.2,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 11.8
+  },
+  {
+   "hasta": 8.9,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 14.6
+  },
+  {
+   "hasta": 9.9,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 16.6
+  },
+  {
+   "hasta": 12.1,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 12.5
+  },
+  {
+   "hasta": 15.2,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 5.5
+  },
+  {
+   "hasta": 19.4,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 9.5
+  },
+  {
+   "hasta": 22.0,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 14.0
+  },
+  {
+   "hasta": 24.89,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 3.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 1.9,
+   "a": 3.2,
+   "grande": "$10",
+   "cursiva": "dólares",
+   "cursiva_de": 2.15
+  },
+  {
+   "de": 14.45,
+   "a": 15.6,
+   "grande": "$10",
+   "cursiva": "dólares",
+   "cursiva_de": 14.7
+  },
+  {
+   "de": 17.0,
+   "a": 19.0,
+   "grande": "$80 a $90",
+   "cursiva": "dólares",
+   "cursiva_de": 18.1
+  }
+ ]
+}

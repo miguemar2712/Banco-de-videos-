@@ -95,7 +95,8 @@ def doble(capa, a, b, estilo, x, y, txt, tags='', sombra=(5, 8), blur=6):
 def grupos_cartel(pal):
     grupos, g = [], []
     for w in pal:
-        if g and (len(g) >= 3 or w['a'] - g[-1]['b'] > .3 or g[-1]['fin'] or sum(len(x['t']) for x in g) + len(w['t']) > 22):
+        if g and (len(g) >= 3 or w['a'] - g[-1]['b'] > .3 or g[-1]['fin'] or (w['clave'] and g[-1]['clave'])
+                  or sum(len(x['t']) for x in g) + len(w['t']) > 22):   # dos claves seguidas (p. ej. colores) van separadas
             grupos.append(g); g = []
         g.append(w)
     return grupos + [g]

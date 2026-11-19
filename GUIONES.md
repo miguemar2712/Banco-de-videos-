@@ -134,6 +134,15 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Y aquí se vende entre **[$precio de venta]**. | vender → bolsa + precio grande |
 | Si quieres vender bolsas como esta y no sabes dónde conseguirlas, comenta **BOLSAS** y te paso la información de mis proveedores. | colección de bolsas → bolsa con guantes |
 
+## 14 · Me llegó mi pedido de bolsas  ·  CTA: PEDIDO
+| Frase | Tomas |
+|---|---|
+| ¡Me llegó mi pedido de China! | cajas en la puerta (coleccion/11) |
+| Mira todo lo que vino: bolsas en negro, café y blanco, cada una con su funda. | bolsas en el piso (coleccion/12, 0-12 s) |
+| También bolsas rosas con su caja, ¡y hasta gorros para el invierno! | bolsas rosas (12-20 s) → gorros (22-28 s) |
+| Cada bolsa me salió en solo **[$]** dólares, y aquí se venden en **[$]** dólares. | bolsas + precio grande |
+| Si quieres vender bolsas y no sabes dónde conseguirlas, comenta **PEDIDO** y te paso la información de mis proveedores. | sus bolsas |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

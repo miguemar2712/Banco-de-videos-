@@ -1,0 +1,128 @@
+{
+ "voz": "videos/voz-6.m4a",
+ "salida": "out/pedido-bolsas.mp4",
+ "titulo": [
+  "Mi pedido",
+  "de China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-6-palabras.json",
+ "claves": [
+  "pedido",
+  "china",
+  "bolsas",
+  "ropa",
+  "gorros",
+  "variedad",
+  "programa",
+  "proveedores",
+  "mercancía",
+  "mínimos",
+  "envíos",
+  "casa",
+  "acompañamiento",
+  "seguros",
+  "confiables",
+  "perfil",
+  "información"
+ ],
+ "reemplazos": {
+  "halo": "Alo",
+  "inviernos": "de invierno",
+  "100": "100%",
+  "%": ""
+ },
+ "tomas": [
+  {
+   "hasta": 1.5,
+   "clip": "videos/clip-k-limpio.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.0,
+   "clip": "videos/clip-k-limpio.mp4",
+   "desde": 1.5
+  },
+  {
+   "hasta": 3.6,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 4.4,
+   "clip": "videos/clip-h-1080.mp4",
+   "desde": 0.5
+  },
+  {
+   "hasta": 5.8,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 22.5
+  },
+  {
+   "hasta": 7.3,
+   "clip": "videos/clip-e-limpio.mp4",
+   "desde": 11.2
+  },
+  {
+   "hasta": 9.6,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 11.3,
+   "clip": "videos/clip-h-1080.mp4",
+   "desde": 9.5
+  },
+  {
+   "hasta": 12.9,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 15.1,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 16.0
+  },
+  {
+   "hasta": 17.3,
+   "clip": "videos/broll/mk-6935.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 18.5,
+   "clip": "videos/clip-k-limpio.mp4",
+   "desde": 2.9
+  },
+  {
+   "hasta": 21.0,
+   "clip": "videos/clip-j-1080.mp4",
+   "desde": 8.0
+  },
+  {
+   "hasta": 22.7,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 5.0
+  },
+  {
+   "hasta": 24.4,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 27.4,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 8.0
+  },
+  {
+   "hasta": 29.4,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 18.5
+  },
+  {
+   "hasta": 31.46,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 20.0
+  }
+ ]
+}

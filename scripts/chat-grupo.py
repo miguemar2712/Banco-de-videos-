@@ -110,7 +110,7 @@ for k in range(N):
     # barra de arriba (nombre del grupo)
     dp.rectangle((0, 0, pant.width, 150), fill=(18, 110, 96, 255))
     dp.ellipse((90, 30, 180, 120), fill=(230, 60, 60, 255))
-    dp.text((135, 75), 'P' if a.pedido else 'DC', font=fnt(34), fill='white', anchor='mm')
+    dp.text((135, 75), (''.join(p[0] for p in [w for w in a.nombre.replace('@', '').replace('_', ' ').split() if w.isalpha()][:2]).upper() or 'P') if a.pedido else 'DC', font=fnt(34), fill='white', anchor='mm')
     dp.text((200, 34), a.nombre + ('  🔒' if False else ''), font=fnt(40), fill='white')
     if a.privado:
         dp.rounded_rectangle((200 + fnt(40).getlength(a.nombre) + 16, 40, 200 + fnt(40).getlength(a.nombre) + 136, 82), 12, fill=(255, 255, 255, 60))

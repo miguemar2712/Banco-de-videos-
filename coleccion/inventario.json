@@ -46,5 +46,9 @@
  "12-bolsas-y-gorros-en-el-piso.mov": {
   "alias": "videos/clip-l.mov",
   "contenido": "0-12 bolsas negras/café/blancas con fundas en el piso · 12-20 bolsas rosas y cafés en cajas · 22-28 gorros de lana (29 s, 476x854)"
+ },
+ "13-cajas-en-la-puerta-sin-capcut.mov": {
+  "alias": "videos/clip-m.mov",
+  "contenido": "igual que #11 (cajas en la puerta) pero sin el final de CapCut, 4.2 s; trae las mismas letras arriba → usar videos/clip-k-limpio.mp4"
  }
 }

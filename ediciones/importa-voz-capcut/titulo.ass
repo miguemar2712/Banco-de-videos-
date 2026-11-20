@@ -16,7 +16,7 @@ Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H0000000
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:25.74,Sombra,,0,0,0,,{\pos(546,379)\blur7\fnKaushan Script\fs214}Importa
-Dialogue: 1,0:00:00.00,0:00:25.74,Titulo,,0,0,0,,{\pos(540,370)\fnKaushan Script\fs214}Importa
-Dialogue: 0,0:00:00.00,0:00:25.74,Sombra,,0,0,0,,{\pos(546,511)\blur7\fnKaushan Script\fs214}desde China
-Dialogue: 1,0:00:00.00,0:00:25.74,Titulo,,0,0,0,,{\pos(540,502)\fnKaushan Script\fs214}desde China
+Dialogue: 0,0:00:00.00,0:00:26.13,Sombra,,0,0,0,,{\pos(546,379)\blur7\fnKaushan Script\fs214}Importa
+Dialogue: 1,0:00:00.00,0:00:26.13,Titulo,,0,0,0,,{\pos(540,370)\fnKaushan Script\fs214}Importa
+Dialogue: 0,0:00:00.00,0:00:26.13,Sombra,,0,0,0,,{\pos(546,511)\blur7\fnKaushan Script\fs214}desde China
+Dialogue: 1,0:00:00.00,0:00:26.13,Titulo,,0,0,0,,{\pos(540,502)\fnKaushan Script\fs214}desde China

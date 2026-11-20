@@ -58,5 +58,9 @@
  "15-bolsas-cadena-colores.mov": {
   "alias": "videos/clip-o.mov",
   "contenido": "fila de bolsas con cadena dorada y funda: 0-1 azul · 1-3 blanca/crema · 4-8 azul · 8-11 café · 11-14 negra · 14-16 rosa · 16-17.8 beige (17.8 s, 720x1280)"
+ },
+ "16-set-alo-azul-marino.mov": {
+  "alias": "videos/clip-p.mov",
+  "contenido": "set deportivo estilo Alo azul marino (chamarra con cierre + pantalón): 0-3 chamarra logo · 3-7 pantalón · 8-12 etiqueta · 13-18 manos con el cierre · 19-20 cierre de cerca · 21-24.7 set completo en la mesa (720x1280). El audio de este archivo es una voz (guion set $17)."
  }
 }

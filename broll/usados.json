@@ -12,6 +12,24 @@
  "33167": [
   "bolsa-rosa"
  ],
+ "22856": [
+  "cotizacion-ddp"
+ ],
+ "35347": [
+  "cotizacion-ddp"
+ ],
+ "36337": [
+  "cotizacion-ddp"
+ ],
+ "35869": [
+  "cotizacion-ddp"
+ ],
+ "46503": [
+  "cotizacion-ddp"
+ ],
+ "47416": [
+  "cotizacion-ddp"
+ ],
  "24139": [
   "errores-importar"
  ],
@@ -145,7 +163,8 @@
   "puerta-de-tu-casa-v2"
  ],
  "30125": [
-  "que-importar"
+  "que-importar",
+  "que-importar-v2"
  ],
  "7374": [
   "set-alo-17"

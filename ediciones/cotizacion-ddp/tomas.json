@@ -1,0 +1,156 @@
+{
+ "voz": "videos/voz-16-voz.m4a",
+ "salida": "out/cotizacion-ddp.mp4",
+ "titulo": [
+  "Antes de pagar",
+  "pide DDP"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-16-palabras.json",
+ "claves": [
+  "cotizaron",
+  "pagar",
+  "casa",
+  "cotización",
+  "escrito",
+  "DDP",
+  "transporte",
+  "aduana",
+  "aranceles",
+  "impuestos",
+  "muestra",
+  "calidad",
+  "envío",
+  "precio",
+  "importar",
+  "proveedores",
+  "seguros",
+  "información"
+ ],
+ "reemplazos": {
+  "Escríbele": "Escríbeme",
+  "100": "100%",
+  "%": "",
+  "¿Ya": "ya",
+  "aprobados": "aprobados"
+ },
+ "tomas": [
+  {
+   "hasta": 2.0,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 3.3,
+   "clip": "videos/clip-t-1080.mp4",
+   "desde": 1.4
+  },
+  {
+   "hasta": 5.5,
+   "clip": "videos/clip-n-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 7.3,
+   "clip": "videos/broll/mk-22856.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 9.4,
+   "clip": "videos/broll/mk-35347.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 11.7,
+   "clip": "videos/broll/mk-36337.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 13.4,
+   "clip": "videos/broll/mk-35869.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 15.3,
+   "clip": "videos/broll/mk-46503.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 17.5,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 19.3,
+   "clip": "videos/clip-i-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 21.2,
+   "clip": "videos/broll/mk-47416.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 22.8,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 11.0
+  },
+  {
+   "hasta": 24.5,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 14.2
+  },
+  {
+   "hasta": 26.2,
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 27.7,
+   "clip": "videos/clip-n-1080.mp4",
+   "desde": 9.0
+  },
+  {
+   "hasta": 30.1,
+   "clip": "videos/clip-t-1080.mp4",
+   "desde": 14.0
+  },
+  {
+   "hasta": 31.8,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 12.0
+  },
+  {
+   "hasta": 33.34,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 15.5
+  }
+ ],
+ "textos": [
+  {
+   "de": 1.2,
+   "a": 2.0,
+   "grande": "$15",
+   "cursiva": "dólares",
+   "cursiva_de": 1.5
+  },
+  {
+   "de": 7.8,
+   "a": 9.4,
+   "grande": "DDP",
+   "cursiva": "a tu puerta",
+   "cursiva_de": 8.3
+  }
+ ],
+ "ocultar_subs": [
+  [
+   1.15,
+   2.0
+  ],
+  [
+   7.75,
+   9.4
+  ]
+ ]
+}

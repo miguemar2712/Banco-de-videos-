@@ -171,6 +171,15 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Todo directo de fábrica, desde **[$]** dólares la pieza. | etiqueta del set + precio grande |
 | Si quieres vender esto en tus redes y no sabes dónde conseguirlo, comenta **LISTA** y te paso mis proveedores. | bolsas con cadena (coleccion/17, 26-28 s) |
 
+## 18 · Tu negocio desde un rinconcito de tu casa  ·  CTA: LISTA  (~23 s, coleccion/17 + coleccion/16)
+| Frase | Tomas |
+|---|---|
+| ¿Sabías que puedes empezar tu propio negocio desde un rinconcito de tu casa y vender por tus redes sociales? | surtido (coleccion/17) |
+| Mira lo que puedes encontrar con proveedores en China: bolsas a **10 o 15** dólares… | bolsas + "$10 o $15" |
+| …y conjuntos deportivos estilo Alo a **17 o 22**. | set azul marino + "$17 o $22" |
+| Dependiendo del modelo y de tus clientes, podrías vender algunas piezas a **70, 80 o hasta 90** dólares. | tenis/cartera → set + $70, $80, $90 uno por uno |
+| Si quieres aprender a importar y desarrollar tu propio negocio desde casa, comenta **LISTA** y te mando la información. | lentes → etiqueta → ropa |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

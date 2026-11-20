@@ -163,7 +163,7 @@ def hacer_ass(plan, total, parte='todo'):
         rep = {k.lower(): v for k, v in plan.get('reemplazos', {}).items()}
         claves = {c.lower() for c in plan.get('claves', [])}
         pal = []
-        tapados = [(x['de'] - .05, x['a']) for x in plan.get('textos', [])]
+        tapados = [(x['de'] - .05, x['a']) for x in plan.get('textos', [])] + [tuple(r) for r in plan.get('ocultar_subs', [])]   # ocultar_subs: [[de, a], ...]
         for w in ws:
             if any(a <= w['start'] < b for a, b in tapados):
                 continue

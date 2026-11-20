@@ -26,6 +26,8 @@ limpias = {   # salida: (entrada, filtro, duración máx.)
  'videos/clip-p-1080.mp4': ('videos/clip-p.mov', E, None),
  'videos/clip-q-1080.mp4': ('videos/clip-q.mov', E, None),
  'videos/clip-s-1080.mp4': ('videos/clip-s.mp4', E, None),
+ 'videos/clip-t-1080.mp4': ('videos/clip-t.mp4', E, None),
+ 'videos/clip-u-1080.mp4': ('videos/clip-u.mov', E, None),
  'videos/clip-n-ajustado.mp4': ('videos/clip-n.mov', 'setpts=PTS/1.1376,fps=30,' + E, None),   # acelerado para el audio voz-7 (ediciones/puerta-de-tu-casa)
 }
 for out, (src, vf, dur) in limpias.items():

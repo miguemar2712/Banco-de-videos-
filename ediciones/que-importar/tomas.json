@@ -1,0 +1,102 @@
+{
+ "voz": "videos/voz-14-voz.m4a",
+ "salida": "out/que-importar.mp4",
+ "titulo": [
+  "¿Qué importar",
+  "desde China?"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-14-palabras.json",
+ "claves": [
+  "importar",
+  "china",
+  "esto",
+  "aprender",
+  "proveedor",
+  "fabricantes",
+  "escríbeme",
+  "explico"
+ ],
+ "reemplazos": {},
+ "tomas": [
+  {
+   "hasta": 1.6,
+   "clip": "videos/broll/mk-30125.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 2.0,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 0.8
+  },
+  {
+   "hasta": 3.6,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 1.4
+  },
+  {
+   "hasta": 5.6,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 12.0
+  },
+  {
+   "hasta": 7.2,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 15.0
+  },
+  {
+   "hasta": 9.9,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 10.6,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 9.7
+  },
+  {
+   "hasta": 13.19,
+   "clip": "videos/clip-s-1080.mp4",
+   "desde": 10.4
+  }
+ ],
+ "textos": [
+  {
+   "de": 2.45,
+   "a": 3.0,
+   "grande": "$12"
+  },
+  {
+   "de": 3.0,
+   "a": 3.65,
+   "grande": "$70",
+   "cursiva": "de venta",
+   "cursiva_de": 3.1
+  },
+  {
+   "de": 4.25,
+   "a": 4.85,
+   "grande": "$11"
+  },
+  {
+   "de": 4.85,
+   "a": 5.65,
+   "grande": "$60",
+   "cursiva": "de venta",
+   "cursiva_de": 4.95
+  },
+  {
+   "de": 6.15,
+   "a": 6.7,
+   "grande": "$13"
+  },
+  {
+   "de": 6.7,
+   "a": 7.3,
+   "grande": "$80",
+   "cursiva": "de venta",
+   "cursiva_de": 6.8
+  }
+ ]
+}

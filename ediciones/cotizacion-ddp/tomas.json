@@ -38,8 +38,8 @@
  "tomas": [
   {
    "hasta": 2.0,
-   "clip": "videos/clip-o-1080.mp4",
-   "desde": 4.0
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 0.5
   },
   {
    "hasta": 3.3,
@@ -88,8 +88,8 @@
   },
   {
    "hasta": 21.2,
-   "clip": "videos/broll/mk-47416.mp4",
-   "desde": 1.0
+   "clip": "videos/clip-l-1080.mp4",
+   "desde": 5.0
   },
   {
    "hasta": 22.8,
@@ -145,7 +145,7 @@
  ],
  "ocultar_subs": [
   [
-   1.15,
+   0.75,
    2.0
   ],
   [

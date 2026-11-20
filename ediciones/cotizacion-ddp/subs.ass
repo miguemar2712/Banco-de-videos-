@@ -16,11 +16,9 @@ Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H0000000
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 3,0:00:00.18,0:00:00.80,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}COTIZARON
-Dialogue: 3,0:00:00.00,0:00:00.80,Cartel,,0,0,0,,{\pos(856,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TE
-Dialogue: 3,0:00:00.60,0:00:00.80,Cartel,,0,0,0,,{\pos(224,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}UNA
-Dialogue: 3,0:00:00.80,0:00:01.90,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}BOLSA
-Dialogue: 3,0:00:01.04,0:00:01.90,Cartel,,0,0,0,,{\pos(359,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}A
+Dialogue: 3,0:00:00.18,0:00:01.50,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}COTIZARON
+Dialogue: 3,0:00:00.00,0:00:01.50,Cartel,,0,0,0,,{\pos(856,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TE
+Dialogue: 3,0:00:00.60,0:00:01.50,Cartel,,0,0,0,,{\pos(224,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}UNA
 Dialogue: 3,0:00:02.58,0:00:03.26,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PAGAR
 Dialogue: 3,0:00:02.42,0:00:03.26,Cartel,,0,0,0,,{\pos(727,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DE
 Dialogue: 3,0:00:02.12,0:00:03.26,Cartel,,0,0,0,,{\pos(638,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}ANTES

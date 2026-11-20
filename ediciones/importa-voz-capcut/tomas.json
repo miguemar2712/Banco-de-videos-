@@ -1,5 +1,5 @@
 {
- "voz": "videos/voz-10-corta.m4a",
+ "voz": "videos/voz-10.m4a",
  "salida": "out/importa-voz-capcut.mp4",
  "titulo": [
   "Importa",
@@ -95,7 +95,7 @@
    "desde": 11.0
   },
   {
-   "hasta": 25.74,
+   "hasta": 26.13,
    "clip": "videos/clip-n-1080.mp4",
    "desde": 7.5
   }

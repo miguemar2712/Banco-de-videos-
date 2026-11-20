@@ -50,7 +50,7 @@
     "Si dice 'solo muestra del video que te envié': NO mezclar otros clips de su colección (ni la bolsa Dior con guantes, ni bolsa rosa, etc.); solo ese video + b-roll NUEVO nunca usado (revisar usados.json). Los gorros no siempre los quiere: preguntar/omitir si los pide.",
     "Voces de CapCut: ella genera la voz en CapCut (texto a voz) y me manda el video exportado; extraer el audio (ffmpeg -vn), transcribir y montar igual que una nota de voz. NUNCA cortar nada del audio (ni el '¡Suscríbete…!' del final): ella quiere el audio COMPLETO tal cual lo manda.",
     "AUDIO SIEMPRE COMPLETO: no recortar ni quitar palabras de su audio sin preguntarle.",
-    "Si manda solo el guion escrito y pide el video ya: voz de IA provisional (Piper es_AR-daniela, CC BY-SA → dar crédito), números en letras; avisarle que puede mandar su voz o la de CapCut para reemplazarla."
+    "Si manda solo el guion escrito: NO ponerle voz de IA. Hacer el video SIN VOZ (audio en silencio) en 2 versiones: con textos en pantalla (subtítulos+precios) y sin textos (para que ella le ponga voz en CapCut)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

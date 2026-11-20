@@ -1,0 +1,84 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Titulo,Montserrat Black,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Sombra,Montserrat Black,128,&H70000000,&H70000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Sub,Montserrat ExtraBold,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
+Style: SubSombra,Montserrat ExtraBold,64,&H80000000,&H80000000,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,4,0,0,0,1
+Style: Cartel,Montserrat Black,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H00000000,0,0,0,0,100,100,0,0,1,13,0,5,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:00.68,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}SABÍAS
+Dialogue: 3,0:00:00.36,0:00:00.68,Cartel,,0,0,0,,{\pos(342,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}QUE
+Dialogue: 3,0:00:00.50,0:00:00.68,Cartel,,0,0,0,,{\pos(467,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PUEDES
+Dialogue: 3,0:00:00.68,0:00:01.30,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}EMPEZAR
+Dialogue: 3,0:00:00.96,0:00:01.30,Cartel,,0,0,0,,{\pos(282,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TU
+Dialogue: 3,0:00:01.12,0:00:01.30,Cartel,,0,0,0,,{\pos(368,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PROPIO
+Dialogue: 3,0:00:01.30,0:00:02.28,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}NEGOCIO
+Dialogue: 3,0:00:01.72,0:00:02.28,Cartel,,0,0,0,,{\pos(294,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DESDE
+Dialogue: 3,0:00:02.12,0:00:02.28,Cartel,,0,0,0,,{\pos(480,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}UN
+Dialogue: 3,0:00:02.28,0:00:02.86,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}RINCONCITO
+Dialogue: 3,0:00:02.64,0:00:02.86,Cartel,,0,0,0,,{\pos(205,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DE
+Dialogue: 3,0:00:02.76,0:00:02.86,Cartel,,0,0,0,,{\pos(294,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TU
+Dialogue: 3,0:00:02.86,0:00:03.38,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CASA
+Dialogue: 3,0:00:03.00,0:00:03.38,Cartel,,0,0,0,,{\pos(393,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}Y
+Dialogue: 3,0:00:03.20,0:00:03.38,Cartel,,0,0,0,,{\pos(447,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}VENDER
+Dialogue: 3,0:00:03.66,0:00:03.86,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}REDES
+Dialogue: 3,0:00:03.54,0:00:03.86,Cartel,,0,0,0,,{\pos(715,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TUS
+Dialogue: 3,0:00:03.38,0:00:03.86,Cartel,,0,0,0,,{\pos(600,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}POR
+Dialogue: 3,0:00:03.86,0:00:04.56,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}SOCIALES
+Dialogue: 3,0:00:04.56,0:00:04.90,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}MIRA
+Dialogue: 3,0:00:04.68,0:00:04.90,Cartel,,0,0,0,,{\pos(400,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}LO
+Dialogue: 3,0:00:04.80,0:00:04.90,Cartel,,0,0,0,,{\pos(487,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}QUE
+Dialogue: 3,0:00:05.06,0:00:05.62,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}ENCONTRAR
+Dialogue: 3,0:00:04.90,0:00:05.62,Cartel,,0,0,0,,{\pos(873,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PUEDES
+Dialogue: 3,0:00:05.40,0:00:05.62,Cartel,,0,0,0,,{\pos(207,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CON
+Dialogue: 3,0:00:05.62,0:00:06.66,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs110\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PROVEEDORES
+Dialogue: 3,0:00:05.98,0:00:06.66,Cartel,,0,0,0,,{\pos(173,1332)\an4\fs50\fscx118\fscy118\t(0,100,\fscx100\fscy100)}EN
+Dialogue: 3,0:00:06.14,0:00:06.66,Cartel,,0,0,0,,{\pos(254,1332)\an4\fs50\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CHINA
+Dialogue: 3,0:00:06.66,0:00:07.78,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}BOLSAS
+Dialogue: 3,0:00:06.98,0:00:07.78,Cartel,,0,0,0,,{\pos(327,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}A
+Dialogue: 3,0:00:08.06,0:00:08.40,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CONJUNTOS
+Dialogue: 3,0:00:08.40,0:00:09.18,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DEPORTIVOS
+Dialogue: 3,0:00:09.18,0:00:10.38,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}ESTILO
+Dialogue: 3,0:00:09.34,0:00:10.38,Cartel,,0,0,0,,{\pos(355,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}ALO
+Dialogue: 3,0:00:09.54,0:00:10.38,Cartel,,0,0,0,,{\pos(478,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}A
+Dialogue: 3,0:00:11.34,0:00:11.56,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}MODELO
+Dialogue: 3,0:00:11.20,0:00:11.56,Cartel,,0,0,0,,{\pos(773,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DEL
+Dialogue: 3,0:00:10.90,0:00:11.56,Cartel,,0,0,0,,{\pos(656,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DEPENDIENDO
+Dialogue: 3,0:00:11.80,0:00:11.88,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TUS
+Dialogue: 3,0:00:11.70,0:00:11.88,Cartel,,0,0,0,,{\pos(642,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DE
+Dialogue: 3,0:00:11.56,0:00:11.88,Cartel,,0,0,0,,{\pos(553,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}Y
+Dialogue: 3,0:00:11.88,0:00:12.70,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CLIENTES
+Dialogue: 3,0:00:12.70,0:00:13.32,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PODRÍAS
+Dialogue: 3,0:00:12.90,0:00:13.32,Cartel,,0,0,0,,{\pos(296,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}VENDER
+Dialogue: 3,0:00:13.10,0:00:13.32,Cartel,,0,0,0,,{\pos(520,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}ALGUNAS
+Dialogue: 3,0:00:13.32,0:00:14.42,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PIEZAS
+Dialogue: 3,0:00:13.62,0:00:14.42,Cartel,,0,0,0,,{\pos(349,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}A
+Dialogue: 3,0:00:16.10,0:00:16.40,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}APRENDER
+Dialogue: 3,0:00:15.94,0:00:16.40,Cartel,,0,0,0,,{\pos(834,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}QUIERES
+Dialogue: 3,0:00:15.78,0:00:16.40,Cartel,,0,0,0,,{\pos(600,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}SI
+Dialogue: 3,0:00:16.54,0:00:17.00,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}IMPORTAR
+Dialogue: 3,0:00:16.40,0:00:17.00,Cartel,,0,0,0,,{\pos(824,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}A
+Dialogue: 3,0:00:16.88,0:00:17.00,Cartel,,0,0,0,,{\pos(256,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}Y
+Dialogue: 3,0:00:17.00,0:00:17.96,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs115\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DESARROLLAR
+Dialogue: 3,0:00:17.62,0:00:17.96,Cartel,,0,0,0,,{\pos(160,1335)\an4\fs52\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TU
+Dialogue: 3,0:00:17.78,0:00:17.96,Cartel,,0,0,0,,{\pos(241,1335)\an4\fs52\fscx118\fscy118\t(0,100,\fscx100\fscy100)}PROPIO
+Dialogue: 3,0:00:17.96,0:00:18.64,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}NEGOCIO
+Dialogue: 3,0:00:18.28,0:00:18.64,Cartel,,0,0,0,,{\pos(294,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}DESDE
+Dialogue: 3,0:00:18.44,0:00:18.64,Cartel,,0,0,0,,{\pos(480,1339)\an4\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}CASA
+Dialogue: 3,0:00:18.64,0:00:18.80,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}COMENTA
+Dialogue: 3,0:00:18.80,0:00:19.48,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}LISTA
+Dialogue: 3,0:00:19.68,0:00:19.84,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs120\fscx118\fscy118\t(0,100,\fscx100\fscy100)}MANDO
+Dialogue: 3,0:00:19.56,0:00:19.84,Cartel,,0,0,0,,{\pos(748,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}TE
+Dialogue: 3,0:00:19.48,0:00:19.84,Cartel,,0,0,0,,{\pos(666,1161)\an6\fs55\fscx118\fscy118\t(0,100,\fscx100\fscy100)}Y
+Dialogue: 3,0:00:19.94,0:00:20.74,Cartel,,0,0,0,,{\pos(540,1250)\an5\fs115\fscx118\fscy118\t(0,100,\fscx100\fscy100)}INFORMACIÓN
+Dialogue: 3,0:00:19.84,0:00:20.74,Cartel,,0,0,0,,{\pos(910,1165)\an6\fs52\fscx118\fscy118\t(0,100,\fscx100\fscy100)}LA

@@ -1,0 +1,138 @@
+{
+ "voz": "videos/voz-13.m4a",
+ "salida": "out/negocio-desde-casa-v2.mp4",
+ "titulo": [
+  "Tu negocio",
+  "desde casa"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-13-palabras-fix.json",
+ "claves": [
+  "negocio",
+  "rinconcito",
+  "casa",
+  "sociales",
+  "proveedores",
+  "china",
+  "bolsas",
+  "conjuntos",
+  "deportivos",
+  "modelo",
+  "clientes",
+  "piezas",
+  "importar",
+  "desarrollar",
+  "lista",
+  "información",
+  "comenta"
+ ],
+ "reemplazos": {
+  "halo": "Alo"
+ },
+ "tomas": [
+  {
+   "hasta": 1.7,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 3.0,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 24.0
+  },
+  {
+   "hasta": 4.5,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 6.6,
+   "clip": "videos/broll/mk-31094.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 7.9,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 26.0
+  },
+  {
+   "hasta": 9.1,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 21.0
+  },
+  {
+   "hasta": 10.8,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 11.7,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 3.0
+  },
+  {
+   "hasta": 12.6,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 13.6,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 15.6,
+   "clip": "videos/broll/mk-24354.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 17.0,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 20.5
+  },
+  {
+   "hasta": 18.6,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 20.52,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 17.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 7.1,
+   "a": 7.9,
+   "grande": "$10 o $15",
+   "cursiva": "dólares",
+   "cursiva_de": 7.45
+  },
+  {
+   "de": 9.7,
+   "a": 10.8,
+   "grande": "$17 o $22",
+   "cursiva": "dólares",
+   "cursiva_de": 10.1
+  },
+  {
+   "de": 13.7,
+   "a": 14.2,
+   "grande": "$70"
+  },
+  {
+   "de": 14.2,
+   "a": 14.9,
+   "grande": "$80"
+  },
+  {
+   "de": 14.9,
+   "a": 15.7,
+   "grande": "$90",
+   "cursiva": "dólares",
+   "cursiva_de": 15.15
+  }
+ ]
+}

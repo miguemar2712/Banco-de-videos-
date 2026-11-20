@@ -24,6 +24,15 @@
     },
     {
      "id": 30125
+    },
+    {
+     "id": 35347
+    },
+    {
+     "id": 36337
+    },
+    {
+     "id": 35869
     }
    ]
   },
@@ -141,6 +150,9 @@
     },
     {
      "id": 24354
+    },
+    {
+     "id": 47416
     }
    ]
   },
@@ -248,6 +260,17 @@
     },
     {
      "id": 23437
+    }
+   ]
+  },
+  "documentos": {
+   "descripcion": "Cotización por escrito, formularios, aduana (sin personas caminando)",
+   "tomas": [
+    {
+     "id": 22856
+    },
+    {
+     "id": 46503
     }
    ]
   }

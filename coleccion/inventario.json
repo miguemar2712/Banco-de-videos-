@@ -62,5 +62,9 @@
  "16-set-alo-azul-marino.mov": {
   "alias": "videos/clip-p.mov",
   "contenido": "set deportivo estilo Alo azul marino (chamarra con cierre + pantalón): 0-3 chamarra logo · 3-7 pantalón · 8-12 etiqueta · 13-18 manos con el cierre · 19-20 cierre de cerca · 21-24.7 set completo en la mesa (720x1280). El audio de este archivo es una voz (guion set $17)."
+ },
+ "17-surtido-ropa-tenis-cartera-bolsas-lentes.mov": {
+  "alias": "videos/clip-q.mov",
+  "contenido": "surtido sobre mesa: 0-2 ropa estilo Alo café/negra · 2-6 tenis negros con caja naranja · 7-9 cartera negra con logo dorado · 10-12 bolsa negra · 13-15 tenis claros · 16-19 ropa Alo crema/negra · 20-23 lentes de sol en estuche · 24-25 carteras café · 26-28.8 bolsas negras con cadena (476x854)"
  }
 }

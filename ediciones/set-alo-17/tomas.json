@@ -1,0 +1,86 @@
+{
+ "voz": "videos/voz-11-voz.m4a",
+ "salida": "out/set-alo-17.mp4",
+ "titulo": [
+  "Set deportivo",
+  "a $17"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-11-palabras.json",
+ "claves": [
+  "vender",
+  "deportiva",
+  "conjuntos",
+  "completo",
+  "alo",
+  "proveedor",
+  "china",
+  "programa",
+  "cotización",
+  "cuentas",
+  "comprar",
+  "importar",
+  "lista",
+  "información"
+ ],
+ "reemplazos": {
+  "aleu": "Alo"
+ },
+ "tomas": [
+  {
+   "hasta": 2.3,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.8,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 21.0
+  },
+  {
+   "hasta": 5.4,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 22.5
+  },
+  {
+   "hasta": 7.0,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 13.5
+  },
+  {
+   "hasta": 8.0,
+   "clip": "videos/broll/mk-7374.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.1,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 11.8,
+   "clip": "videos/broll/mk-34125.mp4",
+   "desde": 3.0
+  },
+  {
+   "hasta": 13.5,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 3.5
+  },
+  {
+   "hasta": 15.29,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 19.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 5.9,
+   "a": 7.0,
+   "grande": "$17",
+   "cursiva": "dólares",
+   "cursiva_de": 6.45
+  }
+ ]
+}

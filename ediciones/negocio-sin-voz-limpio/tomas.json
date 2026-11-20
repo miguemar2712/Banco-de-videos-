@@ -1,0 +1,93 @@
+{
+ "voz": "videos/silencio-23.m4a",
+ "salida": "out/negocio-desde-casa-sin-voz-sin-textos.mp4",
+ "titulo": [
+  "Tu negocio",
+  "desde casa"
+ ],
+ "mapa": true,
+ "palabras": "videos/voz-12-palabras.json",
+ "claves": [
+  "negocio",
+  "rinconcito",
+  "casa",
+  "sociales",
+  "proveedores",
+  "china",
+  "bolsas",
+  "conjuntos",
+  "deportivos",
+  "modelo",
+  "clientes",
+  "piezas",
+  "importar",
+  "desarrollar",
+  "lista",
+  "información"
+ ],
+ "reemplazos": {
+  "ala": "Alo"
+ },
+ "tomas": [
+  {
+   "hasta": 2.0,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 3.3,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 24.0
+  },
+  {
+   "hasta": 5.2,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 7.7,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 3.0
+  },
+  {
+   "hasta": 9.2,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 26.0
+  },
+  {
+   "hasta": 11.9,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 21.0
+  },
+  {
+   "hasta": 13.1,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 14.3,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 17.9,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 13.5
+  },
+  {
+   "hasta": 20.0,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 20.5
+  },
+  {
+   "hasta": 21.4,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 23.39,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 17.0
+  }
+ ]
+}

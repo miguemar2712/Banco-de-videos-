@@ -162,6 +162,15 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Cada una me salió en **[$]** dólares, y las vendo en **[$]**. | bolsas + precios grandes |
 | ¿Quieres que te llegue tu propio pedido a la puerta de tu casa? Comenta **CAJA** y te paso mis proveedores. | cajas en la puerta → fila de bolsas |
 
+## 17 · Mira todo lo que me llegó  ·  CTA: LISTA  (~25 s, coleccion/17 surtido + coleccion/16 set azul marino)
+| Frase | Tomas |
+|---|---|
+| ¡Mira todo lo que me llegó de China! 😍 | surtido en la mesa (coleccion/17) |
+| Ropa deportiva… tenis… carteras… bolsas… ¡y hasta lentes de sol! | cada producto cuando lo nombra (ropa 0-2 · tenis 2-6 · cartera 7-9 · bolsa 10-12 · lentes 20-23) |
+| Y este set deportivo completo, con su chamarra y su pantalón. | set azul marino (coleccion/16) |
+| Todo directo de fábrica, desde **[$]** dólares la pieza. | etiqueta del set + precio grande |
+| Si quieres vender esto en tus redes y no sabes dónde conseguirlo, comenta **LISTA** y te paso mis proveedores. | bolsas con cadena (coleccion/17, 26-28 s) |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

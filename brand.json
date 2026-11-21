@@ -41,7 +41,6 @@
     "NO repartidores/mensajeros en el b-roll (no le gustan). Para 'llega a la puerta de mi casa' usar SU propia caja.",
     "Varios precios seguidos ('11, 12 y 13 dólares'): cada número grande y solo cuando lo dice ($11 → $12 → $13 dólares), nunca todos en una línea. Precios grandes en y=780 (debajo del título/mapa). 'Pido desde mi celular' → scripts/chat-grupo.py --pedido (chat con su proveedor y fotos de su mercancía).",
     "'Fábrica/proveedores': NO máquinas raras de cerca (bordadora, cinta métrica, máquina de coser). Mostrar fábrica o mercado grande con PERSONAS CAMINANDO, estilo tienda (ej. Mixkit 23696, 31086) o tienda con clientas (9165).",
-    "Título de arriba en cursiva de pincel KAUSHAN SCRIPT (la eligió entre 6 opciones; antes Great Vibes), blanca con sombra suave, ~680 px de ancho sobre el mapa. Default en scripts/montar-tomas.py.",
     "'Aquí se vende' hablando de BOLSAS → tienda de bolsas, no de ropa. Mixkit no tiene tiendas de bolsas: usar su colección en exhibición (coleccion/06-coleccion-bolsas, seg. 4–6).",
     "SUBTÍTULOS: Montserrat Black TODO BLANCO, SIN borde ni sombra/resplandor negro (SUB_SOMBRA = False en scripts/montar-tomas.py).",
     "PROHIBIDO: celulares/teléfonos con grupos, chats o pedidos animados (scripts/chat-grupo.py) — NO le gustan. Para comunidad, pedidos, acompañamiento, 'link en mi perfil' o 'sin mínimos' usar su mercancía (coleccion/) o b-roll de lugares y personas (mercado 4147, bodega 4705).",
@@ -52,7 +51,8 @@
     "AUDIO SIEMPRE COMPLETO: no recortar ni quitar palabras de su audio sin preguntarle.",
     "Si manda solo el guion escrito: NO ponerle voz de IA. Hacer el video SIN VOZ (audio en silencio) en 2 versiones: con textos en pantalla (subtítulos+precios) y sin textos (para que ella le ponga voz en CapCut).",
     "Si su video ya viene editado con efectos de sonido (flash de cámara al aparecer fotitos): NO reordenar sus tomas; mantener el video en su tiempo original para que cada sonido caiga con su imagen. Solo agregar clips en partes sin efectos. Para que precios grandes no choquen con subtítulos: 'ocultar_subs': [[de, a]].",
-    "NO usar manos de hombre (calculadoras, firmas, etc.) en el b-roll: se ve feo. Preferir su mercancía. Tampoco la bolsa azul de cadena (coleccion/15, seg 4) como primera toma."
+    "NO usar manos de hombre (calculadoras, firmas, etc.) en el b-roll: se ve feo. Preferir su mercancía. Tampoco la bolsa azul de cadena (coleccion/15, seg 4) como primera toma.",
+    "LOGO (título+mapa): mapa de China GRANDE (130 %, y=200) y título en PLAYFAIR DISPLAY EXTRABOLD ITALIC blanco con sombra (opción 6 de 6; antes Kaushan Script). Constantes MAPA_Y/MAPA_ESC/TITULO_ANCHO y LETRAS en scripts/montar-tomas.py."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -64,7 +64,7 @@
   "texto": "subtítulos siempre + pocos textos grandes con frases clave",
   "emojis": true,
   "subtitulos": "cartel",
-  "titulo_letra": "Kaushan Script",
+  "titulo_letra": "Playfair Display ExtraBold Italic",
   "subtitulos_letra": "Montserrat Black",
   "subtitulos_color": "#FFFFFF",
   "subtitulos_sombra": false

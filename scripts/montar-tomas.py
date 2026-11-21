@@ -24,7 +24,8 @@ RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 CAT = os.path.join(RAIZ, 'broll', 'catalogo.json')
 BROLL = os.path.join(RAIZ, 'videos', 'broll')
 FUENTES = os.path.join(RAIZ, 'fx-camara', 'fonts')
-MAPA_Y, MAPA_ESC, TITULO_ANCHO = 230, .85, 680
+MAPA_Y, MAPA_ESC, TITULO_ANCHO = 200, 1.3, 760   # logo: mapa grande (130 %) + título Playfair (su elección)
+LETRAS = {'Playfair': ('PlayfairDisplayBlackItalic.ttf', 'Playfair Display ExtraBold', '\\i1')}   # nombre → (archivo, familia, etiquetas)
 SUB_SOMBRA = False   # ella quiere los subtítulos SOLO blancos, sin borde ni sombra negra
 
 
@@ -143,21 +144,22 @@ def hacer_ass(plan, total, parte='todo'):
         lineas = [t] if isinstance(t, str) else t
         # centrado sobre el mapa (bajado de la orilla de arriba, donde TikTok pone sus botones)
         y0 = plan.get('titulo_y', int(plan.get('mapa_y', MAPA_Y) + 486 * plan.get('mapa_escala', MAPA_ESC) * .5))
-        letra = plan.get('titulo_letra', 'Kaushan Script')     # su elección: cursiva caligráfica
+        letra = plan.get('titulo_letra', 'Playfair')     # su elección (antes Kaushan Script)
         if letra == 'Montserrat Black':
             for i, l in enumerate(lineas):
                 fs = min(170, int(960 / (len(l) * .56)))
                 out += doble(0, 0, total, 'Titulo', 540, y0 + i * int(fs * .9), l.upper(), f'\\fs{fs}', sombra=(7, 10), blur=8)
         else:                                                # cursiva: tal cual se escribe, más grande
             from PIL import ImageFont
-            archivo = os.path.join(RAIZ, 'fuentes', letra.replace(' ', '') + '.ttf')
+            arch, familia, extra_tag = LETRAS.get(letra, (letra.replace(' ', '') + '.ttf', letra, ''))
+            archivo = os.path.join(RAIZ, 'fuentes', arch)
             f = ImageFont.truetype(archivo, 200); asc, des = f.getmetrics()
             ajuste, interl = {'Great Vibes': (1.44, .5)}.get(letra, (1.0, .62))   # libass dibuja cada letra a distinta escala
             fs = min(int(ajuste * TITULO_ANCHO * (asc + des) / max(f.getlength(l) for l in lineas)), 420)   # ancho ≈ 820 px (libass la dibuja más chica)
             paso = int(fs * interl)
             for i, l in enumerate(lineas):
                 out += doble(0, 0, total, 'Titulo', 540, y0 - paso // 2 * (len(lineas) - 1) + i * paso, l,
-                             f'\\fn{letra}\\fs{fs}', sombra=(6, 9), blur=7)
+                             f'\\fn{familia}{extra_tag}\\fs{fs}', sombra=(6, 9), blur=7)
     if plan.get('subtitulos') and parte in ('todo', 'subs'):
         ws = json.load(open(os.path.join(RAIZ, plan['palabras'])))['words']
         rep = {k.lower(): v for k, v in plan.get('reemplazos', {}).items()}

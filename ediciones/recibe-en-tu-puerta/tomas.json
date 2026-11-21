@@ -1,0 +1,107 @@
+{
+ "voz": "videos/voz-17-voz.m4a",
+ "salida": "out/recibe-en-tu-puerta.mp4",
+ "titulo": [
+  "Importa",
+  "desde China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-17-palabras.json",
+ "claves": [
+  "importar",
+  "china",
+  "mercancía",
+  "puerta",
+  "casa",
+  "escríbeme",
+  "proveedores",
+  "confianza",
+  "pedido",
+  "bolsas",
+  "ropa",
+  "productos",
+  "vender",
+  "importar",
+  "perfil",
+  "empezar"
+ ],
+ "reemplazos": {},
+ "tomas": [
+  {
+   "hasta": 1.0,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 2.2,
+   "clip": "videos/broll/mk-34288.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 4.6,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 2.2
+  },
+  {
+   "hasta": 6.1,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 4.8
+  },
+  {
+   "hasta": 7.5,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 8.6,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 9.6,
+   "clip": "videos/broll/mk-7381.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.9,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 12.4,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 12.0
+  },
+  {
+   "hasta": 13.0,
+   "clip": "videos/clip-h-1080.mp4",
+   "desde": 0.5
+  },
+  {
+   "hasta": 14.5,
+   "clip": "videos/clip-g-limpio.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 16.0,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 15.5
+  },
+  {
+   "hasta": 17.2,
+   "clip": "videos/broll/mk-30979.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 18.7,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 19.5
+  },
+  {
+   "hasta": 20.29,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 22.5
+  }
+ ]
+}

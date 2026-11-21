@@ -24,7 +24,7 @@ RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 CAT = os.path.join(RAIZ, 'broll', 'catalogo.json')
 BROLL = os.path.join(RAIZ, 'videos', 'broll')
 FUENTES = os.path.join(RAIZ, 'fx-camara', 'fonts')
-MAPA_Y, MAPA_ESC, TITULO_ANCHO = 200, 1.3, 760   # logo: mapa grande (130 %) + título Playfair (su elección)
+MAPA_Y, MAPA_ESC, TITULO_ANCHO = 130, 1.3, 760   # logo: mapa grande (130 %) + título Playfair (su elección)
 LETRAS = {'Playfair': ('PlayfairDisplayBlackItalic.ttf', 'Playfair Display ExtraBold', '\\i1')}   # nombre → (archivo, familia, etiquetas)
 SUB_SOMBRA = False   # ella quiere los subtítulos SOLO blancos, sin borde ni sombra negra
 

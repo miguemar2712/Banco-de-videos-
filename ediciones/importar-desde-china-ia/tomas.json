@@ -1,0 +1,36 @@
+{
+ "voz": "videos/voz-20.m4a",
+ "salida": "ediciones/importar-desde-china-ia/sin-titulo.mp4",
+ "tomas": [
+  {
+   "hasta": 6.0,
+   "clip": "videos/clip-y.mov",
+   "desde": 0.0
+  },
+  {
+   "hasta": 7.6,
+   "clip": "videos/broll/mk-26950.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 9.7,
+   "clip": "videos/broll/mk-18305.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 17.4,
+   "clip": "videos/clip-y.mov",
+   "desde": 9.7
+  },
+  {
+   "hasta": 19.6,
+   "clip": "videos/broll/mk-11303.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 22.13,
+   "clip": "videos/clip-y.mov",
+   "desde": 19.6
+  }
+ ]
+}

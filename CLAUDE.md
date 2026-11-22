@@ -65,7 +65,7 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
 
 ## 6 · Videos de tomas con voz en off (formato de @delcarmen__1)
 - Ella NO sale a cámara: su **nota de voz** + **tomas de su mercancía** + **b-roll relacionado** cada 1,5–3 s.
-- **Su estilo de texto (de su ejemplo en CapCut):** **logo con la bandera de China en un círculo + título blanco Playfair** (`"titulo"`; por defecto `"logo": "bandera"`, `"logo_y"` 150 arriba o 1450 si ella sale a cámara; el mapa anterior queda con `"logo": "mapa"`) +
+- **Su estilo de texto (de su ejemplo en CapCut):** **mapa de China rojo grande (130 %) con el título blanco Playfair ExtraBold Italic encima** (`"titulo"`; es el logo por defecto; la bandera en círculo solo si la pide: `"logo": "bandera"`) +
   subtítulos estilo **cartel** (`"subtitulos": "cartel"`): letra **Montserrat Black BLANCA, sin borde ni sombra negra** (lo pidió así; `SUB_SOMBRA = False`), palabra
   clave ENORME al centro + pequeñas arriba-derecha / abajo-izquierda (su plantilla de CapCut). Campos: `"claves"`, `"palabras"`,
   `"reemplazos"`. Modelo: `ediciones/sets-deportivos-cartel/tomas.json`. Fuentes en `fuentes/`, mapa en `assets/`.

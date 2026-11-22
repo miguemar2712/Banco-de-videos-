@@ -53,7 +53,8 @@
     "Si su video ya viene editado con efectos de sonido (flash de cámara al aparecer fotitos): NO reordenar sus tomas; mantener el video en su tiempo original para que cada sonido caiga con su imagen. Solo agregar clips en partes sin efectos. Para que precios grandes no choquen con subtítulos: 'ocultar_subs': [[de, a]].",
     "NO usar manos de hombre (calculadoras, firmas, etc.) en el b-roll: se ve feo. Preferir su mercancía. Tampoco la bolsa azul de cadena (coleccion/15, seg 4) como primera toma.",
     "LOGO (título+mapa): mapa de China GRANDE (130 %, y=130 (lo subió un poquito)) y título en PLAYFAIR DISPLAY EXTRABOLD ITALIC blanco con sombra (opción 6 de 6; antes Kaushan Script). Constantes MAPA_Y/MAPA_ESC/TITULO_ANCHO y LETRAS en scripts/montar-tomas.py.",
-    "REGLA FUERTE: cuando manda un video para editar, usar SOLO ese video (en su orden natural: llegada de la caja → abrir paquetes → mostrar bolsas) + clips 'de IA'/b-roll nuevos relacionados. NUNCA meter clips de su colección anterior (ropa Alo, perfumes, etc.) aunque el audio los mencione."
+    "REGLA FUERTE: cuando manda un video para editar, usar SOLO ese video (en su orden natural: llegada de la caja → abrir paquetes → mostrar bolsas) + clips 'de IA'/b-roll nuevos relacionados. NUNCA meter clips de su colección anterior (ropa Alo, perfumes, etc.) aunque el audio los mencione.",
+    "Videos donde ELLA sale a cámara: el logo (mapa+título) arriba le tapa la cara → bajarlo ('mapa_y':1400,'mapa_escala':0.9) y subtítulos un poco más arriba ('subs_y':1180)."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",

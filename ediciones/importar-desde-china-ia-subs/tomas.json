@@ -1,0 +1,34 @@
+{
+ "voz": "videos/voz-20.m4a",
+ "salida": "out/importar-desde-china-ia-subs.mp4",
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-20-palabras.json",
+ "claves": [
+  "importar",
+  "china",
+  "producto",
+  "clientes",
+  "proveedor",
+  "verificado",
+  "cotización",
+  "puerta",
+  "calcular",
+  "pieza",
+  "pedido",
+  "importación",
+  "pequeño",
+  "aprender",
+  "lista",
+  "paso"
+ ],
+ "reemplazos": {
+  "lista": "LISTA"
+ },
+ "tomas": [
+  {
+   "hasta": 22.13,
+   "clip": "videos/importar-ia-recibido.mp4",
+   "desde": 0.0
+  }
+ ]
+}

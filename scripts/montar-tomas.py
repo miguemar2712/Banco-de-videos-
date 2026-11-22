@@ -291,13 +291,13 @@ def main():
             cadena += dt(x['cursiva'], 'PlayfairDisplay-Italic.ttf', 170, x.get('y', 780 if plan.get('mapa') else 640) + 325, x.get('cursiva_de', a + .3), '+')
     extra = []
     carpeta = os.path.join(RAIZ, os.path.dirname(sys.argv[1]))
-    bandera = bool(plan.get('titulo')) and plan.get('logo', 'bandera') == 'bandera'
+    bandera = bool(plan.get('titulo')) and plan.get('logo', 'mapa') == 'bandera'
     if bandera:                     # logo por defecto: bandera en círculo + título (reemplaza mapa + título)
         lin = [plan['titulo']] if isinstance(plan['titulo'], str) else plan['titulo']
         png = logo_bandera(lin, os.path.join(carpeta, 'logo.png'))
         extra += ['-i', png]
         cadena += f"[vb];[vb][{nv + 1}:v]overlay=x=(W-w)/2:y={plan.get('logo_y', LOGO_Y)}"
-    elif plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
+    elif plan.get('mapa', bool(plan.get('titulo'))):   # por defecto: mapa de China grande detrás del título (su preferencia)
         extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]
         esc = plan.get('mapa_escala', MAPA_ESC)
         cadena += f"[vb];[{nv + 1}:v]scale=iw*{esc}:-1[mapa];[vb][mapa]overlay=x=(W-w)/2:y={plan.get('mapa_y', MAPA_Y)}"

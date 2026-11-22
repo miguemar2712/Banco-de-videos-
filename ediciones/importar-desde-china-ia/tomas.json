@@ -3,9 +3,14 @@
  "salida": "ediciones/importar-desde-china-ia/sin-titulo.mp4",
  "tomas": [
   {
-   "hasta": 6.0,
+   "hasta": 4.3,
    "clip": "videos/clip-y.mov",
    "desde": 0.0
+  },
+  {
+   "hasta": 6.0,
+   "clip": "videos/broll/mk-23237.mp4",
+   "desde": 2.0
   },
   {
    "hasta": 7.6,

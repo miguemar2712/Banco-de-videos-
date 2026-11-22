@@ -1,0 +1,111 @@
+{
+ "voz": "videos/voz-19.m4a",
+ "salida": "out/primera-importacion.mp4",
+ "titulo": [
+  "Tu primera",
+  "importación"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-19-palabras.json",
+ "claves": [
+  "importar",
+  "china",
+  "producto",
+  "clientes",
+  "proveedor",
+  "verificado",
+  "cotización",
+  "puerta",
+  "calcular",
+  "pieza",
+  "pedido",
+  "importación",
+  "pequeño",
+  "aprender",
+  "lista",
+  "paso"
+ ],
+ "reemplazos": {
+  "lista": "LISTA"
+ },
+ "tomas": [
+  {
+   "hasta": 1.6,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 4.0,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 5.6,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 7.5,
+   "clip": "videos/broll/mk-35454.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.5,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 13.9,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 9.0
+  },
+  {
+   "hasta": 17.3,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 10.8
+  },
+  {
+   "hasta": 18.3,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 19.6,
+   "clip": "videos/broll/mk-11011.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 22.06,
+   "clip": "videos/clip-x-1080.mp4",
+   "desde": 17.5
+  }
+ ],
+ "textos": [
+  {
+   "de": 13.1,
+   "a": 13.9,
+   "grande": "$600",
+   "cursiva": "dólares",
+   "cursiva_de": 13.3,
+   "y": 1150
+  },
+  {
+   "de": 16.5,
+   "a": 17.3,
+   "grande": "$300",
+   "cursiva": "dólares",
+   "cursiva_de": 16.8,
+   "y": 1150
+  }
+ ],
+ "ocultar_subs": [
+  [
+   12.95,
+   13.9
+  ],
+  [
+   16.4,
+   17.3
+  ]
+ ]
+}

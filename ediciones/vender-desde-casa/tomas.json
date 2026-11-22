@@ -1,0 +1,81 @@
+{
+ "voz": "videos/voz-21-voz.m4a",
+ "salida": "out/vender-desde-casa.mp4",
+ "titulo": [
+  "Vende",
+  "desde casa"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-21-palabras.json",
+ "claves": [
+  "vender",
+  "casa",
+  "china",
+  "reina",
+  "poquitas",
+  "producto",
+  "clientas",
+  "proveedor",
+  "fotos",
+  "pedido",
+  "cuentas",
+  "precio",
+  "comprar",
+  "enseñe",
+  "importar",
+  "empezar"
+ ],
+ "reemplazos": {
+  "comprarla": "comprarle",
+  "Importar": "IMPORTAR",
+  "cuánto.": "cuánto",
+  "Te": "te"
+ },
+ "tomas": [
+  {
+   "hasta": 1.5,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.0,
+   "clip": "videos/broll/mk-36360.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 5.2,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 1.5
+  },
+  {
+   "hasta": 7.7,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 9.3,
+   "clip": "videos/broll/mk-23237.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 11.7,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 10.5
+  },
+  {
+   "hasta": 13.9,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 14.5
+  },
+  {
+   "hasta": 16.9,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 18.5
+  },
+  {
+   "hasta": 18.59,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 22.5
+  }
+ ]
+}

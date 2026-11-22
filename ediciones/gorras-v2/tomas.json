@@ -1,0 +1,82 @@
+{
+ "voz": "videos/voz-18-voz.m4a",
+ "salida": "out/gorras-v2.mp4",
+ "titulo": [
+  "Mis gorras",
+  "desde China"
+ ],
+ "mapa": true,
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-18-palabras.json",
+ "claves": [
+  "pedido",
+  "china",
+  "gorras",
+  "colores",
+  "detalles",
+  "revender",
+  "puerta",
+  "mercancía",
+  "negocio",
+  "proveedor",
+  "importar",
+  "pedido"
+ ],
+ "reemplazos": {
+  "Importar": "IMPORTAR"
+ },
+ "tomas": [
+  {
+   "hasta": 1.1,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 2.3,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 7.5
+  },
+  {
+   "hasta": 3.3,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 16.5
+  },
+  {
+   "hasta": 4.5,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 21.5
+  },
+  {
+   "hasta": 5.9,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 8.8
+  },
+  {
+   "hasta": 7.4,
+   "clip": "videos/broll/mk-6943.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 9.0,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.9,
+   "clip": "videos/broll/mk-36309.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 12.4,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 14.8
+  },
+  {
+   "hasta": 13.59,
+   "clip": "videos/clip-w-1080.mp4",
+   "desde": 24.5
+  }
+ ],
+ "subs_y": 1180,
+ "logo_y": 1450
+}

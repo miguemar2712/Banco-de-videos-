@@ -137,6 +137,45 @@ def ass_cartel(grupos, Y):
     return out
 
 
+LOGO_Y = 150   # logo 'bandera' (su elección, opción 3): bandera de China en círculo + título blanco Playfair
+
+
+def logo_bandera(lineas, salida):
+    """PNG transparente: círculo con la bandera de China + título en 1–3 líneas, blanco con sombra suave."""
+    import math
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter
+    PF = os.path.join(RAIZ, 'fuentes', 'PlayfairDisplayBlackItalic.ttf')
+    W, D = 1000, 230
+    tam = 140
+    while tam > 50:
+        f = ImageFont.truetype(PF, tam)
+        if max(f.getlength(l) for l in lineas) <= W - D - 60: break
+        tam -= 4
+    alto_txt = int(tam * 1.0 * len(lineas))
+    H = max(D, alto_txt) + 60
+    im = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    cx, cy = 30 + D // 2, H // 2
+    def estrella(d, x, y, r, fill):
+        d.polygon([(x + (r if i % 2 == 0 else r * .4) * math.cos(math.radians(-90 + i * 36)),
+                    y + (r if i % 2 == 0 else r * .4) * math.sin(math.radians(-90 + i * 36))) for i in range(10)], fill=fill)
+    sombra = Image.new('RGBA', im.size, (0, 0, 0, 0)); ds = ImageDraw.Draw(sombra)
+    ds.ellipse((cx - D // 2 + 8, cy - D // 2 + 10, cx + D // 2 + 8, cy + D // 2 + 10), fill=(0, 0, 0, 150))
+    x0 = 30 + D + 40; y0 = cy - alto_txt // 2
+    for i, l in enumerate(lineas):
+        ds.text((x0 + 6, y0 + i * tam + 8), l, font=f, fill=(0, 0, 0, 200))
+    im.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(12)))
+    d = ImageDraw.Draw(im)
+    d.ellipse((cx - D // 2, cy - D // 2, cx + D // 2, cy + D // 2), fill=(214, 30, 40, 255), outline=(255, 255, 255, 255), width=8)
+    GOLD = (240, 200, 60, 255)
+    estrella(d, cx - 40, cy - 30, 44, GOLD)
+    for dx, dy in ((28, -82), (58, -48), (58, -6), (28, 30)): estrella(d, cx + dx, cy + dy, 14, GOLD)
+    for i, l in enumerate(lineas):
+        d.text((x0, y0 + i * tam), l, font=f, fill=(255, 255, 255, 255))
+    bbox = im.getbbox(); im = im.crop((0, 0, max(bbox[2] + 20, D + 60), H))
+    im.save(salida)
+    return salida
+
+
 def hacer_ass(plan, total, parte='todo'):
     out = ASS_CAB
     t = plan.get('titulo') if parte in ('todo', 'titulo') else None
@@ -251,14 +290,20 @@ def main():
         if x.get('cursiva'):
             cadena += dt(x['cursiva'], 'PlayfairDisplay-Italic.ttf', 170, x.get('y', 780 if plan.get('mapa') else 640) + 325, x.get('cursiva_de', a + .3), '+')
     extra = []
-    if plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
+    carpeta = os.path.join(RAIZ, os.path.dirname(sys.argv[1]))
+    bandera = bool(plan.get('titulo')) and plan.get('logo', 'bandera') == 'bandera'
+    if bandera:                     # logo por defecto: bandera en círculo + título (reemplaza mapa + título)
+        lin = [plan['titulo']] if isinstance(plan['titulo'], str) else plan['titulo']
+        png = logo_bandera(lin, os.path.join(carpeta, 'logo.png'))
+        extra += ['-i', png]
+        cadena += f"[vb];[vb][{nv + 1}:v]overlay=x=(W-w)/2:y={plan.get('logo_y', LOGO_Y)}"
+    elif plan.get('mapa'):            # mapa de China rojo con estrellas detrás del título
         extra += ['-i', os.path.join(RAIZ, 'assets', 'china-mapa.png')]
         esc = plan.get('mapa_escala', MAPA_ESC)
         cadena += f"[vb];[{nv + 1}:v]scale=iw*{esc}:-1[mapa];[vb][mapa]overlay=x=(W-w)/2:y={plan.get('mapa_y', MAPA_Y)}"
     fdir = os.path.join(RAIZ, 'fuentes')
-    carpeta = os.path.join(RAIZ, os.path.dirname(sys.argv[1]))
     if plan.get('subtitulos') == 'cartel':
-        if plan.get('titulo'):
+        if plan.get('titulo') and not bandera:
             ass = os.path.join(carpeta, 'titulo.ass'); open(ass, 'w').write(hacer_ass(plan, total, 'titulo'))
             cadena += f",subtitles=filename='{ass}':fontsdir='{fdir}'"
         ass = os.path.join(carpeta, 'subs.ass'); txt = hacer_ass(plan, total, 'subs'); open(ass, 'w').write(txt)
@@ -268,7 +313,7 @@ def main():
             solo = os.path.join(carpeta, 'subs-mascara.ass')        # solo las letras (sin resplandor) para la máscara de desgaste
             open(solo, 'w').write(''.join(l for l in txt.splitlines(True) if 'CartelGlow,' not in l))
             tex = os.path.join(RAIZ, 'assets', 'textura-gastada.png')
-            idx = nv + 1 + (1 if plan.get('mapa') else 0)
+            idx = nv + 1 + (1 if (plan.get('mapa') or bandera) else 0)
             extra += ['-loop', '1', '-i', tex]
             cadena += (f",subtitles=filename='{ass}':fontsdir='{fdir}'[vb2];"
                        f"color=c=black:s=1080x1920:r=30:d={total:.3f},subtitles=filename='{solo}':fontsdir='{fdir}',format=gray,lut=y='if(gt(val,110),255,0)'[am];"

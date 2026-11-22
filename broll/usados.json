@@ -60,7 +60,8 @@
   "puerta-de-tu-casa-v3"
  ],
  "23237": [
-  "importar-desde-china-ia"
+  "importar-desde-china-ia",
+  "vender-desde-casa"
  ],
  "26950": [
   "importar-desde-china-ia"
@@ -269,5 +270,8 @@
  ],
  "21325": [
   "sin-viajar-china"
+ ],
+ "36360": [
+  "vender-desde-casa"
  ]
 }

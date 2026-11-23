@@ -1,0 +1,102 @@
+{
+ "voz": "videos/voz-22-voz.m4a",
+ "salida": "out/caja-de-china.mp4",
+ "titulo": [
+  "¿Qué te gustaría",
+  "que trajera?"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-22-palabras.json",
+ "claves": [
+  "caja",
+  "china",
+  "bolsas",
+  "ropa",
+  "gorras",
+  "clientas",
+  "pedido",
+  "frena",
+  "proveedor",
+  "nervios",
+  "escríbeme",
+  "proveedores",
+  "seguros",
+  "lista"
+ ],
+ "reemplazos": {
+  "100": "100%",
+  "%": ""
+ },
+ "tomas": [
+  {
+   "hasta": 1.2,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 30.0
+  },
+  {
+   "hasta": 2.0,
+   "clip": "videos/broll/mk-31019.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 3.3,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 31.3
+  },
+  {
+   "hasta": 3.7,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 7.5
+  },
+  {
+   "hasta": 4.4,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 4.9,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 17.5
+  },
+  {
+   "hasta": 7.1,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 12.0
+  },
+  {
+   "hasta": 9.4,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 20.0
+  },
+  {
+   "hasta": 11.2,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 8.0
+  },
+  {
+   "hasta": 12.3,
+   "clip": "videos/broll/mk-11430.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 14.3,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 24.0
+  },
+  {
+   "hasta": 16.8,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 27.5
+  },
+  {
+   "hasta": 18.9,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 20.49,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 32.0
+  }
+ ]
+}

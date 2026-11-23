@@ -16,7 +16,7 @@ Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H0000000
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:20.49,Sombra,,0,0,0,,{\pos(546,413)\blur7\fnPlayfair Display ExtraBold\i1\fs133}¿Qué te gustaría
-Dialogue: 1,0:00:00.00,0:00:20.49,Titulo,,0,0,0,,{\pos(540,404)\fnPlayfair Display ExtraBold\i1\fs133}¿Qué te gustaría
-Dialogue: 0,0:00:00.00,0:00:20.49,Sombra,,0,0,0,,{\pos(546,495)\blur7\fnPlayfair Display ExtraBold\i1\fs133}que trajera?
-Dialogue: 1,0:00:00.00,0:00:20.49,Titulo,,0,0,0,,{\pos(540,486)\fnPlayfair Display ExtraBold\i1\fs133}que trajera?
+Dialogue: 0,0:00:00.00,0:00:20.59,Sombra,,0,0,0,,{\pos(546,413)\blur7\fnPlayfair Display ExtraBold\i1\fs133}¿Qué te gustaría
+Dialogue: 1,0:00:00.00,0:00:20.59,Titulo,,0,0,0,,{\pos(540,404)\fnPlayfair Display ExtraBold\i1\fs133}¿Qué te gustaría
+Dialogue: 0,0:00:00.00,0:00:20.59,Sombra,,0,0,0,,{\pos(546,495)\blur7\fnPlayfair Display ExtraBold\i1\fs133}que trajera?
+Dialogue: 1,0:00:00.00,0:00:20.59,Titulo,,0,0,0,,{\pos(540,486)\fnPlayfair Display ExtraBold\i1\fs133}que trajera?

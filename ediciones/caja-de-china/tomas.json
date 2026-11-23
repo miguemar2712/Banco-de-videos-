@@ -1,12 +1,12 @@
 {
- "voz": "videos/voz-22-voz.m4a",
+ "voz": "videos/voz-23-voz.m4a",
  "salida": "out/caja-de-china.mp4",
  "titulo": [
   "¿Qué te gustaría",
   "que trajera?"
  ],
  "subtitulos": "cartel",
- "palabras": "videos/voz-22-palabras.json",
+ "palabras": "videos/voz-23-palabras.json",
  "claves": [
   "caja",
   "china",
@@ -99,7 +99,7 @@
    "desde": 2.0
   },
   {
-   "hasta": 20.49,
+   "hasta": 20.59,
    "clip": "videos/clip-aa-1080.mp4",
    "desde": 32.0
   }

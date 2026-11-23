@@ -40,8 +40,8 @@
   },
   {
    "hasta": 3.3,
-   "clip": "videos/clip-aa-1080.mp4",
-   "desde": 31.3
+   "clip": "videos/broll/mk-4083.mp4",
+   "desde": 2.0
   },
   {
    "hasta": 3.7,
@@ -59,9 +59,14 @@
    "desde": 17.5
   },
   {
-   "hasta": 7.1,
+   "hasta": 6.0,
    "clip": "videos/clip-aa-1080.mp4",
    "desde": 12.0
+  },
+  {
+   "hasta": 7.1,
+   "clip": "videos/broll/mk-12532.mp4",
+   "desde": 5.0
   },
   {
    "hasta": 9.4,

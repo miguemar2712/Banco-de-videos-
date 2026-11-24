@@ -180,6 +180,18 @@ La columna **Tomas** dice qué sale en pantalla en cada frase:
 | Dependiendo del modelo y de tus clientes, podrías vender algunas piezas a **70, 80 o hasta 90** dólares. | tenis/cartera → set + $70, $80, $90 uno por uno |
 | Si quieres aprender a importar y desarrollar tu propio negocio desde casa, comenta **LISTA** y te mando la información. | lentes → etiqueta → ropa |
 
+## 19 · Lo que más se vende en temporada navideña  ·  CTA: NAVIDAD  (~25 s, coleccion/21)
+| Frase | Tomas |
+|---|---|
+| ¿Ya sabes qué vas a vender esta Navidad? 🎄 | cajas en la silla rosa con el árbol (0-2 s) |
+| Mira lo que me llegó de China: tenis, pantuflas… | tenis lila y pantuflas (2-5 s) |
+| …botas peluditas que están súper de moda… | botas peludas café (6-9 s) |
+| …botas altas, mochilas… | botas altas y mochila (12-15 s) |
+| …y estos tenis rosas que se venden solitos. | tenis rosas con caja naranja (16-22 s) |
+| Los consigues desde **[$]** dólares y los puedes vender en **[$]** o más. | bolsa redonda/tenis + precios grandes (24-27 s) |
+| Es la temporada en que más se vende: pide con tiempo para que te llegue antes de las fiestas. | vista general (28-31 s) |
+| Comenta **NAVIDAD** y te paso mis proveedores. | cajas en la silla rosa (32-34 s) |
+
 ---
 **Consejos**
 - Primeros 2 s = la frase más fuerte (pregunta o precio).

@@ -1,0 +1,108 @@
+{
+ "voz": "videos/voz-25-voz.m4a",
+ "salida": "out/empezar-de-cero.mp4",
+ "titulo": [
+  "Si empezara",
+  "de cero"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-25-palabras.json",
+ "claves": [
+  "cero",
+  "encuesta",
+  "historias",
+  "productos",
+  "vender",
+  "seguidoras",
+  "color",
+  "respuestas",
+  "pedido",
+  "pequeño",
+  "gustó",
+  "ofrecer",
+  "invertir",
+  "oriente",
+  "empezar",
+  "información"
+ ],
+ "reemplazos": {
+  "empezar": "EMPEZAR"
+ },
+ "tomas": [
+  {
+   "hasta": 1.6,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.2,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 28.5
+  },
+  {
+   "hasta": 4.0,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 6.5
+  },
+  {
+   "hasta": 4.9,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 13.0
+  },
+  {
+   "hasta": 5.5,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 17.5
+  },
+  {
+   "hasta": 7.3,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 2.2
+  },
+  {
+   "hasta": 7.8,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 0.2
+  },
+  {
+   "hasta": 8.3,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 14.5
+  },
+  {
+   "hasta": 9.2,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 12.5
+  },
+  {
+   "hasta": 10.4,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 10.0
+  },
+  {
+   "hasta": 11.8,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 19.0
+  },
+  {
+   "hasta": 13.6,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 16.5
+  },
+  {
+   "hasta": 14.2,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 24.5
+  },
+  {
+   "hasta": 16.3,
+   "clip": "videos/clip-n-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 18.19,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 32.0
+  }
+ ]
+}

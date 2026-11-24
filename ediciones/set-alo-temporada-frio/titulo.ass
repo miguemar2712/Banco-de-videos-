@@ -16,7 +16,7 @@ Style: CartelGlow,Montserrat Black,80,&H10000000,&H10000000,&H10000000,&H0000000
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:25.16,Sombra,,0,0,0,,{\pos(546,385)\blur7\fnPlayfair Display ExtraBold\i1\fs224}¿Cuánto
-Dialogue: 1,0:00:00.00,0:00:25.16,Titulo,,0,0,0,,{\pos(540,376)\fnPlayfair Display ExtraBold\i1\fs224}¿Cuánto
-Dialogue: 0,0:00:00.00,0:00:25.16,Sombra,,0,0,0,,{\pos(546,523)\blur7\fnPlayfair Display ExtraBold\i1\fs224}pagarías?
-Dialogue: 1,0:00:00.00,0:00:25.16,Titulo,,0,0,0,,{\pos(540,514)\fnPlayfair Display ExtraBold\i1\fs224}pagarías?
+Dialogue: 0,0:00:00.00,0:00:24.69,Sombra,,0,0,0,,{\pos(546,385)\blur7\fnPlayfair Display ExtraBold\i1\fs224}¿Cuánto
+Dialogue: 1,0:00:00.00,0:00:24.69,Titulo,,0,0,0,,{\pos(540,376)\fnPlayfair Display ExtraBold\i1\fs224}¿Cuánto
+Dialogue: 0,0:00:00.00,0:00:24.69,Sombra,,0,0,0,,{\pos(546,523)\blur7\fnPlayfair Display ExtraBold\i1\fs224}pagarías?
+Dialogue: 1,0:00:00.00,0:00:24.69,Titulo,,0,0,0,,{\pos(540,514)\fnPlayfair Display ExtraBold\i1\fs224}pagarías?

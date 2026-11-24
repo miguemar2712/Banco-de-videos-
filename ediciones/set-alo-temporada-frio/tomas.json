@@ -1,12 +1,12 @@
 {
- "voz": "videos/voz-26.m4a",
+ "voz": "videos/voz-27.m4a",
  "salida": "out/set-alo-temporada-frio.mp4",
  "titulo": [
   "¿Cuánto",
   "pagarías?"
  ],
  "subtitulos": "cartel",
- "palabras": "videos/voz-26-palabras-fix.json",
+ "palabras": "videos/voz-27-palabras-fix.json",
  "claves": [
   "pagarías",
   "calidad",
@@ -25,13 +25,7 @@
   "escríbeme",
   "comunidad"
  ],
- "reemplazos": {
-  "Zétalo": "Tócalo",
-  "mercancia": "mercancía",
-  "a": "a",
-  "Puede": "Puedes",
-  "como": "cómo"
- },
+ "reemplazos": {},
  "tomas": [
   {
    "hasta": 1.2,
@@ -74,42 +68,37 @@
    "desde": 9.5
   },
   {
-   "hasta": 11.7,
+   "hasta": 12.2,
    "clip": "videos/clip-p-1080.mp4",
    "desde": 8.5
   },
   {
-   "hasta": 13.5,
-   "clip": "videos/clip-ab-1080.mp4",
-   "desde": 0.0
-  },
-  {
-   "hasta": 15.3,
+   "hasta": 14.1,
    "clip": "videos/clip-q-1080.mp4",
    "desde": 0.0
   },
   {
-   "hasta": 17.2,
+   "hasta": 16.0,
    "clip": "videos/clip-aa-1080.mp4",
    "desde": 17.5
   },
   {
-   "hasta": 18.9,
+   "hasta": 17.9,
    "clip": "videos/clip-aa-1080.mp4",
    "desde": 0.5
   },
   {
-   "hasta": 20.6,
+   "hasta": 19.4,
    "clip": "videos/broll/mk-23493.mp4",
    "desde": 6.0
   },
   {
-   "hasta": 22.4,
+   "hasta": 21.2,
    "clip": "videos/clip-p-1080.mp4",
    "desde": 15.0
   },
   {
-   "hasta": 25.16,
+   "hasta": 24.69,
    "clip": "videos/clip-u-1080.mp4",
    "desde": 0.0
   }
@@ -124,7 +113,7 @@
   },
   {
    "de": 10.5,
-   "a": 11.7,
+   "a": 12.2,
    "grande": "$80 a $90",
    "cursiva": "dólares",
    "cursiva_de": 11.5
@@ -136,8 +125,8 @@
    7.5
   ],
   [
-   10.0,
-   11.7
+   9.9,
+   12.2
   ]
  ]
 }

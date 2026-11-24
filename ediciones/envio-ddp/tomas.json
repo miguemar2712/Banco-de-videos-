@@ -1,0 +1,103 @@
+{
+ "voz": "videos/voz-24-voz.m4a",
+ "salida": "out/envio-ddp.mp4",
+ "titulo": [
+  "¿Tengo que ir",
+  "por mi pedido?"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-24-palabras.json",
+ "claves": [
+  "preguntan",
+  "pedido",
+  "proveedores",
+  "envío",
+  "DDP",
+  "puerta",
+  "casa",
+  "pagar",
+  "escrito",
+  "precio",
+  "dirección",
+  "cotización",
+  "grupo",
+  "personas",
+  "acompañamiento",
+  "canal"
+ ],
+ "reemplazos": {
+  "Puede": "Puedes"
+ },
+ "tomas": [
+  {
+   "hasta": 2.2,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 4.4,
+   "clip": "videos/clip-n-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 6.5,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 1.5
+  },
+  {
+   "hasta": 8.2,
+   "clip": "videos/broll/mk-22133.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 10.3,
+   "clip": "videos/clip-v-1080.mp4",
+   "desde": 2.2
+  },
+  {
+   "hasta": 12.0,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 7.0
+  },
+  {
+   "hasta": 14.4,
+   "clip": "videos/clip-z-1080.mp4",
+   "desde": 14.5
+  },
+  {
+   "hasta": 16.4,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 18.3,
+   "clip": "videos/broll/mk-4084.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 20.3,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 28.0
+  },
+  {
+   "hasta": 23.19,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 16.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 7.0,
+   "a": 8.2,
+   "grande": "DDP",
+   "cursiva": "a tu puerta",
+   "cursiva_de": 7.6
+  }
+ ],
+ "ocultar_subs": [
+  [
+   6.9,
+   8.2
+  ]
+ ]
+}

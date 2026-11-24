@@ -1,0 +1,154 @@
+{
+ "voz": "videos/voz-28-voz.m4a",
+ "salida": "out/compara-cotizaciones.mp4",
+ "titulo": [
+  "Compara",
+  "2 cotizaciones"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-28-palabras-fix.json",
+ "claves": [
+  "cotizaciones",
+  "bolsas",
+  "envío",
+  "mismas",
+  "incluido",
+  "económica",
+  "sumar",
+  "bolsa",
+  "segunda",
+  "cuentas",
+  "pedido",
+  "importar",
+  "proceso",
+  "proveedores"
+ ],
+ "reemplazos": {
+  "diez": "10",
+  "cien": "$100",
+  "cincuenta": "$50",
+  "treinta": "treinta",
+  "quince": "$15",
+  "trece.": "$13.",
+  "trece": "$13",
+  "Bien": "Bien"
+ },
+ "tomas": [
+  {
+   "hasta": 2.0,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 3.9,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 4.0
+  },
+  {
+   "hasta": 5.2,
+   "clip": "videos/broll/mk-6764.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 8.0,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 12.5
+  },
+  {
+   "hasta": 9.6,
+   "clip": "videos/clip-n-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 11.0,
+   "clip": "videos/clip-f-1080.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 12.1,
+   "clip": "videos/broll/mk-47014.mp4",
+   "desde": 1.0
+  },
+  {
+   "hasta": 13.8,
+   "clip": "videos/clip-o-1080.mp4",
+   "desde": 11.0
+  },
+  {
+   "hasta": 15.0,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 16.5
+  },
+  {
+   "hasta": 16.4,
+   "clip": "videos/broll/mk-46994.mp4",
+   "desde": 0.2
+  },
+  {
+   "hasta": 18.2,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 24.0
+  },
+  {
+   "hasta": 19.7,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 19.5
+  },
+  {
+   "hasta": 21.89,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 3.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 2.5,
+   "a": 3.9,
+   "grande": "$100",
+   "cursiva": "10 bolsas",
+   "cursiva_de": 2.7
+  },
+  {
+   "de": 3.9,
+   "a": 5.2,
+   "grande": "+ $50",
+   "cursiva": "de envío",
+   "cursiva_de": 4.4
+  },
+  {
+   "de": 6.9,
+   "a": 8.0,
+   "grande": "$130",
+   "cursiva": "envío incluido",
+   "cursiva_de": 7.2
+  },
+  {
+   "de": 12.9,
+   "a": 13.8,
+   "grande": "$15",
+   "cursiva": "cada bolsa",
+   "cursiva_de": 13.0
+  },
+  {
+   "de": 14.6,
+   "a": 15.0,
+   "grande": "$13",
+   "cursiva": "cada bolsa",
+   "cursiva_de": 14.6
+  }
+ ],
+ "ocultar_subs": [
+  [
+   1.9,
+   5.2
+  ],
+  [
+   6.1,
+   8.0
+  ],
+  [
+   12.0,
+   15.0
+  ]
+ ]
+}

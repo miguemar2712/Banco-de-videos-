@@ -1,0 +1,143 @@
+{
+ "voz": "videos/voz-26.m4a",
+ "salida": "out/set-alo-temporada-frio.mp4",
+ "titulo": [
+  "¿Cuánto",
+  "pagarías?"
+ ],
+ "subtitulos": "cartel",
+ "palabras": "videos/voz-26-palabras-fix.json",
+ "claves": [
+  "pagarías",
+  "calidad",
+  "tela",
+  "frío",
+  "venden",
+  "modelo",
+  "china",
+  "completo",
+  "vender",
+  "empezando",
+  "mercancía",
+  "producto",
+  "ropa",
+  "proveedores",
+  "escríbeme",
+  "comunidad"
+ ],
+ "reemplazos": {
+  "Zétalo": "Tócalo",
+  "mercancia": "mercancía",
+  "a": "a",
+  "Puede": "Puedes",
+  "como": "cómo"
+ },
+ "tomas": [
+  {
+   "hasta": 1.2,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 21.0
+  },
+  {
+   "hasta": 2.6,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 13.5
+  },
+  {
+   "hasta": 3.8,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 19.0
+  },
+  {
+   "hasta": 5.8,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 16.0
+  },
+  {
+   "hasta": 7.5,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 8.0,
+   "clip": "videos/broll/mk-46126.mp4",
+   "desde": 2.0
+  },
+  {
+   "hasta": 9.0,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 22.0
+  },
+  {
+   "hasta": 10.5,
+   "clip": "videos/clip-h-1080.mp4",
+   "desde": 9.5
+  },
+  {
+   "hasta": 11.7,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 8.5
+  },
+  {
+   "hasta": 13.5,
+   "clip": "videos/clip-ab-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 15.3,
+   "clip": "videos/clip-q-1080.mp4",
+   "desde": 0.0
+  },
+  {
+   "hasta": 17.2,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 17.5
+  },
+  {
+   "hasta": 18.9,
+   "clip": "videos/clip-aa-1080.mp4",
+   "desde": 0.5
+  },
+  {
+   "hasta": 20.6,
+   "clip": "videos/broll/mk-23493.mp4",
+   "desde": 6.0
+  },
+  {
+   "hasta": 22.4,
+   "clip": "videos/clip-p-1080.mp4",
+   "desde": 15.0
+  },
+  {
+   "hasta": 25.16,
+   "clip": "videos/clip-u-1080.mp4",
+   "desde": 0.0
+  }
+ ],
+ "textos": [
+  {
+   "de": 6.8,
+   "a": 7.5,
+   "grande": "$24",
+   "cursiva": "dólares",
+   "cursiva_de": 7.2
+  },
+  {
+   "de": 10.5,
+   "a": 11.7,
+   "grande": "$80 a $90",
+   "cursiva": "dólares",
+   "cursiva_de": 11.5
+  }
+ ],
+ "ocultar_subs": [
+  [
+   6.75,
+   7.5
+  ],
+  [
+   10.0,
+   11.7
+  ]
+ ]
+}

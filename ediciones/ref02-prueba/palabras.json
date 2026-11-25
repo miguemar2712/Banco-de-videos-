@@ -1,0 +1,365 @@
+{
+ "words": [
+  {
+   "text": "Si",
+   "start": 0.0,
+   "end": 0.14
+  },
+  {
+   "text": "hoy",
+   "start": 0.14,
+   "end": 0.26
+  },
+  {
+   "text": "me",
+   "start": 0.26,
+   "end": 0.36
+  },
+  {
+   "text": "tocará",
+   "start": 0.36,
+   "end": 0.66
+  },
+  {
+   "text": "empezar",
+   "start": 0.66,
+   "end": 0.86
+  },
+  {
+   "text": "de",
+   "start": 0.86,
+   "end": 1.04
+  },
+  {
+   "text": "cero,",
+   "start": 1.04,
+   "end": 1.24
+  },
+  {
+   "text": "abriría",
+   "start": 1.46,
+   "end": 1.94
+  },
+  {
+   "text": "una",
+   "start": 1.94,
+   "end": 2.04
+  },
+  {
+   "text": "encuesta",
+   "start": 2.04,
+   "end": 2.32
+  },
+  {
+   "text": "en",
+   "start": 2.32,
+   "end": 2.46
+  },
+  {
+   "text": "mis",
+   "start": 2.46,
+   "end": 2.56
+  },
+  {
+   "text": "historias",
+   "start": 2.56,
+   "end": 2.98
+  },
+  {
+   "text": "y",
+   "start": 2.98,
+   "end": 3.08
+  },
+  {
+   "text": "pondría",
+   "start": 3.08,
+   "end": 3.42
+  },
+  {
+   "text": "tres",
+   "start": 3.42,
+   "end": 3.86
+  },
+  {
+   "text": "productos",
+   "start": 3.86,
+   "end": 4.18
+  },
+  {
+   "text": "que",
+   "start": 4.18,
+   "end": 4.4
+  },
+  {
+   "text": "me",
+   "start": 4.4,
+   "end": 4.5
+  },
+  {
+   "text": "gustaría",
+   "start": 4.5,
+   "end": 4.7
+  },
+  {
+   "text": "vender.",
+   "start": 4.7,
+   "end": 5.06
+  },
+  {
+   "text": "Les",
+   "start": 5.46,
+   "end": 5.58
+  },
+  {
+   "text": "preguntaría",
+   "start": 5.58,
+   "end": 6.0
+  },
+  {
+   "text": "a",
+   "start": 6.0,
+   "end": 6.08
+  },
+  {
+   "text": "mis",
+   "start": 6.08,
+   "end": 6.18
+  },
+  {
+   "text": "seguidoras",
+   "start": 6.18,
+   "end": 6.6
+  },
+  {
+   "text": "cuál",
+   "start": 6.6,
+   "end": 6.72
+  },
+  {
+   "text": "comprarían",
+   "start": 6.72,
+   "end": 7.26
+  },
+  {
+   "text": "y",
+   "start": 7.26,
+   "end": 7.4
+  },
+  {
+   "text": "en",
+   "start": 7.4,
+   "end": 7.5
+  },
+  {
+   "text": "qué",
+   "start": 7.5,
+   "end": 7.6
+  },
+  {
+   "text": "color.",
+   "start": 7.6,
+   "end": 7.8
+  },
+  {
+   "text": "Con",
+   "start": 8.22,
+   "end": 8.34
+  },
+  {
+   "text": "esas",
+   "start": 8.34,
+   "end": 8.5
+  },
+  {
+   "text": "respuestas",
+   "start": 8.5,
+   "end": 8.98
+  },
+  {
+   "text": "cotizaría",
+   "start": 8.98,
+   "end": 9.48
+  },
+  {
+   "text": "un",
+   "start": 9.48,
+   "end": 9.58
+  },
+  {
+   "text": "pedido",
+   "start": 9.58,
+   "end": 9.82
+  },
+  {
+   "text": "pequeño",
+   "start": 9.82,
+   "end": 10.12
+  },
+  {
+   "text": "del",
+   "start": 10.12,
+   "end": 10.28
+  },
+  {
+   "text": "producto",
+   "start": 10.28,
+   "end": 10.54
+  },
+  {
+   "text": "que",
+   "start": 10.54,
+   "end": 10.76
+  },
+  {
+   "text": "más",
+   "start": 10.76,
+   "end": 10.94
+  },
+  {
+   "text": "les",
+   "start": 10.94,
+   "end": 11.06
+  },
+  {
+   "text": "gustó.",
+   "start": 11.06,
+   "end": 11.44
+  },
+  {
+   "text": "Así",
+   "start": 11.7,
+   "end": 11.86
+  },
+  {
+   "text": "tendría",
+   "start": 11.86,
+   "end": 12.16
+  },
+  {
+   "text": "una",
+   "start": 12.16,
+   "end": 12.28
+  },
+  {
+   "text": "idea",
+   "start": 12.28,
+   "end": 12.48
+  },
+  {
+   "text": "de",
+   "start": 12.48,
+   "end": 12.62
+  },
+  {
+   "text": "qué",
+   "start": 12.62,
+   "end": 12.72
+  },
+  {
+   "text": "ofrecer",
+   "start": 12.72,
+   "end": 13.06
+  },
+  {
+   "text": "antes",
+   "start": 13.06,
+   "end": 13.32
+  },
+  {
+   "text": "de",
+   "start": 13.32,
+   "end": 13.48
+  },
+  {
+   "text": "invertir.",
+   "start": 13.48,
+   "end": 13.86
+  },
+  {
+   "text": "Si",
+   "start": 14.16,
+   "end": 14.28
+  },
+  {
+   "text": "quieres",
+   "start": 14.28,
+   "end": 14.5
+  },
+  {
+   "text": "que",
+   "start": 14.5,
+   "end": 14.6
+  },
+  {
+   "text": "te",
+   "start": 14.6,
+   "end": 14.7
+  },
+  {
+   "text": "oriente",
+   "start": 14.7,
+   "end": 14.9
+  },
+  {
+   "text": "con",
+   "start": 14.9,
+   "end": 15.06
+  },
+  {
+   "text": "tu",
+   "start": 15.06,
+   "end": 15.16
+  },
+  {
+   "text": "primer",
+   "start": 15.16,
+   "end": 15.36
+  },
+  {
+   "text": "pedido,",
+   "start": 15.36,
+   "end": 15.72
+  },
+  {
+   "text": "escríbeme",
+   "start": 16.08,
+   "end": 16.44
+  },
+  {
+   "text": "empezar",
+   "start": 16.44,
+   "end": 16.72
+  },
+  {
+   "text": "y",
+   "start": 16.72,
+   "end": 16.92
+  },
+  {
+   "text": "te",
+   "start": 16.92,
+   "end": 17.04
+  },
+  {
+   "text": "envío",
+   "start": 17.04,
+   "end": 17.24
+  },
+  {
+   "text": "toda",
+   "start": 17.24,
+   "end": 17.4
+  },
+  {
+   "text": "la",
+   "start": 17.4,
+   "end": 17.56
+  },
+  {
+   "text": "información.",
+   "start": 17.56,
+   "end": 17.78
+  }
+ ],
+ "text": "Si hoy me tocará empezar de cero, abriría una encuesta en mis historias y pondría tres productos que me gustaría vender. Les preguntaría a mis seguidoras cuál comprarían y en qué color. Con esas respuestas cotizaría un pedido pequeño del producto que más les gustó. Así tendría una idea de qué ofrecer antes de invertir. Si quieres que te oriente con tu primer pedido, escríbeme empezar y te envío toda la información."
+}

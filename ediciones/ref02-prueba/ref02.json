@@ -1,0 +1,34 @@
+{
+  "audio": "videos/ref02-original.mov",
+  "palabras": "ediciones/ref02-prueba/palabras.json",
+  "duracion": 20.5,
+  "salida": "out/ref02-prueba.mp4",
+  "reemplazos": [["tocará", "tocara"]],
+  "tomas": [
+    {"src": "videos/ref02-original.mov", "desde": 0.0,  "a": 0.0,  "hasta": 1.9},
+    {"src": "videos/ref02-original.mov", "desde": 1.9,  "a": 1.9,  "hasta": 3.4},
+    {"src": "videos/broll/mk-43270.mp4", "desde": 1.0,  "a": 3.4,  "hasta": 5.4},
+    {"src": "videos/ref02-original.mov", "desde": 5.4,  "a": 5.4,  "hasta": 6.6},
+    {"src": "videos/broll/mk-49381.mp4", "desde": 3.0,  "a": 6.6,  "hasta": 8.2},
+    {"src": "videos/broll/mk-4953.mp4",  "desde": 2.0,  "a": 8.2,  "hasta": 9.4},
+    {"src": "videos/ref02-original.mov", "desde": 9.4,  "a": 9.4,  "hasta": 12.5},
+    {"src": "videos/ref02-original.mov", "desde": 12.5, "a": 12.5, "hasta": 13.4},
+    {"src": "videos/ref02-original.mov", "desde": 13.4, "a": 13.4, "hasta": 16.0},
+    {"src": "videos/ref02-original.mov", "desde": 16.0, "a": 16.0, "hasta": 20.5}
+  ],
+  "titulos": [
+    {"de": 0.0,  "a": 1.9,  "titular": "EMPEZAR DE CERO",   "cursiva": "si hoy me tocara"},
+    {"de": 3.4,  "a": 5.3,  "titular": "3 PRODUCTOS",       "cursiva": "que me gustaría vender"},
+    {"de": 9.5,  "a": 11.6, "titular": "PEDIDO PEQUEÑO",    "cursiva": "del que más les gustó"},
+    {"de": 12.9, "a": 14.1, "titular": "ANTES DE INVERTIR", "cursiva": "una idea de qué ofrecer"}
+  ],
+  "etiquetas": [
+    {"de": 1.95, "a": 3.4,  "texto": "ENCUESTA",      "x": 790, "y": 470, "rot": -7},
+    {"de": 6.6,  "a": 8.2,  "texto": "¿QUÉ COLOR?",   "x": 300, "y": 470, "rot": 6},
+    {"de": 15.1, "a": 16.0, "texto": "PRIMER PEDIDO", "x": 700, "y": 1000, "rot": -5}
+  ],
+  "claves": ["encuesta", "historias", "seguidoras", "color", "cotizaría", "primer", "pedido", "información"],
+  "ocultar_subs": [[0, 1.9], [3.4, 5.3], [9.5, 11.6], [12.9, 14.1], [16.0, 21]],
+  "subs_y": 1420,
+  "cta": {"de": 16.0, "titular": "ESCRÍBEME", "cursiva": "“empezar”", "y": 900}
+}

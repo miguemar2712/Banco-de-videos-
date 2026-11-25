@@ -60,7 +60,8 @@
     "NO tomas de solo nubes / ala sobre nubes (11303, 11011, 4204): no le gustan. Para 'desde China'/'envío' usar un avión completo visible (ej. 6938) o puerto/barco.",
     "'Proveedores/fábrica': SÍ le gusta una FÁBRICA con trabajadores caminando (ej. 23378, 23696); NO personas de oficina/traje (pareja 23237).",
     "LOGO: volvió al MAPA de China grande con título Playfair (dijo 'es el mapa'). La bandera en círculo queda solo si la pide ('logo':'bandera').",
-    "Quiere MÁS clips relacionados ('de IA'): ~4–5 por video de 20 s (no solo 2), intercalados con su mercancía."
+    "Quiere MÁS clips relacionados ('de IA'): ~4–5 por video de 20 s (no solo 2), intercalados con su mercancía.",
+    "NUEVO ESTILO 'REF 02' (PDF de referencia, 25-nov-2026): titular MAYÚSCULAS crema #FFF0AF pesado + cursiva serif blanca solapada, subtítulos blancos palabra por palabra, stickers de precio ROSA #F68CBF colgantes, cortes secos por objeto, micro zoom y CTA crema+cursiva con fondo oscurecido. Detalle en brand.json → estilo_ref02 y referencias/ref02-estilo.md."
   ],
   "nicho": "Importaciones desde China. Usa marketing digital en redes para atraer clientes a su programa de importación (incluye proveedores seguros y confiables).",
   "objetivo": "Vender su programa de importación: cada video debe generar confianza y cerrar con CTA hacia el programa.",
@@ -76,5 +77,50 @@
   "subtitulos_letra": "Montserrat Black",
   "subtitulos_color": "#FFFFFF",
   "subtitulos_sombra": false,
-  "logo": "mapa"
+  "logo": "mapa",
+  "estilo_ref02": {
+    "fuente": "referencias/ref02-guia-visual.pdf (notas: referencias/ref02-estilo.md)",
+    "colores": {
+      "crema_titular": "#FFF0AF",
+      "blanco": "#FFFFFF",
+      "negro_tinta": "#171817",
+      "rosa_etiqueta": "#F68CBF",
+      "naranja_acento": "#D56F35",
+      "gris_calido": "#7B7770"
+    },
+    "letras": {
+      "titular": "Anton (o Montserrat Black) MAYÚSCULAS crema, tracking -2/-4 %, sombra suave, 90-135 px",
+      "cursiva": "Playfair Display Bold Italic blanca, solapada al titular, 50-85 px",
+      "subtitulos": "Montserrat SemiBold/ExtraBold blanca palabra por palabra (0,15-0,55 s), clave más grande, 45-70 px",
+      "cifra": "pesada 90-130 px + cursiva (ej. '$200' + 'de ganancia'), punch con rebote mínimo"
+    },
+    "efectos": [
+      "titular pop-in 115→100 % en 4-7 frames",
+      "cursiva fade+subida 5-9 frames",
+      "sticker de precio rosa colgante con cuerda, rotación -8/+8°, pop+microrebote",
+      "carteles por categoría en crema",
+      "hard cuts / match cuts por movimiento",
+      "micro zoom 100→103-106 %",
+      "whip blur 3-5 frames solo 1 vez si se justifica",
+      "dim-overlay 50-70 % en el CTA final"
+    ],
+    "estructura": [
+      "gancho titular+cursiva+cifra (0-1,8 s)",
+      "producto/beneficio",
+      "lugar",
+      "explicación/unboxing",
+      "catálogo rápido con stickers de precio",
+      "empaque",
+      "plataformas (mockup propio)",
+      "promesa/entrega",
+      "CTA crema+cursiva centrado",
+      "cierre con fondo oscurecido"
+    ],
+    "reglas": [
+      "tabla de escenas antes de editar",
+      "sin marcas de agua ni logos ajenos",
+      "sin efectos de sonido (preferencia de ella)",
+      "margen lateral 80-100 px"
+    ]
+  }
 }

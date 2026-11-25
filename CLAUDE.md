@@ -85,3 +85,10 @@ Banco de Motion Graphics **Level Up** · creado por **José Sibú**.
 - **Nada de personas caminando** (mercados, bodegas, fábricas con gente) **ni tomas acercadas que se vean borrosas**.
 - **Nada de repartidores** en el b-roll; para "llega a mi casa" usa su propia caja.
 - Guiones listos: `GUIONES.md`.
+
+## 7 · Estilo REF 02 (PDF de referencia que mandó)
+- PDF guardado en `referencias/ref02-guia-visual.pdf`; notas completas en `referencias/ref02-estilo.md`; valores en `brand.json` → `"estilo_ref02"`.
+- Resumen: titular **MAYÚSCULAS crema #FFF0AF** (Anton / Montserrat Black, sombra suave) + **cursiva Playfair Bold Italic blanca** solapada;
+  subtítulos **blancos palabra por palabra** (Montserrat), clave más grande; **cifras con punch**; **stickers de precio rosa #F68CBF** colgantes;
+  cortes secos por objeto, micro zoom 103–106 %; **CTA crema + cursiva centrado con fondo oscurecido 50–70 %**.
+- Antes de editar con este estilo: hacer **tabla de escenas** (tiempo, toma, texto, efecto, duración). Sin marcas de agua ni logos ajenos.

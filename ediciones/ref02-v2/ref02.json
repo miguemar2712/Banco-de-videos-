@@ -1,0 +1,36 @@
+{
+  "audio": "videos/ref02-v2-original.mov",
+  "palabras": "ediciones/ref02-v2/palabras.json",
+  "duracion": 25.5,
+  "salida": "out/ref02-v2.mp4",
+  "reemplazos": [["como", "cómo"], ["puede", "Puedes"]],
+  "tomas": [
+    {"src": "videos/ref02-v2-original.mov", "desde": 0.0,  "a": 0.0,  "hasta": 2.4},
+    {"src": "videos/ref02-v2-original.mov", "desde": 2.4,  "a": 2.4,  "hasta": 4.3},
+    {"src": "videos/broll/mk-22032.mp4", "desde": 3.0, "a": 4.3, "hasta": 6.3},
+    {"src": "videos/broll/mk-35866.mp4", "desde": 10.0, "a": 6.3, "hasta": 8.1},
+    {"src": "videos/ref02-v2-original.mov", "desde": 4.3,  "a": 8.1,  "hasta": 10.2},
+    {"src": "videos/ref02-v2-original.mov", "desde": 7.1,  "a": 10.2, "hasta": 11.1},
+    {"src": "videos/broll/mk-46505.mp4", "desde": 5.0, "a": 11.1, "hasta": 12.6},
+    {"src": "videos/ref02-v2-original.mov", "desde": 10.0, "a": 12.6, "hasta": 14.3},
+    {"src": "videos/broll/mk-47489.mp4", "desde": 3.0, "a": 14.3, "hasta": 16.1},
+    {"src": "videos/ref02-v2-original.mov", "desde": 14.0, "a": 16.1, "hasta": 18.1},
+    {"src": "videos/ref02-v2-original.mov", "desde": 17.0, "a": 18.1, "hasta": 20.2},
+    {"src": "videos/ref02-v2-original.mov", "desde": 19.5, "a": 20.2, "hasta": 22.9},
+    {"src": "videos/ref02-v2-original.mov", "desde": 22.2, "a": 22.9, "hasta": 25.5}
+  ],
+  "titulos": [
+    {"de": 0.0,  "a": 2.35, "titular": "LO QUE MÁS",  "cursiva": "me preguntan"},
+    {"de": 6.4,  "a": 8.1,  "titular": "ENVÍO DDP",   "cursiva": "se incluye"},
+    {"de": 16.1, "a": 18.1, "titular": "ESCRÍBEME",   "cursiva": "“envío”"},
+    {"de": 19.5, "a": 21.0, "titular": "MÁS DE 100",  "cursiva": "personas en mi grupo", "tam": 150}
+  ],
+  "etiquetas": [
+    {"de": 8.2,  "a": 10.2, "texto": "HASTA MI PUERTA", "x": 700, "y": 470, "rot": -6},
+    {"de": 11.15,"a": 12.6, "texto": "POR ESCRITO",     "x": 760, "y": 1000, "rot": 6}
+  ],
+  "claves": ["pedido", "proveedores", "pagar", "precio", "dirección", "cotización", "grupo", "acompañamiento"],
+  "ocultar_subs": [[0, 2.35], [6.4, 8.1], [16.1, 18.1], [19.5, 21.0], [22.6, 30]],
+  "subs_y": 1420,
+  "cta": {"de": 22.9, "titular": "ESCRÍBEME", "cursiva": "“envío”", "y": 900}
+}

@@ -1,0 +1,485 @@
+{
+ "words": [
+  {
+   "text": "Una",
+   "start": 0.0,
+   "end": 0.14
+  },
+  {
+   "text": "de",
+   "start": 0.14,
+   "end": 0.22
+  },
+  {
+   "text": "las",
+   "start": 0.22,
+   "end": 0.34
+  },
+  {
+   "text": "cosas",
+   "start": 0.34,
+   "end": 0.54
+  },
+  {
+   "text": "que",
+   "start": 0.54,
+   "end": 0.72
+  },
+  {
+   "text": "más",
+   "start": 0.72,
+   "end": 0.86
+  },
+  {
+   "text": "me",
+   "start": 0.86,
+   "end": 0.98
+  },
+  {
+   "text": "preguntan",
+   "start": 0.98,
+   "end": 1.4
+  },
+  {
+   "text": "es",
+   "start": 1.4,
+   "end": 1.54
+  },
+  {
+   "text": "Carmen.",
+   "start": 1.54,
+   "end": 1.9
+  },
+  {
+   "text": "¿Tengo",
+   "start": 2.4,
+   "end": 2.6
+  },
+  {
+   "text": "que",
+   "start": 2.6,
+   "end": 2.72
+  },
+  {
+   "text": "ir",
+   "start": 2.72,
+   "end": 2.84
+  },
+  {
+   "text": "a",
+   "start": 2.84,
+   "end": 2.88
+  },
+  {
+   "text": "buscar",
+   "start": 2.88,
+   "end": 3.06
+  },
+  {
+   "text": "mi",
+   "start": 3.06,
+   "end": 3.26
+  },
+  {
+   "text": "pedido",
+   "start": 3.26,
+   "end": 3.58
+  },
+  {
+   "text": "a",
+   "start": 3.58,
+   "end": 3.68
+  },
+  {
+   "text": "algún",
+   "start": 3.68,
+   "end": 3.86
+  },
+  {
+   "text": "lado?",
+   "start": 3.86,
+   "end": 4.06
+  },
+  {
+   "text": "En",
+   "start": 4.4,
+   "end": 4.5
+  },
+  {
+   "text": "los",
+   "start": 4.5,
+   "end": 4.58
+  },
+  {
+   "text": "pedidos",
+   "start": 4.58,
+   "end": 4.86
+  },
+  {
+   "text": "que",
+   "start": 4.86,
+   "end": 4.98
+  },
+  {
+   "text": "hacemos",
+   "start": 4.98,
+   "end": 5.18
+  },
+  {
+   "text": "con",
+   "start": 5.18,
+   "end": 5.38
+  },
+  {
+   "text": "nuestros",
+   "start": 5.38,
+   "end": 5.56
+  },
+  {
+   "text": "proveedores,",
+   "start": 5.56,
+   "end": 6.08
+  },
+  {
+   "text": "se",
+   "start": 6.3,
+   "end": 6.5
+  },
+  {
+   "text": "incluye",
+   "start": 6.5,
+   "end": 6.8
+  },
+  {
+   "text": "el",
+   "start": 6.8,
+   "end": 6.88
+  },
+  {
+   "text": "método",
+   "start": 6.88,
+   "end": 7.14
+  },
+  {
+   "text": "de",
+   "start": 7.14,
+   "end": 7.26
+  },
+  {
+   "text": "envío",
+   "start": 7.26,
+   "end": 7.5
+  },
+  {
+   "text": "DDP.",
+   "start": 7.5,
+   "end": 7.8
+  },
+  {
+   "text": "La",
+   "start": 8.14,
+   "end": 8.2
+  },
+  {
+   "text": "mercancía",
+   "start": 8.2,
+   "end": 8.6
+  },
+  {
+   "text": "me",
+   "start": 8.6,
+   "end": 8.7
+  },
+  {
+   "text": "llega",
+   "start": 8.7,
+   "end": 8.88
+  },
+  {
+   "text": "hasta",
+   "start": 8.88,
+   "end": 9.08
+  },
+  {
+   "text": "la",
+   "start": 9.08,
+   "end": 9.18
+  },
+  {
+   "text": "puerta",
+   "start": 9.18,
+   "end": 9.38
+  },
+  {
+   "text": "de",
+   "start": 9.38,
+   "end": 9.54
+  },
+  {
+   "text": "mi",
+   "start": 9.54,
+   "end": 9.62
+  },
+  {
+   "text": "casa.",
+   "start": 9.62,
+   "end": 9.86
+  },
+  {
+   "text": "Antes",
+   "start": 10.24,
+   "end": 10.42
+  },
+  {
+   "text": "de",
+   "start": 10.42,
+   "end": 10.56
+  },
+  {
+   "text": "pagar,",
+   "start": 10.56,
+   "end": 10.76
+  },
+  {
+   "text": "confirmo",
+   "start": 11.16,
+   "end": 11.54
+  },
+  {
+   "text": "por",
+   "start": 11.54,
+   "end": 11.68
+  },
+  {
+   "text": "escrito",
+   "start": 11.68,
+   "end": 11.9
+  },
+  {
+   "text": "que",
+   "start": 11.9,
+   "end": 12.12
+  },
+  {
+   "text": "incluye",
+   "start": 12.12,
+   "end": 12.48
+  },
+  {
+   "text": "el",
+   "start": 12.48,
+   "end": 12.6
+  },
+  {
+   "text": "precio",
+   "start": 12.6,
+   "end": 12.78
+  },
+  {
+   "text": "y",
+   "start": 12.78,
+   "end": 13.02
+  },
+  {
+   "text": "a",
+   "start": 13.02,
+   "end": 13.12
+  },
+  {
+   "text": "qué",
+   "start": 13.12,
+   "end": 13.16
+  },
+  {
+   "text": "dirección",
+   "start": 13.16,
+   "end": 13.5
+  },
+  {
+   "text": "van",
+   "start": 13.5,
+   "end": 13.66
+  },
+  {
+   "text": "a",
+   "start": 13.66,
+   "end": 13.72
+  },
+  {
+   "text": "entregar.",
+   "start": 13.72,
+   "end": 14.04
+  },
+  {
+   "text": "Si",
+   "start": 14.4,
+   "end": 14.52
+  },
+  {
+   "text": "quieres",
+   "start": 14.52,
+   "end": 14.7
+  },
+  {
+   "text": "aprender",
+   "start": 14.7,
+   "end": 14.94
+  },
+  {
+   "text": "a",
+   "start": 14.94,
+   "end": 15.08
+  },
+  {
+   "text": "pedir",
+   "start": 15.08,
+   "end": 15.24
+  },
+  {
+   "text": "esa",
+   "start": 15.24,
+   "end": 15.44
+  },
+  {
+   "text": "cotización,",
+   "start": 15.44,
+   "end": 15.84
+  },
+  {
+   "text": "escríbeme",
+   "start": 16.26,
+   "end": 16.58
+  },
+  {
+   "text": "envío",
+   "start": 16.58,
+   "end": 16.88
+  },
+  {
+   "text": "y",
+   "start": 16.88,
+   "end": 17.0
+  },
+  {
+   "text": "te",
+   "start": 17.0,
+   "end": 17.08
+  },
+  {
+   "text": "explico",
+   "start": 17.08,
+   "end": 17.36
+  },
+  {
+   "text": "como",
+   "start": 17.36,
+   "end": 17.52
+  },
+  {
+   "text": "también.",
+   "start": 17.52,
+   "end": 17.8
+  },
+  {
+   "text": "Puede",
+   "start": 18.2,
+   "end": 18.32
+  },
+  {
+   "text": "ser",
+   "start": 18.32,
+   "end": 18.48
+  },
+  {
+   "text": "parte",
+   "start": 18.48,
+   "end": 18.66
+  },
+  {
+   "text": "de",
+   "start": 18.66,
+   "end": 18.82
+  },
+  {
+   "text": "mi",
+   "start": 18.82,
+   "end": 18.88
+  },
+  {
+   "text": "grupo",
+   "start": 18.88,
+   "end": 19.04
+  },
+  {
+   "text": "directo",
+   "start": 19.04,
+   "end": 19.46
+  },
+  {
+   "text": "de",
+   "start": 19.46,
+   "end": 19.52
+  },
+  {
+   "text": "más",
+   "start": 19.52,
+   "end": 19.66
+  },
+  {
+   "text": "de",
+   "start": 19.66,
+   "end": 19.78
+  },
+  {
+   "text": "100",
+   "start": 19.78,
+   "end": 19.9
+  },
+  {
+   "text": "personas",
+   "start": 19.9,
+   "end": 20.26
+  },
+  {
+   "text": "y",
+   "start": 20.26,
+   "end": 20.48
+  },
+  {
+   "text": "recibir",
+   "start": 20.48,
+   "end": 20.76
+  },
+  {
+   "text": "mi",
+   "start": 20.76,
+   "end": 21.22
+  },
+  {
+   "text": "acompañamiento",
+   "start": 21.22,
+   "end": 21.8
+  },
+  {
+   "text": "en",
+   "start": 21.8,
+   "end": 21.94
+  },
+  {
+   "text": "todo",
+   "start": 21.94,
+   "end": 22.1
+  },
+  {
+   "text": "tu",
+   "start": 22.1,
+   "end": 22.28
+  },
+  {
+   "text": "proceso.",
+   "start": 22.28,
+   "end": 22.54
+  }
+ ],
+ "text": "Una de las cosas que más me preguntan es Carmen. ¿Tengo que ir a buscar mi pedido a algún lado? En los pedidos que hacemos con nuestros proveedores, se incluye el método de envío DDP. La mercancía me llega hasta la puerta de mi casa. Antes de pagar, confirmo por escrito que incluye el precio y a qué dirección van a entregar. Si quieres aprender a pedir esa cotización, escríbeme envío y te explico como también. Puede ser parte de mi grupo directo de más de 100 personas y recibir mi acompañamiento en todo tu proceso."
+}
